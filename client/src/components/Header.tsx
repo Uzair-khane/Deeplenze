@@ -8,7 +8,7 @@ import { Link, useLocation } from 'wouter';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Menu, X, Globe } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import logo from '@/assets/images/Deeplenz.svg';
+
 
 export default function Header() {
   const { language, setLanguage, t, dir } = useLanguage();
@@ -55,7 +55,7 @@ export default function Header() {
     transition={{ type: 'spring', stiffness: 300 }}
   >
 <img
-  src={logo}
+  src="./src/assets/images/Deeplenz.svg"
   alt="Logo"
   className="w-18 h-18 object-contain transition-transform duration-300"
 />
