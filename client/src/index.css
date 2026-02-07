@@ -1,6 +1,24 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+/* Step 2a: Define Satoshi font */
+@font-face {
+  font-family: 'Satoshi';
+  src: url('./assets/fonts/OTF/Satoshi-Regular.otf') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
 
+@font-face {
+  font-family: 'Satoshi';
+  src: url('./assets/fonts/OTF/Satoshi-Bold.otf') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Step 2b: Apply to body and all text elements */
+body, h1, h2, h3, h4, h5, h6, p, b, strong, span, a, li, button {
+  font-family: 'Satoshi', sans-serif;
+}
 @custom-variant dark (&:is(.dark *));
 
 /* Desert Futurism Design System

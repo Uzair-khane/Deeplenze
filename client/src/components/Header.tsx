@@ -8,6 +8,7 @@ import { Link, useLocation } from 'wouter';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Menu, X, Globe } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import logo from '@/assets/images/Deeplenz.svg';
 
 export default function Header() {
   const { language, setLanguage, t, dir } = useLanguage();
@@ -48,24 +49,27 @@ export default function Header() {
         <nav className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/">
-            <motion.div
-              className="flex items-center gap-3 cursor-pointer"
-              whileHover={{ scale: 1.02 }}
-              transition={{ type: 'spring', stiffness: 400 }}
-            >
-              <div className="relative w-10 h-10">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#00D4AA] to-[#C9A227] rounded-lg opacity-80" />
-                <div className="absolute inset-[2px] bg-[#0A1628] rounded-lg flex items-center justify-center">
-                  <span className="text-[#00D4AA] font-bold text-lg">TV</span>
-                </div>
-              </div>
-              <div className={`${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}>
-                <span className="text-white font-semibold text-lg tracking-wide">
-                  {language === 'en' ? 'TechVision' : 'تك فيجن'}
-                </span>
-              </div>
-            </motion.div>
-          </Link>
+  <motion.div
+    className="flex items-center gap-3 cursor-pointer"
+    whileHover={{ scale: 1.04 }}
+    transition={{ type: 'spring', stiffness: 300 }}
+  >
+<img
+  src={logo}
+  alt="Logo"
+  className="w-18 h-18 object-contain transition-transform duration-300"
+/>
+
+
+    {/* Optional Text */}
+    {/* 
+    <span className="text-white font-semibold text-lg tracking-wide">
+      Deeplenz
+    </span> 
+    */}
+  </motion.div>
+</Link>
+
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-8">
@@ -117,6 +121,7 @@ export default function Header() {
                 </span>
               </motion.button>
             </Link>
+            
           </div>
 
           {/* Mobile Menu Button */}
