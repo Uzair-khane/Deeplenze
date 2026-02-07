@@ -6,7 +6,7 @@ import { Link } from 'wouter';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Mail, Phone, MapPin, Linkedin, Twitter } from 'lucide-react';
 import { motion } from 'framer-motion';
-
+import logo from '@/assets/images/DeepLenz.svg';
 export default function Footer() {
   const { t, dir, language } = useLanguage();
 
@@ -38,15 +38,28 @@ export default function Footer() {
           {/* Brand Column */}
           <div className={`space-y-6 ${dir === 'rtl' ? 'text-right' : ''}`}>
             <div className="flex items-center gap-3">
-              <div className="relative w-10 h-10">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#00D4AA] to-[#C9A227] rounded-lg opacity-80" />
-                <div className="absolute inset-[2px] bg-[#0A1628] rounded-lg flex items-center justify-center">
-                  <span className="text-[#00D4AA] font-bold text-lg">TV</span>
-                </div>
-              </div>
-              <span className={`text-white font-semibold text-xl ${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}>
-                {language === 'en' ? 'TechVision' : 'تك فيجن'}
-              </span>
+                      <Link href="/">
+  <motion.div
+    className="flex items-center gap-3 cursor-pointer"
+    whileHover={{ scale: 1.04 }}
+    transition={{ type: 'spring', stiffness: 300 }}
+  >
+<img
+  src={logo}
+  alt="Logo"
+  className="w-24 h-24 object-contain transition-transform duration-300"
+/>
+
+
+    {/* Optional Text */}
+    {/* 
+    <span className="text-white font-semibold text-lg tracking-wide">
+      Deeplenz
+    </span> 
+    */}
+  </motion.div>
+</Link>
+             
             </div>
             <p className={`text-gray-400 text-sm leading-relaxed ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
               {t('footer.description')}
