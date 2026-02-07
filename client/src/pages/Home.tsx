@@ -29,7 +29,7 @@ import {
 } from 'lucide-react';
 
 // Image URLs
-const HERO_BG = "@/assets/images/herosection.png"
+
 const AI_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030867079/hYVpeMLXqLiWYyQt.jpg";
 const CYBER_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030867079/ttqBQgjepjeNgSMT.jpg";
 const DIGITAL_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030867079/xsqFgzTMBLvupfxK.jpg";
@@ -109,9 +109,9 @@ export default function Home() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <img 
-            src={HERO_BG}
+            src="./src/assets/images/herosection.png"
             alt="Hero Background" 
-            className="w-full h-full object-cover"
+            className="w-full  h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#0A1628] via-[#0A1628]/80 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0A1628] via-transparent to-[#0A1628]/50" />
