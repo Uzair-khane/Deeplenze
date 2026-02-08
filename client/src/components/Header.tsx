@@ -39,36 +39,35 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled
-          ? 'py-3 glass'
-          : 'py-5 bg-transparent'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
+        ? 'py-3 glass shadow-sm'
+        : 'py-5 bg-transparent'
+        }`}
     >
-      <div className="container">
+      <div className="container mx-auto px-4">
         <nav className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/">
-  <motion.div
-    className="flex items-center gap-3 cursor-pointer"
-    whileHover={{ scale: 1.04 }}
-    transition={{ type: 'spring', stiffness: 300 }}
-  >
-<img
-  src={logo}
-  alt="Logo"
-  className="w-18 h-18 object-contain transition-transform duration-300"
-/>
+            <motion.div
+              className="flex items-center gap-3 cursor-pointer"
+              whileHover={{ scale: 1.04 }}
+              transition={{ type: 'spring', stiffness: 300 }}
+            >
+              <img
+                src={logo}
+                alt="Logo"
+                className="w-18 h-18 object-contain transition-transform duration-300"
+              />
 
 
-    {/* Optional Text */}
-    {/* 
-    <span className="text-white font-semibold text-lg tracking-wide">
+              {/* Optional Text */}
+              {/* 
+    <span className="text-foreground font-semibold text-lg tracking-wide">
       Deeplenz
     </span> 
     */}
-  </motion.div>
-</Link>
+            </motion.div>
+          </Link>
 
 
           {/* Desktop Navigation */}
@@ -76,18 +75,17 @@ export default function Header() {
             {navLinks.map((link) => (
               <Link key={link.href} href={link.href}>
                 <motion.span
-                  className={`relative text-sm font-medium transition-colors cursor-pointer ${
-                    location === link.href
-                      ? 'text-[#00D4AA]'
-                      : 'text-gray-300 hover:text-white'
-                  } ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}
+                  className={`relative text-sm font-medium transition-colors cursor-pointer ${location === link.href
+                    ? 'text-primary'
+                    : 'text-muted-foreground hover:text-primary'
+                    } ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}
                   whileHover={{ y: -2 }}
                   transition={{ type: 'spring', stiffness: 400 }}
                 >
                   {link.label}
                   {location === link.href && (
                     <motion.div
-                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-[#00D4AA] to-[#C9A227]"
+                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-primary to-secondary"
                       layoutId="activeNav"
                     />
                   )}
@@ -100,7 +98,7 @@ export default function Header() {
           <div className="hidden lg:flex items-center gap-4">
             <motion.button
               onClick={toggleLanguage}
-              className="flex items-center gap-2 px-3 py-2 rounded-lg border border-[#C9A227]/30 text-[#C9A227] hover:bg-[#C9A227]/10 transition-colors"
+              className="flex items-center gap-2 px-3 bg-gradient-to-r from-primary to-primary/80 text-primary-foreground font-semibold text-sm rounded-lg hover:shadow-lg hover:shadow-primary/25 transition-all py-2 rounded-lg  hover:bg-muted transition-colors"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -109,10 +107,10 @@ export default function Header() {
                 {language === 'en' ? 'العربية' : 'English'}
               </span>
             </motion.button>
-            
+
             <Link href="/contact">
               <motion.button
-                className="px-5 py-2.5 bg-gradient-to-r from-[#00D4AA] to-[#00D4AA]/80 text-[#0A1628] font-semibold text-sm rounded-lg hover:shadow-lg hover:shadow-[#00D4AA]/25 transition-all"
+                className="px-5 py-2.5 bg-yellow-500 text-primary-foreground font-semibold text-sm rounded-lg hover:shadow-lg hover:shadow-yellow-600/25 transition-all"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -121,21 +119,21 @@ export default function Header() {
                 </span>
               </motion.button>
             </Link>
-            
+
           </div>
 
           {/* Mobile Menu Button */}
           <div className="flex lg:hidden items-center gap-3">
             <motion.button
               onClick={toggleLanguage}
-              className="p-2 rounded-lg border border-[#C9A227]/30 text-[#C9A227]"
+              className="p-2 rounded-lg border border-secondary/30 text-secondary"
               whileTap={{ scale: 0.95 }}
             >
               <Globe className="w-5 h-5" />
             </motion.button>
             <motion.button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2 text-white"
+              className="p-2 text-foreground"
               whileTap={{ scale: 0.95 }}
             >
               {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -151,7 +149,7 @@ export default function Header() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden glass mt-2 mx-4 rounded-xl overflow-hidden"
+            className="lg:hidden glass mt-2 mx-4 rounded-xl overflow-hidden shadow-xl"
           >
             <div className="py-4 px-6 space-y-1">
               {navLinks.map((link, index) => (
@@ -164,11 +162,10 @@ export default function Header() {
                   <Link href={link.href}>
                     <span
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className={`block py-3 px-4 rounded-lg transition-colors cursor-pointer ${
-                        location === link.href
-                          ? 'bg-[#00D4AA]/10 text-[#00D4AA]'
-                          : 'text-gray-300 hover:bg-white/5 hover:text-white'
-                      } ${dir === 'rtl' ? 'font-arabic text-right' : 'font-body'}`}
+                      className={`block py-3 px-4 rounded-lg transition-colors cursor-pointer ${location === link.href
+                        ? 'bg-primary/10 text-primary'
+                        : 'text-muted-foreground hover:bg-muted hover:text-foreground'
+                        } ${dir === 'rtl' ? 'font-arabic text-right' : 'font-body'}`}
                     >
                       {link.label}
                     </span>

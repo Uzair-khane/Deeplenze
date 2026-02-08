@@ -10,8 +10,8 @@ export default function NotFound() {
       {/* Background Effects */}
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#00D4AA]/5 rounded-full blur-3xl" />
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#C9A227]/5 rounded-full blur-3xl" />
-      
-      <div className="container relative z-10">
+
+      <div className="container mx-auto px-4 relative z-10">
         <motion.div
           className="text-center max-w-2xl mx-auto"
           initial={{ opacity: 0, y: 30 }}
@@ -33,7 +33,7 @@ export default function NotFound() {
           <h1 className="text-3xl md:text-4xl font-bold text-white mb-4 font-display">
             Page Not Found
           </h1>
-          
+
           <p className="text-gray-400 text-lg mb-10 font-body">
             The page you're looking for doesn't exist or has been moved.
           </p>
@@ -49,7 +49,7 @@ export default function NotFound() {
                 Go Home
               </motion.button>
             </Link>
-            
+
             <motion.button
               onClick={() => window.history.back()}
               className="flex items-center gap-2 px-8 py-4 border-2 border-[#C9A227] text-[#C9A227] font-semibold rounded-lg hover:bg-[#C9A227]/10 transition-all font-body"
