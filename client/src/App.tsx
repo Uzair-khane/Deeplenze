@@ -11,18 +11,34 @@ import Services from "./pages/Services";
 import Products from "./pages/Products";
 import Industries from "./pages/Industries";
 import Contact from "./pages/Contact";
-
+import Nalyst from "@/pages/products/nalyst";
+import FourKast from "@/pages/products/4kast";
+import Khella from "@/pages/products/khella";
+import HR360 from "@/pages/products/hr360";
+import Asaad from "@/pages/products/asaad";
+import Newshunt from "@/pages/products/newshunt";
 function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/about" component={About} />
       <Route path="/services" component={Services} />
+      
+      
+      <Route path="/products/nalyst" component={Nalyst} />
+      <Route path="/products/4kast" component={FourKast} />
+      <Route path="/products/khella" component={Khella} />
+      <Route path="/products/hr360" component={HR360} />
+      <Route path="/products/asaad" component={Asaad} />
+      <Route path="/products/newshunt" component={Newshunt} />
+      
+      
       <Route path="/products" component={Products} />
+      
       <Route path="/industries" component={Industries} />
       <Route path="/contact" component={Contact} />
       <Route path="/404" component={NotFound} />
-      {/* Final fallback route */}
+
       <Route component={NotFound} />
     </Switch>
   );

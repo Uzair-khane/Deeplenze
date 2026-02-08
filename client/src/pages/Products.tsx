@@ -21,6 +21,9 @@ import {
   Sparkles
 } from 'lucide-react';
 
+// import Nalyst from "./pages/product/nalyst";
+
+
 export default function Products() {
   const { t, dir, language } = useLanguage();
   const ArrowIcon = dir === 'rtl' ? ArrowLeft : ArrowRight;
@@ -126,89 +129,101 @@ export default function Products() {
 
       {/* Products Grid */}
       <section className="py-16">
-        <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {products.map((product, index) => (
-              <motion.div
-                key={product.id}
-                className={`group relative p-8 rounded-2xl overflow-hidden ${dir === 'rtl' ? 'text-right' : ''}`}
-                style={{ 
-                  background: `linear-gradient(135deg, ${product.color}10 0%, transparent 50%)`,
-                  border: `1px solid ${product.color}20`
-                }}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ y: -5 }}
-              >
-                {/* Background Glow */}
-                <div 
-                  className="absolute top-0 right-0 w-64 h-64 rounded-full blur-3xl opacity-0 group-hover:opacity-20 transition-opacity duration-500"
-                  style={{ backgroundColor: product.color }}
-                />
+  <div className="container">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      {products.map((product, index) => (
+        <motion.div
+          key={product.id}
+          className={`group relative p-8 rounded-2xl overflow-hidden ${dir === 'rtl' ? 'text-right' : ''}`}
+          style={{ 
+            background: `linear-gradient(135deg, ${product.color}10 0%, transparent 50%)`,
+            border: `1px solid ${product.color}20`
+          }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: index * 0.1 }}
+          whileHover={{ y: -5 }}
+        >
+          {/* Background Glow */}
+          <div 
+            className="absolute top-0 right-0 w-64 h-64 rounded-full blur-3xl opacity-0 group-hover:opacity-20 transition-opacity duration-500"
+            style={{ backgroundColor: product.color }}
+          />
 
-                <div className={`relative z-10 ${dir === 'rtl' ? 'text-right' : ''}`}>
-                  {/* Header */}
-                  <div className={`flex items-start justify-between mb-6 ${dir === 'rtl' ? 'flex-row-reverse' : ''}`}>
-                    <div className={`flex items-center gap-4 ${dir === 'rtl' ? 'flex-row-reverse' : ''}`}>
-                      <div 
-                        className="w-14 h-14 rounded-xl flex items-center justify-center"
-                        style={{ backgroundColor: `${product.color}20`, border: `1px solid ${product.color}40` }}
-                      >
-                        <product.icon className="w-7 h-7" style={{ color: product.color }} />
-                      </div>
-                      <div>
-                        <h3 className={`text-2xl font-bold text-white ${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}>
-                          {product.name}
-                        </h3>
-                        <span 
-                          className={`text-sm ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}
-                          style={{ color: product.color }}
-                        >
-                          {product.tagline}
-                        </span>
-                      </div>
-                    </div>
+          <div className={`relative z-10 ${dir === 'rtl' ? 'text-right' : ''}`}>
+            {/* Header */}
+            <div className={`flex items-start justify-between mb-6 ${dir === 'rtl' ? 'flex-row-reverse' : ''}`}>
+              <div className={`flex items-center gap-4 ${dir === 'rtl' ? 'flex-row-reverse' : ''}`}>
+
+                {/*logo is clickable */}
+                <Link href={`/products/${product.id}`}>
+                  <div 
+                    className="w-14 h-14 rounded-xl flex items-center justify-center cursor-pointer"
+                    style={{ 
+                      backgroundColor: `${product.color}20`, 
+                      border: `1px solid ${product.color}40` 
+                    }}
+                  >
+                    <product.icon className="w-7 h-7" style={{ color: product.color }} />
                   </div>
+                </Link>
 
-                  {/* Description */}
-                  <p className={`text-gray-300 mb-6 leading-relaxed ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
-                    {product.description}
-                  </p>
-
-                  {/* Features */}
-                  <div className="grid grid-cols-2 gap-3 mb-6">
-                    {product.features.map((feature, i) => (
-                      <div 
-                        key={i}
-                        className={`flex items-center gap-2 ${dir === 'rtl' ? 'flex-row-reverse' : ''}`}
-                      >
-                        <CheckCircle2 className="w-4 h-4 flex-shrink-0" style={{ color: product.color }} />
-                        <span className={`text-gray-400 text-sm ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
-                          {feature}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* CTA */}
-                  <Link href="/contact">
-                    <motion.button
-                      className={`inline-flex items-center gap-2 text-sm font-medium ${dir === 'rtl' ? 'flex-row-reverse font-arabic' : 'font-body'}`}
-                      style={{ color: product.color }}
-                      whileHover={{ x: dir === 'rtl' ? -5 : 5 }}
-                    >
-                      {language === 'en' ? 'Request Demo' : 'طلب عرض توضيحي'}
-                      <ArrowIcon className="w-4 h-4" />
-                    </motion.button>
-                  </Link>
+                <div>
+                  <h3 className={`text-2xl font-bold text-white ${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}>
+                    {product.name}
+                  </h3>
+                  <span 
+                    className={`text-sm ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}
+                    style={{ color: product.color }}
+                  >
+                    {product.tagline}
+                  </span>
                 </div>
-              </motion.div>
-            ))}
+              </div>
+            </div>
+
+            {/* Description */}
+            <p className={`text-gray-300 mb-6 leading-relaxed ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
+              {product.description}
+            </p>
+
+            {/* Features */}
+            <div className="grid grid-cols-2 gap-3 mb-6">
+              {product.features.map((feature, i) => (
+                <div 
+                  key={i}
+                  className={`flex items-center gap-2 ${dir === 'rtl' ? 'flex-row-reverse' : ''}`}
+                >
+                  <CheckCircle2
+                    className="w-4 h-4 flex-shrink-0"
+                    style={{ color: product.color }}
+                  />
+                  <span className={`text-gray-400 text-sm ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
+                    {feature}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            {/* CTA */}
+            <Link href="/contact">
+              <motion.button
+                className={`inline-flex items-center gap-2 text-sm font-medium ${dir === 'rtl' ? 'flex-row-reverse font-arabic' : 'font-body'}`}
+                style={{ color: product.color }}
+                whileHover={{ x: dir === 'rtl' ? -5 : 5 }}
+              >
+                {language === 'en' ? 'Request Demo' : 'طلب عرض توضيحي'}
+                <ArrowIcon className="w-4 h-4" />
+              </motion.button>
+            </Link>
           </div>
-        </div>
-      </section>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
+
 
       {/* Integration Section */}
       <section className="py-20 relative bg-[#050d18]">

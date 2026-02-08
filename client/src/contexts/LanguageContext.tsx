@@ -71,9 +71,9 @@ const translations: Translations = {
   'industries.private.description': { en: 'Enterprise solutions for digital growth and operational excellence.', ar: 'حلول المؤسسات للنمو الرقمي والتميز التشغيلي.' },
   
   // About Section
-  'about.title': { en: 'About TechVision', ar: 'عن تك فيجن' },
+  'about.title': { en: 'About Deeplenze', ar: 'عن تك فيجن' },
   'about.subtitle': { en: 'Pioneering Digital Excellence in Saudi Arabia', ar: 'ريادة التميز الرقمي في المملكة العربية السعودية' },
-  'about.description': { en: 'TechVision is a leading technology consulting firm headquartered in Saudi Arabia, dedicated to driving digital transformation across the Kingdom. Our team of experts combines deep technical knowledge with regional insights to deliver innovative solutions that align with Vision 2030.', ar: 'تك فيجن هي شركة استشارات تقنية رائدة مقرها في المملكة العربية السعودية، مكرسة لدفع التحول الرقمي في جميع أنحاء المملكة. يجمع فريقنا من الخبراء بين المعرفة التقنية العميقة والرؤى الإقليمية لتقديم حلول مبتكرة تتوافق مع رؤية 2030.' },
+  'about.description': { en: 'Deeplenze is a leading technology consulting firm headquartered in Saudi Arabia, dedicated to driving digital transformation across the Kingdom. Our team of experts combines deep technical knowledge with regional insights to deliver innovative solutions that align with Vision 2030.', ar: 'تك فيجن هي شركة استشارات تقنية رائدة مقرها في المملكة العربية السعودية، مكرسة لدفع التحول الرقمي في جميع أنحاء المملكة. يجمع فريقنا من الخبراء بين المعرفة التقنية العميقة والرؤى الإقليمية لتقديم حلول مبتكرة تتوافق مع رؤية 2030.' },
   'about.mission.title': { en: 'Our Mission', ar: 'مهمتنا' },
   'about.mission.description': { en: 'To empower organizations with cutting-edge technology solutions that drive growth, enhance security, and create sustainable digital ecosystems.', ar: 'تمكين المؤسسات من خلال حلول تقنية متطورة تدفع النمو وتعزز الأمان وتخلق أنظمة رقمية مستدامة.' },
   'about.vision.title': { en: 'Our Vision', ar: 'رؤيتنا' },
@@ -95,7 +95,7 @@ const translations: Translations = {
   'contact.form.message': { en: 'Your Message', ar: 'رسالتك' },
   'contact.form.submit': { en: 'Send Message', ar: 'إرسال الرسالة' },
   'contact.info.address': { en: 'Riyadh, Saudi Arabia', ar: 'الرياض، المملكة العربية السعودية' },
-  'contact.info.email': { en: 'info@techvision.sa', ar: 'info@techvision.sa' },
+  'contact.info.email': { en: 'info@Deeplenze.sa', ar: 'info@Deeplenze.sa' },
   'contact.info.phone': { en: '+966 11 XXX XXXX', ar: '+966 11 XXX XXXX' },
   
   // Footer
@@ -103,7 +103,7 @@ const translations: Translations = {
   'footer.quicklinks': { en: 'Quick Links', ar: 'روابط سريعة' },
   'footer.services': { en: 'Our Services', ar: 'خدماتنا' },
   'footer.contact': { en: 'Contact Info', ar: 'معلومات الاتصال' },
-  'footer.copyright': { en: '© 2024 TechVision. All rights reserved.', ar: '© 2024 تك فيجن. جميع الحقوق محفوظة.' },
+  'footer.copyright': { en: '© 2024 Deeplenze. All rights reserved.', ar: '© 2024 تك فيجن. جميع الحقوق محفوظة.' },
   
   // Common
   'common.readMore': { en: 'Read More', ar: 'اقرأ المزيد' },

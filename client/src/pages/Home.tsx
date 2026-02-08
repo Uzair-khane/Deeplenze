@@ -8,11 +8,11 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { motion } from 'framer-motion';
-import { 
-  Brain, 
-  Shield, 
-  Sparkles, 
-  Building2, 
+import {
+  Brain,
+  Shield,
+  Sparkles,
+  Building2,
   ArrowRight,
   ArrowLeft,
   ChevronRight,
@@ -72,7 +72,7 @@ export default function Home() {
     {
       icon: Cloud,
       title: language === 'en' ? 'AWS Cloud Management' : 'إدارة سحابة AWS',
-      description: language === 'en' 
+      description: language === 'en'
         ? 'Comprehensive AWS cloud services for scalable and secure infrastructure.'
         : 'خدمات سحابة AWS الشاملة للبنية التحتية القابلة للتوسع والآمنة.',
       image: DIGITAL_IMG,
@@ -81,12 +81,12 @@ export default function Home() {
   ];
 
   const products = [
-    { name: t('products.nalyst.name'), description: t('products.nalyst.description'), icon: '📊' },
-    { name: t('products.newshunt.name'), description: t('products.newshunt.description'), icon: '📰' },
-    { name: t('products.asaad.name'), description: t('products.asaad.description'), icon: '🛡️' },
-    { name: t('products.khella.name'), description: t('products.khella.description'), icon: '💬' },
-    { name: t('products.4kast.name'), description: t('products.4kast.description'), icon: '📈' },
-    { name: t('products.hr360.name'), description: t('products.hr360.description'), icon: '👥' },
+    { name: t('products.nalyst.name'), description: t('products.nalyst.description'), icon: '📊', path: '/products/nalyst' },
+    { name: t('products.newshunt.name'), description: t('products.newshunt.description'), icon: '📰', path: '/products/newshunt' },
+    { name: t('products.asaad.name'), description: t('products.asaad.description'), icon: '🛡️', path: '/products/asaad' },
+    { name: t('products.khella.name'), description: t('products.khella.description'), icon: '💬', path: '/products/khella' },
+    { name: t('products.4kast.name'), description: t('products.4kast.description'), icon: '📈', path: '/products/4kast' },
+    { name: t('products.hr360.name'), description: t('products.hr360.description'), icon: '👥', path: '/products/hr360' },
   ];
 
   const industries = [
@@ -103,14 +103,14 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-[#0A1628]">
       <Header />
-      
+
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
-          <img 
+          <img
             src={HeroImage}
-            alt="Hero Background" 
+            alt="Hero Background"
             className="w-full  h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#0A1628] via-[#0A1628]/80 to-transparent" />
@@ -160,7 +160,7 @@ export default function Home() {
             >
               {t('hero.title')}
             </motion.h1>
-            
+
             <motion.h2
               className={`text-4xl md:text-6xl font-bold mb-8 ${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}
               initial={{ opacity: 0, y: 30 }}
@@ -224,7 +224,7 @@ export default function Home() {
       <section className="py-24 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#C9A227]/30 to-transparent" />
         <div className="absolute top-1/4 right-0 w-96 h-96 bg-[#00D4AA]/5 rounded-full blur-3xl" />
-        
+
         <div className="container">
           <motion.div
             className={`text-center mb-16 ${dir === 'rtl' ? 'font-arabic' : ''}`}
@@ -254,30 +254,30 @@ export default function Home() {
                 transition={{ delay: index * 0.1 }}
               >
                 <div className="absolute inset-0">
-                  <img 
-                    src={service.image} 
+                  <img
+                    src={service.image}
                     alt={service.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0A1628] via-[#0A1628]/70 to-transparent" />
                 </div>
-                
+
                 <div className={`relative p-8 min-h-[320px] flex flex-col justify-end ${dir === 'rtl' ? 'text-right' : ''}`}>
-                  <div 
+                  <div
                     className="w-14 h-14 rounded-xl flex items-center justify-center mb-4"
                     style={{ backgroundColor: `${service.color}20`, border: `1px solid ${service.color}40` }}
                   >
                     <service.icon className="w-7 h-7" style={{ color: service.color }} />
                   </div>
-                  
+
                   <h3 className={`text-2xl font-bold text-white mb-3 ${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}>
                     {service.title}
                   </h3>
-                  
+
                   <p className={`text-gray-300 mb-4 leading-relaxed ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
                     {service.description}
                   </p>
-                  
+
                   <Link href="/services">
                     <motion.span
                       className={`inline-flex items-center gap-2 text-sm font-medium cursor-pointer ${dir === 'rtl' ? 'flex-row-reverse font-arabic' : 'font-body'}`}
@@ -322,23 +322,24 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {products.map((product, index) => (
-              <motion.div
-                key={index}
-                className={`group p-6 rounded-2xl bg-[#0A1628] border border-white/5 hover:border-[#00D4AA]/30 transition-all duration-300 ${dir === 'rtl' ? 'text-right' : ''}`}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ y: -5 }}
-              >
-                <div className="text-4xl mb-4">{product.icon}</div>
-                <h3 className={`text-xl font-bold text-white mb-2 group-hover:text-[#00D4AA] transition-colors ${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}>
-                  {product.name}
-                </h3>
-                <p className={`text-gray-400 text-sm leading-relaxed ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
-                  {product.description}
-                </p>
-              </motion.div>
+              <Link key={index} href={product.path}>
+                <motion.div
+                  className={`group p-6 rounded-2xl bg-[#0A1628] border border-white/5 hover:border-[#00D4AA]/30 transition-all duration-300 cursor-pointer ${dir === 'rtl' ? 'text-right' : ''}`}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  whileHover={{ y: -5 }}
+                >
+                  <div className="text-4xl mb-4">{product.icon}</div>
+                  <h3 className={`text-xl font-bold text-white mb-2 group-hover:text-[#00D4AA] transition-colors ${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}>
+                    {product.name}
+                  </h3>
+                  <p className={`text-gray-400 text-sm leading-relaxed ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
+                    {product.description}
+                  </p>
+                </motion.div>
+              </Link>
             ))}
           </div>
 
@@ -365,7 +366,7 @@ export default function Home() {
       {/* Industries Section */}
       <section className="py-24 relative">
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#00D4AA]/30 to-transparent" />
-        
+
         <div className="container">
           <motion.div
             className={`text-center mb-16 ${dir === 'rtl' ? 'font-arabic' : ''}`}
@@ -432,7 +433,7 @@ export default function Home() {
       <section className="py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-[#00D4AA]/10 via-transparent to-[#C9A227]/10" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#00D4AA]/5 rounded-full blur-3xl" />
-        
+
         <div className="container relative">
           <motion.div
             className={`text-center max-w-3xl mx-auto ${dir === 'rtl' ? 'font-arabic' : ''}`}
@@ -444,7 +445,7 @@ export default function Home() {
               {language === 'en' ? 'Ready to Transform Your Business?' : 'هل أنت مستعد لتحويل أعمالك؟'}
             </h2>
             <p className={`text-gray-300 text-lg mb-10 ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
-              {language === 'en' 
+              {language === 'en'
                 ? 'Partner with us to unlock the full potential of digital innovation and drive your organization forward.'
                 : 'شاركنا لإطلاق الإمكانات الكاملة للابتكار الرقمي ودفع مؤسستك إلى الأمام.'
               }
