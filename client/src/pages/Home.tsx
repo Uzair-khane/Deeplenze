@@ -236,7 +236,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <span className="inline-block px-4 py-2 rounded-full bg-sky-500/10 text-yellow-500 text-sm font-bold mb-4 uppercase tracking-wider">
+            <span className="inline-block px-4 py-2 rounded-full bg-[#32A7B51A] text-[#32a7b5] text-sm font-bold mb-4 uppercase tracking-wider">
               {language === 'en' ? 'What We Do' : 'ما نقدمه'}
             </span>
             <h2 className={`text-4xl md:text-5xl font-bold text-slate-800 mb-6 ${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}>
@@ -285,7 +285,7 @@ export default function Home() {
 
                   <Link href="/services">
                     <motion.span
-                      className={`inline-flex items-center gap-2 text-sm font-bold text-sky-500 cursor-pointer hover:underline ${dir === 'rtl' ? 'flex-row-reverse font-arabic' : 'font-body'}`}
+                      className={`inline-flex items-center gap-2 text-sm font-bold text-[#32a7b5]  cursor-pointer hover:underline ${dir === 'rtl' ? 'flex-row-reverse font-arabic' : 'font-body'}`}
                       whileHover={{ x: dir === 'rtl' ? -5 : 5 }}
                     >
                       {t('services.learnMore')}
@@ -310,7 +310,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <span className="inline-block px-4 py-2 rounded-full bg-sky-500/10 text-yellow-500 text-sm font-bold mb-4 uppercase tracking-wider">
+            <span className="inline-block px-4 py-2 rounded-full bg-[#32A7B51A] text-[#32a7b5] text-sm font-bold mb-4 uppercase tracking-wider">
               {language === 'en' ? 'Our Solutions' : 'حلولنا'}
             </span>
             <h2 className={`text-4xl md:text-5xl font-bold text-slate-700 mb-6 ${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}>
