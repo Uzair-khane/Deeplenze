@@ -63,13 +63,6 @@ export default function Home() {
       color: '#00D4AA',
     },
     {
-      icon: Building2,
-      title: t('services.smart.title'),
-      description: t('services.smart.description'),
-      image: SMART_IMG,
-      color: '#C9A227',
-    },
-    {
       icon: Cloud,
       title: language === 'en' ? 'AWS Cloud Management' : 'إدارة سحابة AWS',
       description: language === 'en'
@@ -81,13 +74,44 @@ export default function Home() {
   ];
 
   const products = [
-    { name: t('products.nalyst.name'), description: t('products.nalyst.description'), icon: '📊' },
-    { name: t('products.newshunt.name'), description: t('products.newshunt.description'), icon: '📰' },
-    { name: t('products.asaad.name'), description: t('products.asaad.description'), icon: '🛡️' },
-    { name: t('products.khella.name'), description: t('products.khella.description'), icon: '💬' },
-    { name: t('products.4kast.name'), description: t('products.4kast.description'), icon: '📈' },
-    { name: t('products.hr360.name'), description: t('products.hr360.description'), icon: '👥' },
+    {
+      name: t('products.nalyst.name'),
+      description: t('products.nalyst.description'),
+      icon: '📊',
+      url: 'https://nalyst.ai', // link for Nalyst
+    },
+    {
+      name: t('products.newshunt.name'),
+      description: t('products.newshunt.description'),
+      icon: '📰',
+      url: 'https://newshunt.io', // link for Newshunt
+    },
+    {
+      name: t('products.asaad.name'),
+      description: t('products.asaad.description'),
+      icon: '🛡️',
+      url: 'https://example.com/asaad', // placeholder, change later
+    },
+    {
+      name: t('products.khella.name'),
+      description: t('products.khella.description'),
+      icon: '💬',
+      url: 'https://example.com/khella', // placeholder, change later
+    },
+    {
+      name: t('products.4kast.name'),
+      description: t('products.4kast.description'),
+      icon: '📈',
+      url: 'https://example.com/4kast', // placeholder, change later
+    },
+    {
+      name: t('products.hr360.name'),
+      description: t('products.hr360.description'),
+      icon: '👥',
+      url: 'https://example.com/hr360', // placeholder, change later
+    },
   ];
+
 
   const industries = [
     { icon: Landmark, title: t('industries.government.title'), description: t('industries.government.description') },
@@ -325,9 +349,17 @@ export default function Home() {
                 whileHover={{ y: -8 }}
               >
                 {/* Icon */}
-                <div className="text-5xl mb-6 transform group-hover:scale-110 transition-transform duration-300 text-yellow-500">
-                  {product.icon}
-                </div>
+                <a
+                  href={product.url}           // external URL
+                  target="_blank"              // open in new tab
+                  rel="noopener noreferrer"    // security best practice
+                  className="group"            // preserve hover effects
+                >
+                  <div className="text-5xl mb-6 transform group-hover:scale-110 transition-transform duration-300 text-yellow-500">
+                    {product.icon}
+                  </div>
+                </a>
+
 
                 {/* Product Title */}
                 <h3 className={`text-xl font-bold text-slate-700 mb-3 ${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}>

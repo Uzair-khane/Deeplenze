@@ -35,6 +35,7 @@ const translations: Translations = {
   'services.digital.title': { en: 'Digital Transformation', ar: 'التحول الرقمي' },
   'services.digital.description': { en: 'Navigate your digital journey with strategic consulting, process optimization, and technology integration aligned with Vision 2030.', ar: 'انتقل في رحلتك الرقمية من خلال الاستشارات الاستراتيجية وتحسين العمليات وتكامل التكنولوجيا المتوافقة مع رؤية 2030.' },
   'services.smart.title': { en: 'Smart Cities', ar: 'المدن الذكية' },
+  'services.aws.title': { en: 'AWS Cloud Management', ar: 'المدن الذكية' },
   'services.smart.description': { en: 'Build intelligent urban infrastructure with IoT solutions, data analytics, and sustainable technologies for the cities of tomorrow.', ar: 'ابنِ بنية تحتية حضرية ذكية مع حلول إنترنت الأشياء وتحليلات البيانات والتقنيات المستدامة لمدن الغد.' },
   'services.learnMore': { en: 'Learn More', ar: 'اعرف المزيد' },
   

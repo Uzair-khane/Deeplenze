@@ -29,73 +29,74 @@ export default function Products() {
   const ArrowIcon = dir === 'rtl' ? ArrowLeft : ArrowRight;
 
   const products = [
-    {
-      id: 'nalyst',
-      name: t('products.nalyst.name'),
-      description: t('products.nalyst.description'),
-      icon: BarChart3,
-      color: '#00D4AA',
-      tagline: language === 'en' ? 'AI-Powered Analytics' : 'تحليلات مدعومة بالذكاء الاصطناعي',
-      features: language === 'en'
-        ? ['Real-time data processing', 'Custom dashboard builder', 'Predictive insights', 'Multi-source integration']
-        : ['معالجة البيانات في الوقت الفعلي', 'منشئ لوحات المعلومات المخصصة', 'رؤى تنبؤية', 'تكامل متعدد المصادر'],
-    },
-    {
-      id: 'newshunt',
-      name: t('products.newshunt.name'),
-      description: t('products.newshunt.description'),
-      icon: Newspaper,
-      color: '#C9A227',
-      tagline: language === 'en' ? 'Media Intelligence' : 'الذكاء الإعلامي',
-      features: language === 'en'
-        ? ['AI-powered news aggregation', 'Sentiment analysis', 'Trend detection', 'Custom alerts & reports']
-        : ['تجميع الأخبار بالذكاء الاصطناعي', 'تحليل المشاعر', 'اكتشاف الاتجاهات', 'تنبيهات وتقارير مخصصة'],
-    },
-    {
-      id: 'asaad',
-      name: t('products.asaad.name'),
-      description: t('products.asaad.description'),
-      icon: ShieldCheck,
-      color: '#00D4AA',
-      tagline: language === 'en' ? 'Enterprise Security' : 'أمان المؤسسات',
-      features: language === 'en'
-        ? ['Threat detection & response', 'Vulnerability management', 'Compliance monitoring', 'Security analytics']
-        : ['اكتشاف التهديدات والاستجابة', 'إدارة الثغرات', 'مراقبة الامتثال', 'تحليلات الأمان'],
-    },
-    {
-      id: 'khella',
-      name: t('products.khella.name'),
-      description: t('products.khella.description'),
-      icon: MessageSquare,
-      color: '#C9A227',
-      tagline: language === 'en' ? 'Smart Collaboration' : 'التعاون الذكي',
-      features: language === 'en'
-        ? ['Secure messaging', 'Video conferencing', 'File sharing & collaboration', 'AI meeting assistant']
-        : ['المراسلة الآمنة', 'مؤتمرات الفيديو', 'مشاركة الملفات والتعاون', 'مساعد الاجتماعات بالذكاء الاصطناعي'],
-    },
-    {
-      id: '4kast',
-      name: t('products.4kast.name'),
-      description: t('products.4kast.description'),
-      icon: TrendingUp,
-      color: '#00D4AA',
-      tagline: language === 'en' ? 'Predictive Intelligence' : 'الذكاء التنبؤي',
-      features: language === 'en'
-        ? ['Demand forecasting', 'Risk prediction', 'Market analysis', 'Scenario planning']
-        : ['التنبؤ بالطلب', 'التنبؤ بالمخاطر', 'تحليل السوق', 'تخطيط السيناريوهات'],
-    },
-    {
-      id: 'hr360',
-      name: t('products.hr360.name'),
-      description: t('products.hr360.description'),
-      icon: Users,
-      color: '#C9A227',
-      tagline: language === 'en' ? 'HR Management' : 'إدارة الموارد البشرية',
-      features: language === 'en'
-        ? ['Employee lifecycle management', 'Performance tracking', 'Payroll automation', 'Learning & development']
-        : ['إدارة دورة حياة الموظف', 'تتبع الأداء', 'أتمتة الرواتب', 'التعلم والتطوير'],
-    },
-  ];
+  {
+    name: t('products.nalyst.name'),
+    description: t('products.nalyst.description'),
+    icon: BarChart3,
+    color: '#00D4AA',
+    tagline: language === 'en' ? 'AI-Powered Analytics' : 'تحليلات مدعومة بالذكاء الاصطناعي',
+    url: 'https://nalyst.ai/', // placeholder, change later
+    features: language === 'en'
+      ? ['Real-time data processing', 'Custom dashboard builder', 'Predictive insights', 'Multi-source integration']
+      : ['معالجة البيانات في الوقت الفعلي', 'منشئ لوحات المعلومات المخصصة', 'رؤى تنبؤية', 'تكامل متعدد المصادر'],
+  },
+  {
+    name: t('products.newshunt.name'),
+    description: t('products.newshunt.description'),
+    icon: Newspaper,
+    color: '#C9A227',
+    tagline: language === 'en' ? 'Media Intelligence' : 'الذكاء الإعلامي',
+    url: 'https://newshunt.io/', // placeholder
+    features: language === 'en'
+      ? ['AI-powered news aggregation', 'Sentiment analysis', 'Trend detection', 'Custom alerts & reports']
+      : ['تجميع الأخبار بالذكاء الاصطناعي', 'تحليل المشاعر', 'اكتشاف الاتجاهات', 'تنبيهات وتقارير مخصصة'],
+  },
+  {
+    name: t('products.asaad.name'),
+    description: t('products.asaad.description'),
+    icon: ShieldCheck,
+    color: '#00D4AA',
+    tagline: language === 'en' ? 'Enterprise Security' : 'أمان المؤسسات',
+    url: 'https://example.com/asaad', // placeholder
+    features: language === 'en'
+      ? ['Threat detection & response', 'Vulnerability management', 'Compliance monitoring', 'Security analytics']
+      : ['اكتشاف التهديدات والاستجابة', 'إدارة الثغرات', 'مراقبة الامتثال', 'تحليلات الأمان'],
+  },
+  {
+    name: t('products.khella.name'),
+    description: t('products.khella.description'),
+    icon: MessageSquare,
+    color: '#C9A227',
+    tagline: language === 'en' ? 'Smart Collaboration' : 'التعاون الذكي',
+    url: 'https://example.com/khella', // placeholder
+    features: language === 'en'
+      ? ['Secure messaging', 'Video conferencing', 'File sharing & collaboration', 'AI meeting assistant']
+      : ['المراسلة الآمنة', 'مؤتمرات الفيديو', 'مشاركة الملفات والتعاون', 'مساعد الاجتماعات بالذكاء الاصطناعي'],
+  },
+  {
+    name: t('products.4kast.name'),
+    description: t('products.4kast.description'),
+    icon: TrendingUp,
+    color: '#00D4AA',
+    tagline: language === 'en' ? 'Predictive Intelligence' : 'الذكاء التنبؤي',
+    url: 'https://example.com/4kast', // placeholder
+    features: language === 'en'
+      ? ['Demand forecasting', 'Risk prediction', 'Market analysis', 'Scenario planning']
+      : ['التنبؤ بالطلب', 'التنبؤ بالمخاطر', 'تحليل السوق', 'تخطيط السيناريوهات'],
+  },
+  {
+    name: t('products.hr360.name'),
+    description: t('products.hr360.description'),
+    icon: Users,
+    color: '#C9A227',
+    tagline: language === 'en' ? 'HR Management' : 'إدارة الموارد البشرية',
+    url: 'https://example.com/hr360', // placeholder
+    features: language === 'en'
+      ? ['Employee lifecycle management', 'Performance tracking', 'Payroll automation', 'Learning & development']
+      : ['إدارة دورة حياة الموظف', 'تتبع الأداء', 'أتمتة الرواتب', 'التعلم والتطوير'],
+  },
+];
+
 
   return (
     <div className="min-h-screen bg-background font-body">
@@ -153,17 +154,19 @@ export default function Products() {
                     <div className={`flex items-center gap-4 ${dir === 'rtl' ? 'flex-row-reverse' : ''}`}>
 
                       {/*logo is clickable */}
-                      <Link href={`/products/${product.id}`}>
-                        <div
-                          className="w-14 h-14 rounded-xl flex items-center justify-center cursor-pointer shadow-sm"
-                          style={{
-                            backgroundColor: `${product.color}15`,
-                            border: `1px solid ${product.color}30`
-                          }}
-                        >
-                          <product.icon className="w-7 h-7" style={{ color: product.color }} />
-                        </div>
-                      </Link>
+                      <a
+                        href={product.url}           // external URL
+                        target="_blank"              // open in new tab
+                        rel="noopener noreferrer"    // security best practice
+                        className="w-14 h-14 rounded-xl flex items-center justify-center cursor-pointer shadow-sm"
+                        style={{
+                          backgroundColor: `${product.color}15`,
+                          border: `1px solid ${product.color}30`,
+                        }}
+                      >
+                        <product.icon className="w-7 h-7" style={{ color: product.color }} />
+                      </a>
+
 
                       <div>
                         <h3 className={`text-2xl font-bold text-foreground ${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}>
