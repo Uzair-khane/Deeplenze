@@ -98,7 +98,8 @@ export default function Header() {
           <div className="hidden lg:flex items-center gap-4">
             <motion.button
               onClick={toggleLanguage}
-              className="flex items-center gap-2 px-3  border border-1 border-white text-primary-foreground font-semibold text-sm rounded-lg hover:shadow-lg hover:shadow-primary/25 transition-all py-2 rounded-lg  hover:bg-muted transition-colors"
+              className="flex items-center gap-2 px-3  border border-1
+               border-white text-primary-foreground font-semibold text-sm rounded-lg hover:shadow-lg hover:shadow-primary/25 transition-all py-2 rounded-lg  hover:bg-muted transition-colors"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
