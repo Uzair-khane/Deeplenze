@@ -123,7 +123,7 @@ export default function Header() {
           <div className="flex lg:hidden items-center gap-3">
             <motion.button
               onClick={toggleLanguage}
-              className="p-2 rounded-lg border border-secondary/30 text-secondary"
+              className="p-2 rounded-lg border border-[#32a7b5] text-[#32a7b5]"
               whileTap={{ scale: 0.95 }}
             >
               <Globe className="w-5 h-5" />
@@ -133,7 +133,7 @@ export default function Header() {
               className="p-2 text-foreground"
               whileTap={{ scale: 0.95 }}
             >
-              {isMobileMenuOpen ? <X className="w-8 h-8" /> : <Menu className="w-10 h-10 text-sky-400" />}
+              {isMobileMenuOpen ? <X className="w-8 h-8" /> : <Menu className="w-10 h-10 text-slate-600" />}
             </motion.button>
           </div>
         </nav>
@@ -161,7 +161,7 @@ export default function Header() {
                       onClick={() => setIsMobileMenuOpen(false)}
                       className={`block py-3 px-4 rounded-lg transition-colors cursor-pointer ${location === link.href
                         ? 'bg-primary/10 text-primary'
-                        : 'text-muted-foreground hover:bg-muted hover:text-foreground'
+                        : 'text-slate-700 hover:bg-gray-200 hover:text-slate-800'
                         } ${dir === 'rtl' ? 'font-arabic text-right' : 'font-body'}`}
                     >
                       {link.label}
