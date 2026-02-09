@@ -40,9 +40,9 @@ export default function Header() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
-        ? 'py-3 glass shadow-sm'
-        : 'py-5 bg-transparent'
-        }`}
+  ? 'py-3 glass shadow-sm'
+  : 'py-5 bg-transparent'
+}`}
     >
       <div className="container mx-auto px-4">
         <nav className="flex items-center justify-between">
@@ -76,8 +76,8 @@ export default function Header() {
               <Link key={link.href} href={link.href}>
                 <motion.span
                   className={`relative text-sm font-medium transition-colors cursor-pointer ${location === link.href
-                    ? 'text-primary'
-                    : 'text-muted-foreground hover:text-primary'
+                  ? 'text-slate-100'
+                  : 'text-slate-100/70 hover:text-slate-200'
                     } ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}
                   whileHover={{ y: -2 }}
                   transition={{ type: 'spring', stiffness: 400 }}
@@ -98,7 +98,7 @@ export default function Header() {
           <div className="hidden lg:flex items-center gap-4">
             <motion.button
               onClick={toggleLanguage}
-              className="flex items-center gap-2 px-3 bg-gradient-to-r from-primary to-primary/80 text-primary-foreground font-semibold text-sm rounded-lg hover:shadow-lg hover:shadow-primary/25 transition-all py-2 rounded-lg  hover:bg-muted transition-colors"
+              className="flex items-center gap-2 px-3  border border-1 border-white text-primary-foreground font-semibold text-sm rounded-lg hover:shadow-lg hover:shadow-primary/25 transition-all py-2 rounded-lg  hover:bg-muted transition-colors"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >

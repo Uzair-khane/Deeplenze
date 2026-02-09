@@ -76,7 +76,7 @@ export default function Footer() {
               {quickLinks.map((link) => (
                 <li key={link.href}>
                   <Link href={link.href}>
-                    <span className={`text-slate-600 hover:text-yellow-500 transition-colors text-sm cursor-pointer ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
+                    <span className={`text-slate-600 hover:text-sky-500 transition-colors text-sm cursor-pointer ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
                       {link.label}
                     </span>
                   </Link>
@@ -94,7 +94,7 @@ export default function Footer() {
               {services.map((service, idx) => (
                 <li key={idx}>
                   <Link href="/services">
-                    <span className={`text-slate-600 hover:text-yellow-500 transition-colors text-sm cursor-pointer ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
+                    <span className={`text-slate-600 hover:text-sky-500 transition-colors text-sm cursor-pointer ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
                       {service.label}
                     </span>
                   </Link>
@@ -110,17 +110,17 @@ export default function Footer() {
             </h4>
             <ul className="space-y-4">
               <li className={`flex items-start gap-3 ${dir === 'rtl' ? 'flex-row-reverse' : ''}`}>
-                <MapPin className="w-5 h-5 text-yellow-500 flex-shrink-0 mt-0.5" />
+                <MapPin className="w-5 h-5 text-sky-500 flex-shrink-0 mt-0.5" />
                 <span className={`text-slate-600 text-sm ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
                   {t('contact.info.address')}
                 </span>
               </li>
               <li className={`flex items-center gap-3 ${dir === 'rtl' ? 'flex-row-reverse' : ''}`}>
-                <Mail className="w-5 h-5 text-yellow-500 flex-shrink-0" />
+                <Mail className="w-5 h-5 text-sky-500 flex-shrink-0" />
                 <span className="text-slate-600 text-sm font-body">{t('contact.info.email')}</span>
               </li>
               <li className={`flex items-center gap-3 ${dir === 'rtl' ? 'flex-row-reverse' : ''}`}>
-                <Phone className="w-5 h-5 text-yellow-500 flex-shrink-0" />
+                <Phone className="w-5 h-5 text-sky-500 flex-shrink-0" />
                 <span className="text-slate-600 text-sm font-body" dir="ltr">{t('contact.info.phone')}</span>
               </li>
             </ul>

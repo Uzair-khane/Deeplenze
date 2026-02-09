@@ -162,7 +162,7 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.1 }}
             >
               <span className="block text-white">{t('hero.title')}</span>
-              <span className="text-gradient-teal  text-4xl md:text-5xl lg:text-6xl text-sky-500">{t('hero.subtitle')}</span>
+              <span className="text-gradient-teal  text-4xl md:text-5xl lg:text-6xl text-sky-400">{t('hero.subtitle')}</span>
 
             </motion.h1>
 
