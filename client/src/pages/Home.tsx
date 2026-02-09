@@ -123,7 +123,7 @@ export default function Home() {
           {[...Array(20)].map((_, i) => (
             <motion.div
               key={i}
-              className="absolute w-1.5 h-1.5 bg-yellow-500 rounded-full"
+              className="absolute w-1.5 h-1.5 bg-sky-800 rounded-full"
               style={{
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
@@ -162,6 +162,7 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.1 }}
             >
               <span className="block text-white">{t('hero.title')}</span>
+              <span className="text-gradient-teal  text-4xl md:text-5xl lg:text-6xl text-sky-500">{t('hero.subtitle')}</span>
 
             </motion.h1>
 
@@ -184,7 +185,7 @@ export default function Home() {
             >
               <Link href="/services">
                 <motion.button
-                  className={`group flex items-center gap-2 px-8 py-4 bg-yellow-600 text-white font-bold rounded-xl shadow-lg hover:bg-yellow-500  hover:-translate-y-1 transition-all duration-300 ${dir === 'rtl' ? 'flex-row-reverse font-arabic' : 'font-body'}`}
+                  className={`group flex items-center gap-2 px-8 py-4 bg-sky-500 text-white font-bold rounded-xl shadow-lg hover:bg-sky-400  hover:-translate-y-1 transition-all duration-300 ${dir === 'rtl' ? 'flex-row-reverse font-arabic' : 'font-body'}`}
                   whileTap={{ scale: 0.95 }}
                 >
                   {t('hero.cta.services')}
@@ -193,7 +194,7 @@ export default function Home() {
               </Link>
               <Link href="/contact">
                 <motion.button
-                  className={`flex items-center gap-2 px-8 py-4 border-2 border-yellow-500 text-yellow-500 font-bold rounded-xl hover:bg-yellow-500/10 hover:-translate-y-1 transition-all duration-300 ${dir === 'rtl' ? 'flex-row-reverse font-arabic' : 'font-body'}`}
+                  className={`flex items-center gap-2 px-8 py-4 border-2 border-sky-500 text-white font-bold rounded-xl hover:bg-sky-300/10 hover:-translate-y-1 transition-all duration-300 ${dir === 'rtl' ? 'flex-row-reverse font-arabic' : 'font-body'}`}
                   whileTap={{ scale: 0.95 }}
                 >
                   {t('hero.cta.contact')}
@@ -210,7 +211,7 @@ export default function Home() {
           transition={{ duration: 2, repeat: Infinity }}
         >
           <div className="w-6 h-10 rounded-full border-2 border-yellow-500/50 flex justify-center pt-2">
-            <div className="w-1.5 h-3 bg-yellow-500 rounded-full" />
+            <div className="w-1.5 h-3 bg-sky-500 rounded-full" />
           </div>
         </motion.div>
       </section>
@@ -226,7 +227,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <span className="inline-block px-4 py-2 rounded-full bg-yellow-500/10 text-yellow-500 text-sm font-bold mb-4 uppercase tracking-wider">
+            <span className="inline-block px-4 py-2 rounded-full bg-sky-500/10 text-yellow-500 text-sm font-bold mb-4 uppercase tracking-wider">
               {language === 'en' ? 'What We Do' : 'ما نقدمه'}
             </span>
             <h2 className={`text-4xl md:text-5xl font-bold text-slate-800 mb-6 ${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}>
@@ -275,7 +276,7 @@ export default function Home() {
 
                   <Link href="/services">
                     <motion.span
-                      className={`inline-flex items-center gap-2 text-sm font-bold text-yellow-500 cursor-pointer hover:underline ${dir === 'rtl' ? 'flex-row-reverse font-arabic' : 'font-body'}`}
+                      className={`inline-flex items-center gap-2 text-sm font-bold text-sky-500 cursor-pointer hover:underline ${dir === 'rtl' ? 'flex-row-reverse font-arabic' : 'font-body'}`}
                       whileHover={{ x: dir === 'rtl' ? -5 : 5 }}
                     >
                       {t('services.learnMore')}
@@ -300,7 +301,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <span className="inline-block px-4 py-2 rounded-full bg-yellow-500/10 text-yellow-500 text-sm font-bold mb-4 uppercase tracking-wider">
+            <span className="inline-block px-4 py-2 rounded-full bg-sky-500/10 text-yellow-500 text-sm font-bold mb-4 uppercase tracking-wider">
               {language === 'en' ? 'Our Solutions' : 'حلولنا'}
             </span>
             <h2 className={`text-4xl md:text-5xl font-bold text-slate-700 mb-6 ${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}>
@@ -350,7 +351,7 @@ export default function Home() {
           >
             <Link href="/products">
               <motion.button
-                className={`inline-flex items-center gap-2 px-8 py-4 bg-yellow-500 text-white rounded-xl font-bold hover:bg-yellow-400 transition-colors ${dir === 'rtl' ? 'flex-row-reverse font-arabic' : 'font-body'}`}
+                className={`inline-flex items-center gap-2 px-8 py-4 bg-sky-500 text-white rounded-xl font-bold hover:bg-sky-400 transition-colors ${dir === 'rtl' ? 'flex-row-reverse font-arabic' : 'font-body'}`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -372,7 +373,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <span className="inline-block px-4 py-2 rounded-full bg-yellow-500/10 text-yellow-500 text-sm font-bold mb-4 uppercase tracking-wider">
+            <span className="inline-block px-4 py-2 rounded-full bg-sky-500/10 text-yellow-500 text-sm font-bold mb-4 uppercase tracking-wider">
               {language === 'en' ? 'Sectors' : 'القطاعات'}
             </span>
             <h2 className={`text-4xl md:text-5xl font-bold text-slate-700 mb-6 ${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}>
@@ -396,12 +397,12 @@ export default function Home() {
                 whileHover={{ y: -8 }}
               >
                 {/* Icon */}
-                <div className="w-14 h-14 rounded-xl bg-yellow-500/10 text-yellow-500 flex items-center justify-center mb-6 group-hover:bg-yellow-500 group-hover:text-white transition-colors duration-300">
+                <div className="w-14 h-14 rounded-xl bg-yellow-500/10 text-sky-500 flex items-center justify-center mb-6 group-hover:bg-sky-300 group-hover:text-white transition-colors duration-300">
                   <industry.icon className="w-7 h-7" />
                 </div>
 
                 {/* Industry Title */}
-                <h3 className={`text-xl font-bold text-slate-700 mb-3 group-hover:text-yellow-600 transition-colors ${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}>
+                <h3 className={`text-xl font-bold text-slate-700 mb-3 group-hover:text-sky-400 transition-colors ${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}>
                   {industry.title}
                 </h3>
 
@@ -422,7 +423,7 @@ export default function Home() {
           >
             <Link href="/industries">
               <motion.button
-                className={`inline-flex items-center gap-2 px-8 py-4 bg-yellow-500 text-white rounded-xl font-bold hover:bg-yellow-400 transition-colors ${dir === 'rtl' ? 'flex-row-reverse font-arabic' : 'font-body'}`}
+                className={`inline-flex items-center gap-2 px-8 py-4 bg-sky-500 text-white rounded-xl font-bold hover:bg-sky-400 transition-colors ${dir === 'rtl' ? 'flex-row-reverse font-arabic' : 'font-body'}`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -461,7 +462,7 @@ export default function Home() {
             {/* CTA Button */}
             <Link href="/contact">
               <motion.button
-                className={`inline-flex items-center gap-3 px-10 py-5 bg-yellow-500 text-white font-bold text-lg rounded-xl shadow-xl hover:bg-yellow-400 hover:-translate-y-1 transition-all duration-300 ${dir === 'rtl' ? 'flex-row-reverse font-arabic' : 'font-body'}`}
+                className={`inline-flex items-center gap-3 px-10 py-5 bg-sky-500 text-white font-bold text-lg rounded-xl shadow-xl hover:bg-sky-400 hover:-translate-y-1 transition-all duration-300 ${dir === 'rtl' ? 'flex-row-reverse font-arabic' : 'font-body'}`}
                 whileTap={{ scale: 0.95 }}
               >
                 {t('hero.cta.contact')}

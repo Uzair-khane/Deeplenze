@@ -136,7 +136,7 @@ export default function Header() {
               className="p-2 text-foreground"
               whileTap={{ scale: 0.95 }}
             >
-              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isMobileMenuOpen ? <X className="w-8 h-8" /> : <Menu className="w-10 h-10 text-sky-400" />}
             </motion.button>
           </div>
         </nav>
