@@ -72,52 +72,49 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <Link key={link.href} href={link.href}>
-                <motion.span
-                  className={`relative text-sm font-medium transition-colors cursor-pointer ${location === link.href
-                    ? 'text-primary'
-                    : 'text-muted-foreground hover:text-primary'
-                    } ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}
-                  whileHover={{ y: -2 }}
-                  transition={{ type: 'spring', stiffness: 400 }}
-                >
-                  {link.label}
-                  {location === link.href && (
-                    <motion.div
-                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-primary to-secondary"
-                      layoutId="activeNav"
-                    />
-                  )}
-                </motion.span>
-              </Link>
-            ))}
-          </div>
+  {navLinks.map((link) => (
+    <Link key={link.href} href={link.href}>
+      <motion.span
+        className={`relative text-sm font-medium transition-colors cursor-pointer ${
+          location === link.href
+            ? 'text-[#32a7b5]'
+            : 'text-black hover:text-black'
+        } ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}
+        whileHover={{ y: -2 }}
+        transition={{ type: 'spring', stiffness: 400 }}
+      >
+        {link.label}
+        {location === link.href && (
+          <motion.div
+            className="absolute -bottom-1 left-1 right-1 h-0.5 bg-[#32a7b5]"
+            layoutId="activeNav"
+          />
+        )}
+      </motion.span>
+    </Link>
+  ))}
+</div>
 
           {/* Language Switcher & CTA */}
           <div className="hidden lg:flex items-center gap-4">
-            <motion.button
+            <button
               onClick={toggleLanguage}
-              className="flex items-center gap-2 px-3 bg-gradient-to-r from-primary to-primary/80 text-primary-foreground font-semibold text-sm rounded-lg hover:shadow-lg hover:shadow-primary/25 transition-all py-2 rounded-lg  hover:bg-muted transition-colors"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              className="flex items-center gap-2 px-3 py-2 text-black"
             >
               <Globe className="w-4 h-4" />
               <span className={`text-sm font-medium ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
-                {language === 'en' ? 'العربية' : 'English'}
+                {language === 'en' ? 'العربية' : 'ENG'}
               </span>
-            </motion.button>
+            </button>
 
             <Link href="/contact">
-              <motion.button
-                className="px-5 py-2.5 bg-yellow-500 text-primary-foreground font-semibold text-sm rounded-lg hover:shadow-lg hover:shadow-yellow-600/25 transition-all"
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
+              <button
+                className="px-5 py-2.5 bg-transparent text-black font-semibold text-sm rounded-lg border border-black"
               >
                 <span className={dir === 'rtl' ? 'font-arabic' : 'font-body'}>
                   {t('nav.contact')}
                 </span>
-              </motion.button>
+              </button>
             </Link>
 
           </div>

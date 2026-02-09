@@ -29,7 +29,7 @@ import {
 } from 'lucide-react';
 
 // Image URLs
-import HeroImage from '@/assets/images/herosection.png';
+import HeroImage from '@/assets/images/hero.png';
 const AI_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030867079/hYVpeMLXqLiWYyQt.jpg";
 const CYBER_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030867079/ttqBQgjepjeNgSMT.jpg";
 const DIGITAL_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030867079/xsqFgzTMBLvupfxK.jpg";
@@ -137,9 +137,6 @@ export default function Home() {
             alt="Hero Background"
             className="w-full h-full object-cover"
           />
-          {/* Slate overlay */}
-          <div className="absolute inset-0 bg-slate-900/60" />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 via-transparent to-slate-900/30" />
         </div>
 
         {/* Animated Gold Particles */}
@@ -173,7 +170,7 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <span className={`inline-block px-4 py-2 rounded-full bg-yellow-500/10 border border-yellow-500/30 text-yellow-500 text-sm font-bold mb-6 tracking-wide uppercase ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
+              <span className={`inline-block px-4 py-2 rounded-full bg-[#32a7b5]/10 border border-[#32a7b5]/30 text-[#32a7b5] text-sm font-bold mb-6 tracking-wide uppercase ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
                 {language === 'en' ? 'Aligned with Vision 2030' : 'متوافق مع رؤية 2030'}
               </span>
             </motion.div>
@@ -185,14 +182,14 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1 }}
             >
-              <span className="block text-white">{t('hero.title')}</span>
-              <span className="text-gradient-teal  text-4xl md:text-5xl lg:text-6xl text-sky-500">{t('hero.subtitle')}</span>
+              <span className="block text-black">{t('hero.title')}</span>
+              <span className="text-4xl md:text-5xl lg:text-6xl text-[#32a7b5]">{t('hero.subtitle')}</span>
 
             </motion.h1>
 
             {/* Description */}
             <motion.p
-              className={`text-lg md:text-xl text-white mb-12 max-w-2xl leading-relaxed ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}
+              className={`text-lg md:text-xl text-black mb-12 max-w-2xl leading-relaxed ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -209,7 +206,7 @@ export default function Home() {
             >
               <Link href="/services">
                 <motion.button
-                  className={`group flex items-center gap-2 px-8 py-4 bg-sky-500 text-white font-bold rounded-xl shadow-lg hover:bg-sky-400  hover:-translate-y-1 transition-all duration-300 ${dir === 'rtl' ? 'flex-row-reverse font-arabic' : 'font-body'}`}
+                  className={`group flex items-center gap-2 px-8 py-4 bg-[#32a7b5] text-white font-bold rounded-xl shadow-lg hover:bg-[#2a8f9a] hover:-translate-y-1 transition-all duration-300 ${dir === 'rtl' ? 'flex-row-reverse font-arabic' : 'font-body'}`}
                   whileTap={{ scale: 0.95 }}
                 >
                   {t('hero.cta.services')}
@@ -218,7 +215,7 @@ export default function Home() {
               </Link>
               <Link href="/contact">
                 <motion.button
-                  className={`flex items-center gap-2 px-8 py-4 border-2 border-sky-500 text-white font-bold rounded-xl hover:bg-sky-300/10 hover:-translate-y-1 transition-all duration-300 ${dir === 'rtl' ? 'flex-row-reverse font-arabic' : 'font-body'}`}
+                  className={`flex items-center gap-2 px-8 py-4 border-2 border-[#32a7b5] text-black font-bold rounded-xl hover:bg-[#32a7b5]/10 hover:-translate-y-1 transition-all duration-300 ${dir === 'rtl' ? 'flex-row-reverse font-arabic' : 'font-body'}`}
                   whileTap={{ scale: 0.95 }}
                 >
                   {t('hero.cta.contact')}
