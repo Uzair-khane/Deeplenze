@@ -22,7 +22,8 @@ export default function Footer() {
     { label: t('services.ai.title') },
     { label: t('services.cyber.title') },
     { label: t('services.digital.title') },
-    { label: t('services.smart.title') },
+    { label: t('services.aws.title') },
+
   ];
 
   return (

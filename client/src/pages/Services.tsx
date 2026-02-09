@@ -70,18 +70,7 @@ export default function Services() {
         ? ['Digital Strategy Development', 'Process Automation', 'Cloud Migration', 'Legacy System Modernization', 'Change Management', 'Digital Workforce Training']
         : ['تطوير الاستراتيجية الرقمية', 'أتمتة العمليات', 'الانتقال إلى السحابة', 'تحديث الأنظمة القديمة', 'إدارة التغيير', 'تدريب القوى العاملة الرقمية'],
     },
-    {
-      id: 'smart',
-      icon: Building2,
-      smallIcon: Wifi,
-      title: t('services.smart.title'),
-      description: t('services.smart.description'),
-      image: SMART_IMG,
-      color: '#C9A227',
-      features: language === 'en'
-        ? ['IoT Infrastructure', 'Urban Data Analytics', 'Smart Transportation', 'Energy Management', 'Citizen Services Platform', 'Environmental Monitoring']
-        : ['البنية التحتية لإنترنت الأشياء', 'تحليلات البيانات الحضرية', 'النقل الذكي', 'إدارة الطاقة', 'منصة خدمات المواطنين', 'المراقبة البيئية'],
-    },
+   
     {
       id: 'aws',
       icon: Cloud,
@@ -96,6 +85,7 @@ export default function Services() {
         ? ['Cloud Architecture Design', 'AWS Migration Services', 'Cost Optimization', 'DevOps & CI/CD', 'Managed Cloud Services', '24/7 Cloud Monitoring']
         : ['تصميم البنية السحابية', 'خدمات الترحيل إلى AWS', 'تحسين التكاليف', 'DevOps و CI/CD', 'الخدمات السحابية المدارة', 'مراقبة السحابة 24/7'],
     },
+  
   ];
 
   return (
