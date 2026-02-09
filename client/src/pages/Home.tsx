@@ -453,7 +453,7 @@ export default function Home() {
       </section>
 
       {/* Industries Section */}
-      <section className="py-24 relative bg-slate-200">
+      <section className="py-24 relative bg-white">
         <div className="container mx-auto px-4">
           {/* Section Heading */}
           <motion.div
@@ -478,12 +478,12 @@ export default function Home() {
           </motion.div>
 
           {/* Industries Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2  items-center lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2  items-center lg:grid-cols-3 gap-8 ">
             {industries.map((industry, index) => (
               <motion.div
                 key={index}
                 className={`group p-8 rounded-2xl bg-white border border-yellow-500/30 shadow-sm hover:shadow-xl transition-all duration-300 
-flex flex-col items-center text-center
+flex flex-col items-center text-center h-full
 ${dir === "rtl" ? "font-arabic" : ""}`}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -493,7 +493,7 @@ ${dir === "rtl" ? "font-arabic" : ""}`}
               >
                 {/* Icon */}
                 <div className="w-14 h-14 rounded-xl  text-[#32a7b5]  flex items-center justify-center mb-6  transition-colors duration-300">
-                  <industry.icon className="w-7 h-7" />
+                  <industry.icon className="w-12 h-12 " />
                 </div>
 
                 {/* Industry Title */}
@@ -522,7 +522,7 @@ ${dir === "rtl" ? "font-arabic" : ""}`}
           >
             <Link href="/industries">
               <motion.button
-                className={`inline-flex items-center gap-2 px-8 py-4 bg-sky-500 text-white rounded-xl font-bold hover:bg-sky-400 transition-colors ${dir === "rtl" ? "flex-row-reverse font-arabic" : "font-body"}`}
+                className={`inline-flex items-center gap-2 px-8 py-4 bg-[#32A7B5] text-white rounded-xl font-bold hover:bg-sky-500 transition-colors ${dir === "rtl" ? "flex-row-reverse font-arabic" : "font-body"}`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -535,7 +535,7 @@ ${dir === "rtl" ? "font-arabic" : ""}`}
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 relative overflow-hidden bg-slate-100/30">
+      <section className="py-24 relative overflow-hidden bg-[#E0F2F4]">
         <div className="absolute inset-0 bg-yellow-500/5" />
         <div className="container mx-auto px-4 relative">
           <motion.div
@@ -565,7 +565,7 @@ ${dir === "rtl" ? "font-arabic" : ""}`}
             {/* CTA Button */}
             <Link href="/contact">
               <motion.button
-                className={`inline-flex items-center gap-3 px-10 py-5 bg-sky-500 text-white font-bold text-lg rounded-xl shadow-xl hover:bg-sky-400 hover:-translate-y-1 transition-all duration-300 ${dir === "rtl" ? "flex-row-reverse font-arabic" : "font-body"}`}
+                className={`inline-flex items-center gap-3 px-10 py-5  text-[#32A7B5] font-bold text-lg rounded-xl shadow-xl border-2 border-[#32A7B5] hover:-translate-y-1 transition-all duration-300 ${dir === "rtl" ? "flex-row-reverse font-arabic" : "font-body"}`}
                 whileTap={{ scale: 0.95 }}
               >
                 {t("hero.cta.contact")}

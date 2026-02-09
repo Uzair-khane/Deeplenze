@@ -27,7 +27,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="relative bg-slate-200  overflow-hidden">
+    <footer className="relative bg-white  overflow-hidden">
       {/* Decorative blur circles */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-yellow-500/10 rounded-full blur-3xl opacity-50" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl opacity-50" />
@@ -136,7 +136,7 @@ export default function Footer() {
             </p>
             <div className="flex items-center gap-2 text-slate-600 text-sm">
               <span className="font-body">Aligned with</span>
-              <span className="text-yellow-500 font-semibold">Vision 2030</span>
+              <span className="text-[#32a7b5] font-semibold">Vision 2030</span>
             </div>
           </div>
         </div>
