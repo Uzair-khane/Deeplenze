@@ -184,7 +184,6 @@ export default function Home() {
             >
               <span className="block text-black">{t('hero.title')}</span>
               <span className="text-4xl md:text-5xl lg:text-6xl text-[#32a7b5]">{t('hero.subtitle')}</span>
-
             </motion.h1>
 
             {/* Description */}
@@ -224,17 +223,6 @@ export default function Home() {
             </motion.div>
           </div>
         </div>
-
-        {/* Scroll Indicator */}
-        <motion.div
-          className="absolute bottom-10 left-1/2 -translate-x-1/2"
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-        >
-          <div className="w-6 h-10 rounded-full border-2 border-yellow-500/50 flex justify-center pt-2">
-            <div className="w-1.5 h-3 bg-sky-500 rounded-full" />
-          </div>
-        </motion.div>
       </section>
 
 
