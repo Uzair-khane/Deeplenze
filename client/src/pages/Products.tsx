@@ -131,7 +131,7 @@ export default function Products() {
             <span className={`inline-block px-4 py-2 rounded-full bg-[#32a7b5]/10 border border-[#32a7b5]/30 text-[#32a7b5] text-sm font-bold mb-6 tracking-wide uppercase ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
               {language === 'en' ? 'Our Solutions' : 'حلولنا'}
             </span>
-            <h1 className={`text-4xl md:text-6xl font-bold text-[#32a7b5] mb-6 ${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}>
+            <h1 className={`text-4xl md:text-6xl font-bold text-[#1D293D] mb-6 ${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}>
               {t('products.title')}
             </h1>
             <p className={`text-xl text-black leading-relaxed ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>

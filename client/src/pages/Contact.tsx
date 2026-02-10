@@ -120,13 +120,13 @@ export default function Contact() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className={`inline-block px-4 py-2 rounded-full bg-primary/10 border border-primary/30 text-primary text-sm font-medium mb-6 ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
+            <span className={`inline-block px-4 py-2 rounded-full bg-primary/10 border border-primary/30 text-[#32A7B5] text-sm font-medium mb-6 ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
               {language === 'en' ? 'Get in Touch' : 'تواصل معنا'}
             </span>
-            <h1 className={`text-4xl md:text-6xl font-bold text-primary mb-6 ${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}>
+            <h1 className={`text-4xl md:text-6xl font-bold text-[#1D293D] mb-6 ${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}>
               {t('contact.title')}
             </h1>
-            <p className={`text-xl text-muted-foreground leading-relaxed ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
+            <p className={`text-xl text-slate-600 leading-relaxed ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
               {t('contact.subtitle')}
             </p>
           </motion.div>
@@ -145,7 +145,7 @@ export default function Contact() {
               viewport={{ once: true }}
             >
               <div className="mb-8">
-                <h2 className={`text-2xl font-bold text-foreground mb-4 ${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}>
+                <h2 className={`text-2xl font-bold text-[#32A7B5] mb-4 ${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}>
                   {language === 'en' ? 'Contact Information' : 'معلومات الاتصال'}
                 </h2>
                 <p className={`text-muted-foreground ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
@@ -159,7 +159,7 @@ export default function Contact() {
               {contactInfo.map((info, index) => (
                 <motion.div
                   key={index}
-                  className={`p-5 rounded-xl bg-card border border-border shadow-sm ${dir === 'rtl' ? 'text-right' : ''}`}
+                  className={`p-5 rounded-xl bg-white  shadow-sm ${dir === 'rtl' ? 'text-right' : ''}`}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -170,7 +170,7 @@ export default function Contact() {
                       <info.icon className="w-5 h-5 text-primary" />
                     </div>
                     <div>
-                      <h3 className={`text-foreground font-semibold mb-1 ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
+                      <h3 className={`text-[#32A7B5] font-semibold mb-1 ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
                         {info.title}
                       </h3>
                       {info.details.map((detail, i) => (
@@ -191,13 +191,13 @@ export default function Contact() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <div className={`p-8 rounded-2xl bg-card border border-border shadow-md ${dir === 'rtl' ? 'text-right' : ''}`}>
+              <div className={`p-8 rounded-2xl bg-white  shadow-md ${dir === 'rtl' ? 'text-right' : ''}`}>
                 <div className={`flex items-center gap-3 mb-8 ${dir === 'rtl' ? 'flex-row-reverse' : ''}`}>
                   <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/30 flex items-center justify-center">
                     <MessageSquare className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <h2 className={`text-xl font-bold text-foreground ${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}>
+                    <h2 className={`text-xl font-bold text-[#32A7B5]  ${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}>
                       {language === 'en' ? 'Send us a Message' : 'أرسل لنا رسالة'}
                     </h2>
                     <p className={`text-muted-foreground text-sm ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
@@ -210,7 +210,7 @@ export default function Contact() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {/* Name */}
                     <div>
-                      <label className={`block text-sm font-medium text-muted-foreground mb-2 ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
+                      <label className={`block text-sm font-medium text-slate-700 mb-2 ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
                         {t('contact.form.name')} *
                       </label>
                       <input
@@ -219,14 +219,14 @@ export default function Contact() {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        className={`w-full px-4 py-3 rounded-lg bg-background border border-input text-foreground placeholder-muted-foreground focus:border-primary focus:ring-1 focus:ring-primary transition-colors ${dir === 'rtl' ? 'font-arabic text-right' : 'font-body'}`}
+                        className={`w-full px-4 py-3 rounded-lg bg-gray-50  text-slate-800 placeholder-muted-foreground focus:border-primary focus:ring-1 focus:ring-primary transition-colors ${dir === 'rtl' ? 'font-arabic text-right' : 'font-body'}`}
                         placeholder={language === 'en' ? 'Your full name' : 'اسمك الكامل'}
                       />
                     </div>
 
                     {/* Email */}
                     <div>
-                      <label className={`block text-sm font-medium text-muted-foreground mb-2 ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
+                      <label className={`block text-sm font-medium text-slate-700 mb-2 ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
                         {t('contact.form.email')} *
                       </label>
                       <input
@@ -235,7 +235,7 @@ export default function Contact() {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className={`w-full px-4 py-3 rounded-lg bg-background border border-input text-foreground placeholder-muted-foreground focus:border-primary focus:ring-1 focus:ring-primary transition-colors ${dir === 'rtl' ? 'font-arabic text-right' : 'font-body'}`}
+                        className={`w-full px-4 py-3 rounded-lg bg-gray-50 text-slate-800 placeholder-muted-foreground focus:border-primary focus:ring-1 focus:ring-primary transition-colors ${dir === 'rtl' ? 'font-arabic text-right' : 'font-body'}`}
                         placeholder={language === 'en' ? 'your@email.com' : 'بريدك@الإلكتروني.com'}
                         dir="ltr"
                       />
@@ -243,7 +243,7 @@ export default function Contact() {
 
                     {/* Phone */}
                     <div>
-                      <label className={`block text-sm font-medium text-muted-foreground mb-2 ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
+                      <label className={`block text-sm font-medium text-slate-700 mb-2 ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
                         {t('contact.form.phone')}
                       </label>
                       <input
@@ -251,7 +251,7 @@ export default function Contact() {
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
-                        className={`w-full px-4 py-3 rounded-lg bg-background border border-input text-foreground placeholder-muted-foreground focus:border-primary focus:ring-1 focus:ring-primary transition-colors font-body`}
+                        className={`w-full px-4 py-3 rounded-lg bg-gray-50 text-slate-800 placeholder-muted-foreground focus:border-primary focus:ring-1 focus:ring-primary transition-colors font-body`}
                         placeholder="+966 XX XXX XXXX"
                         dir="ltr"
                       />
@@ -259,7 +259,7 @@ export default function Contact() {
 
                     {/* Company */}
                     <div>
-                      <label className={`block text-sm font-medium text-muted-foreground mb-2 ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
+                      <label className={`block text-sm font-medium text-slate-700 mb-2 ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
                         {t('contact.form.company')}
                       </label>
                       <input
@@ -267,7 +267,7 @@ export default function Contact() {
                         name="company"
                         value={formData.company}
                         onChange={handleChange}
-                        className={`w-full px-4 py-3 rounded-lg bg-background border border-input text-foreground placeholder-muted-foreground focus:border-primary focus:ring-1 focus:ring-primary transition-colors ${dir === 'rtl' ? 'font-arabic text-right' : 'font-body'}`}
+                        className={`w-full px-4 py-3 rounded-lg bg-gray-50 text-slate-800 placeholder-muted-foreground focus:border-primary focus:ring-1 focus:ring-primary transition-colors ${dir === 'rtl' ? 'font-arabic text-right' : 'font-body'}`}
                         placeholder={language === 'en' ? 'Company name' : 'اسم الشركة'}
                       />
                     </div>
@@ -275,14 +275,14 @@ export default function Contact() {
 
                   {/* Service */}
                   <div>
-                    <label className={`block text-sm font-medium text-muted-foreground mb-2 ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
+                    <label className={`block text-sm font-medium text-slate-700 mb-2 ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
                       {t('contact.form.service')}
                     </label>
                     <select
                       name="service"
                       value={formData.service}
                       onChange={handleChange}
-                      className={`w-full px-4 py-3 rounded-lg bg-background border border-input text-foreground focus:border-primary focus:ring-1 focus:ring-primary transition-colors ${dir === 'rtl' ? 'font-arabic text-right' : 'font-body'}`}
+                      className={`w-full px-4 py-3 rounded-lg bg-gray-50 text-slate-500 focus:border-primary focus:ring-1 focus:ring-primary transition-colors ${dir === 'rtl' ? 'font-arabic text-right' : 'font-body'}`}
                     >
                       <option value="">{language === 'en' ? 'Select a service' : 'اختر خدمة'}</option>
                       {services.map((service) => (
@@ -295,7 +295,7 @@ export default function Contact() {
 
                   {/* Message */}
                   <div>
-                    <label className={`block text-sm font-medium text-muted-foreground mb-2 ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
+                    <label className={`block text-sm font-medium text-slate-700 mb-2 ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
                       {t('contact.form.message')} *
                     </label>
                     <textarea
@@ -304,7 +304,7 @@ export default function Contact() {
                       onChange={handleChange}
                       required
                       rows={5}
-                      className={`w-full px-4 py-3 rounded-lg bg-background border border-input text-foreground placeholder-muted-foreground focus:border-primary focus:ring-1 focus:ring-primary transition-colors resize-none ${dir === 'rtl' ? 'font-arabic text-right' : 'font-body'}`}
+                      className={`w-full px-4 py-3 rounded-lg bg-gray-50 text-slate-800 placeholder-muted-foreground focus:border-primary focus:ring-1 focus:ring-primary transition-colors resize-none ${dir === 'rtl' ? 'font-arabic text-right' : 'font-body'}`}
                       placeholder={language === 'en' ? 'Tell us about your project or inquiry...' : 'أخبرنا عن مشروعك أو استفسارك...'}
                     />
                   </div>
@@ -313,7 +313,7 @@ export default function Contact() {
                   <motion.button
                     type="submit"
                     disabled={isSubmitting}
-                    className={`w-full flex items-center justify-center gap-3 px-8 py-4 bg-primary text-primary-foreground font-bold rounded-lg hover:shadow-lg hover:bg-yellow-500 transition-all disabled:opacity-50 disabled:cursor-not-allowed ${dir === 'rtl' ? 'flex-row-reverse font-arabic' : 'font-body'}`}
+                    className={`w-full flex items-center justify-center gap-3 px-8 py-4 bg-[#32A7B5] text-primary-foreground font-bold rounded-lg hover:shadow-lg  transition-all disabled:opacity-50 disabled:cursor-not-allowed ${dir === 'rtl' ? 'flex-row-reverse font-arabic' : 'font-body'}`}
                     whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
                     whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
                   >
@@ -334,7 +334,7 @@ export default function Contact() {
       </section>
 
       {/* Map Section Placeholder */}
-      <section className="py-16 relative bg-muted/30">
+      <section className="py-16 relative bg-[#E0F2F4]">
         <div className="container mx-auto px-4">
           <motion.div
             className={`text-center mb-12 ${dir === 'rtl' ? 'font-arabic' : ''}`}
@@ -342,16 +342,16 @@ export default function Contact() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className={`text-3xl font-bold text-primary mb-4 ${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}>
+            <h2 className={`text-3xl font-bold text-[#314158] mb-4 ${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}>
               {language === 'en' ? 'Our Location' : 'موقعنا'}
             </h2>
-            <p className={`text-muted-foreground ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
+            <p className={`text-slate-600 ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
               {language === 'en' ? 'Visit us at our headquarters in Riyadh' : 'زورنا في مقرنا الرئيسي في الرياض'}
             </p>
           </motion.div>
 
           <motion.div
-            className="rounded-2xl overflow-hidden h-[400px] relative bg-card border border-border"
+            className="rounded-md overflow-hidden h-[400px] relative bg-slate-100 "
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -361,7 +361,7 @@ export default function Contact() {
                 <div className="w-20 h-20 rounded-2xl bg-primary/10 border border-primary/30 flex items-center justify-center mx-auto mb-4">
                   <Building2 className="w-10 h-10 text-primary" />
                 </div>
-                <h3 className={`text-xl font-bold text-foreground mb-2 ${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}>
+                <h3 className={`text-xl font-bold text-[#314158] mb-2 ${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}>
                   {language === 'en' ? 'TechVision Headquarters' : 'المقر الرئيسي لتك فيجن'}
                 </h3>
                 <p className={`text-muted-foreground ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>

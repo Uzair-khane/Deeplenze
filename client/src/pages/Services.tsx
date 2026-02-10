@@ -106,7 +106,7 @@ export default function Services() {
             <span className={`inline-block px-4 py-2 rounded-full bg-primary/10 border border-primary/30 text-primary text-sm font-medium mb-6 ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
               {language === 'en' ? 'Our Expertise' : 'خبراتنا'}
             </span>
-            <h1 className={`text-4xl md:text-6xl font-bold text-primary mb-6 ${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}>
+            <h1 className={`text-4xl md:text-6xl font-bold text-[#314158] mb-6 ${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}>
               {t('services.title')}
             </h1>
             <p className={`text-xl text-muted-foreground leading-relaxed ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
@@ -121,7 +121,7 @@ export default function Services() {
         {services.map((service, index) => (
           <div
             key={service.id}
-            className={`py-16 ${index % 2 === 1 ? 'bg-muted/30' : ''}`}
+            className={`py-16 ${index % 2 === 1 ? '' : ''}`}
           >
             <div className="container mx-auto px-4">
               <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 && dir === 'ltr' ? 'lg:flex-row-reverse' : ''}`}>
@@ -141,7 +141,7 @@ export default function Services() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
                   <div className="absolute bottom-6 left-6 right-6">
                     <div
-                      className="w-16 h-16 rounded-xl flex items-center justify-center backdrop-blur-md bg-white/50 border border-white/20 shadow-sm"
+                      className="w-16 h-16 rounded-xl flex items-center justify-center backdrop-blur-md bg-[#32A7B51A] border border-white/20 shadow-sm"
                       style={{ borderColor: `${service.color}40` }}
                     >
                       <service.icon className="w-8 h-8" style={{ color: service.color }} />
@@ -156,7 +156,7 @@ export default function Services() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                 >
-                  <h2 className={`text-3xl md:text-4xl font-bold text-primary mb-4 ${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}>
+                  <h2 className={`text-3xl md:text-4xl font-bold text-[#314158] mb-4 ${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}>
                     {service.title}
                   </h2>
                   <p className={`text-muted-foreground text-lg mb-8 leading-relaxed ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
@@ -169,7 +169,7 @@ export default function Services() {
                         key={i}
                         className={`flex items-center gap-3 ${dir === 'rtl' ? 'flex-row-reverse' : ''}`}
                       >
-                        <CheckCircle2 className="w-5 h-5 flex-shrink-0" style={{ color: service.color }} />
+                        <CheckCircle2 className="w-5 h-5 text-[#32A7B5] flex-shrink-0"  />
                         <span className={`text-muted-foreground text-sm ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
                           {feature}
                         </span>
@@ -179,12 +179,12 @@ export default function Services() {
 
                   <Link href="/contact">
                     <motion.button
-                      className={`inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-all ${dir === 'rtl' ? 'flex-row-reverse font-arabic' : 'font-body'}`}
-                      style={{
-                        backgroundColor: `${service.color}10`,
-                        border: `1px solid ${service.color}40`,
-                        color: service.color
-                      }}
+                      className={`inline-flex  bg-[#32A7B5] items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-all ${dir === 'rtl' ? 'flex-row-reverse font-arabic' : 'font-body'}`}
+                      // style={{
+                      //   backgroundColor: `${service.color}10`,
+                      //   border: `1px solid ${service.color}40`,
+                      //   color: service.color
+                      // }}
                       whileHover={{ scale: 1.05, y: -2 }}
                       whileTap={{ scale: 0.95 }}
                     >
@@ -200,7 +200,7 @@ export default function Services() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 relative overflow-hidden bg-background">
+      <section className="py-24 relative overflow-hidden bg-[#E0F2F4]">
         <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-secondary/5" />
 
         <div className="container mx-auto px-4 relative">
@@ -210,7 +210,7 @@ export default function Services() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className={`text-3xl md:text-4xl font-bold text-primary mb-6 ${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}>
+            <h2 className={`text-3xl md:text-4xl font-bold text-[#314158] mb-6 ${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}>
               {language === 'en' ? 'Need a Custom Solution?' : 'هل تحتاج إلى حل مخصص؟'}
             </h2>
             <p className={`text-muted-foreground text-lg mb-10 ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
