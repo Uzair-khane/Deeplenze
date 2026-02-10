@@ -63,8 +63,13 @@ export default function About() {
             alt="About Background"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-background via-background/90 to-background" />
+          {/* Very light dark overlay - same as other pages */}
+          <div className="absolute inset-0 " />
         </div>
+
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent" />
+        <div className="absolute top-1/4 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
 
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
@@ -73,13 +78,13 @@ export default function About() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className={`inline-block px-4 py-2 rounded-full bg-primary/10 border border-primary/30 text-primary text-sm font-medium mb-6 ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
+            <span className={`inline-block px-4 py-2 rounded-full bg-[#32a7b5]/10 border border-[#32a7b5]/30 text-[#32a7b5] text-sm font-bold mb-6 tracking-wide uppercase ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
               {language === 'en' ? 'Who We Are' : 'من نحن'}
             </span>
-            <h1 className={`text-4xl md:text-6xl font-bold text-slate-800 mb-6 ${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}>
+            <h1 className={`text-4xl md:text-6xl font-bold text-[#314158] mb-6 ${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}>
               {t('about.title')}
             </h1>
-            <p className={`text-xl text-slate-600 leading-relaxed ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
+            <p className={`text-xl text-black leading-relaxed ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
               {t('about.subtitle')}
             </p>
           </motion.div>
@@ -87,34 +92,34 @@ export default function About() {
       </section>
 
       {/* Story Section */}
-     <section className="py-20 relative">
-  <div className="container mx-auto px-4">
-    <div className="grid grid-cols-1 items-center">
-      
-      <motion.div
-        className={`max-w-3xl mx-auto text-center ${dir === 'rtl' ? 'font-arabic' : ''}`}
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-      >
-        <h2 className={`text-3xl md:text-4xl font-bold text-slate-800 mb-6 ${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}>
-          {language === 'en' ? 'Our Story' : 'قصتنا'}
-        </h2>
+      <section className="py-20 relative">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 items-center">
 
-        <div className={`space-y-4 text-muted-foreground leading-relaxed ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
-          <p>{t('about.description')}</p>
-          <p>
-            {language === 'en'
-              ? 'Founded with a vision to bridge the gap between traditional business practices and modern technology, we have grown to become a trusted partner for organizations across Saudi Arabia and the wider Gulf region.'
-              : 'تأسسنا برؤية لسد الفجوة بين ممارسات الأعمال التقليدية والتكنولوجيا الحديثة، ونمونا لنصبح شريكاً موثوقاً للمؤسسات في جميع أنحاء المملكة العربية السعودية ومنطقة الخليج الأوسع.'
-            }
-          </p>
+            <motion.div
+              className={`max-w-3xl mx-auto text-center ${dir === 'rtl' ? 'font-arabic' : ''}`}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <h2 className={`text-3xl md:text-4xl font-bold text-slate-800 mb-6 ${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}>
+                {language === 'en' ? 'Our Story' : 'قصتنا'}
+              </h2>
+
+              <div className={`space-y-4 text-muted-foreground leading-relaxed ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
+                <p>{t('about.description')}</p>
+                <p>
+                  {language === 'en'
+                    ? 'Founded with a vision to bridge the gap between traditional business practices and modern technology, we have grown to become a trusted partner for organizations across Saudi Arabia and the wider Gulf region.'
+                    : 'تأسسنا برؤية لسد الفجوة بين ممارسات الأعمال التقليدية والتكنولوجيا الحديثة، ونمونا لنصبح شريكاً موثوقاً للمؤسسات في جميع أنحاء المملكة العربية السعودية ومنطقة الخليج الأوسع.'
+                  }
+                </p>
+              </div>
+            </motion.div>
+
+          </div>
         </div>
-      </motion.div>
-
-    </div>
-  </div>
-</section>
+      </section>
 
 
       {/* Mission & Vision */}

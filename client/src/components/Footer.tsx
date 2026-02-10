@@ -80,7 +80,7 @@ export default function Footer() {
               {quickLinks.map((link) => (
                 <li key={link.href}>
                   <Link href={link.href}>
-                    <span className={`text-slate-600 hover:text-sky-500 transition-colors text-sm cursor-pointer ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
+                    <span className={`text-slate-600 hover:text-[#32a7b5] transition-colors text-sm cursor-pointer ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
                       {link.label}
                     </span>
                   </Link>
@@ -98,7 +98,7 @@ export default function Footer() {
               {services.map((service, idx) => (
                 <li key={idx}>
                   <Link href="/services">
-                    <span className={`text-slate-600 hover:text-sky-500 transition-colors text-sm cursor-pointer ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
+                    <span className={`text-slate-600 hover:text-[#32a7b5] transition-colors text-sm cursor-pointer ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
                       {service.label}
                     </span>
                   </Link>

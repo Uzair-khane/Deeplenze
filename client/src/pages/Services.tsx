@@ -2,7 +2,7 @@
  * Four service verticals with detailed information
  * Colors: Midnight Blue, Digital Gold, Electric Teal
  */
-
+import HeroImage from "@/assets/images/hero.png";
 import { useLanguage } from '@/contexts/LanguageContext';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -70,7 +70,7 @@ export default function Services() {
         ? ['Digital Strategy Development', 'Process Automation', 'Cloud Migration', 'Legacy System Modernization', 'Change Management', 'Digital Workforce Training']
         : ['تطوير الاستراتيجية الرقمية', 'أتمتة العمليات', 'الانتقال إلى السحابة', 'تحديث الأنظمة القديمة', 'إدارة التغيير', 'تدريب القوى العاملة الرقمية'],
     },
-   
+
     {
       id: 'aws',
       icon: Cloud,
@@ -85,7 +85,7 @@ export default function Services() {
         ? ['Cloud Architecture Design', 'AWS Migration Services', 'Cost Optimization', 'DevOps & CI/CD', 'Managed Cloud Services', '24/7 Cloud Monitoring']
         : ['تصميم البنية السحابية', 'خدمات الترحيل إلى AWS', 'تحسين التكاليف', 'DevOps و CI/CD', 'الخدمات السحابية المدارة', 'مراقبة السحابة 24/7'],
     },
-  
+
   ];
 
   return (
@@ -94,7 +94,20 @@ export default function Services() {
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <img
+            src={HeroImage}
+            alt="Services Background"
+            className="w-full h-full object-cover"
+          />
+          {/* Very light dark overlay */}
+          <div className="absolute inset-0 " />
+        </div>
+
         <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent" />
+        <div className="absolute top-1/4 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
 
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
@@ -103,13 +116,13 @@ export default function Services() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className={`inline-block px-4 py-2 rounded-full bg-primary/10 border border-primary/30 text-primary text-sm font-medium mb-6 ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
+            <span className={`inline-block px-4 py-2 rounded-full bg-[#32a7b5]/10 border border-[#32a7b5]/30 text-[#32a7b5] text-sm font-bold mb-6 tracking-wide uppercase ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
               {language === 'en' ? 'Our Expertise' : 'خبراتنا'}
             </span>
             <h1 className={`text-4xl md:text-6xl font-bold text-[#314158] mb-6 ${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}>
               {t('services.title')}
             </h1>
-            <p className={`text-xl text-muted-foreground leading-relaxed ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
+            <p className={`text-xl text-black leading-relaxed ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
               {t('services.subtitle')}
             </p>
           </motion.div>
@@ -169,7 +182,7 @@ export default function Services() {
                         key={i}
                         className={`flex items-center gap-3 ${dir === 'rtl' ? 'flex-row-reverse' : ''}`}
                       >
-                        <CheckCircle2 className="w-5 h-5 text-[#32A7B5] flex-shrink-0"  />
+                        <CheckCircle2 className="w-5 h-5 text-[#32A7B5] flex-shrink-0" />
                         <span className={`text-muted-foreground text-sm ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
                           {feature}
                         </span>
