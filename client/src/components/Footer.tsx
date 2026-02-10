@@ -4,7 +4,7 @@ import { Link } from 'wouter';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Mail, Phone, MapPin, Linkedin, Twitter } from 'lucide-react';
 import { motion } from 'framer-motion';
-import logo from '@/assets/images/DeepLenz.svg';
+import logo from '@/assets/images/logo.svg';
 
 export default function Footer() {
   const { t, dir, language } = useLanguage();
@@ -36,15 +36,18 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand Column */}
           <div className={dir === 'rtl' ? 'text-right space-y-6' : 'space-y-6'}>
-            <Link href="/">
+            <Link href="/" className="ml-0 pl-0">
               <motion.div
-                className="flex items-center gap-3 cursor-pointer"
-                whileHover={{ scale: 1.04 }}
-                transition={{ type: 'spring', stiffness: 300 }}
+                className="flex items-center gap-3 cursor-pointer ml-0 pl-0"
               >
-                <img src={logo} alt="Logo" className="w-32 h-32 -mt-10 object-contain transition-transform duration-300" />
+                <img
+                  src={logo}
+                  alt="Logo"
+                  className="w-24 h-24 ml-0 pl-0 mb-6 object-contain"
+                />
               </motion.div>
             </Link>
+
             <p className={`text-slate-600 text-sm leading-relaxed ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
               {t('footer.description')}
             </p>
@@ -111,18 +114,24 @@ export default function Footer() {
             </h4>
             <ul className="space-y-4">
               <li className={`flex items-start gap-3 ${dir === 'rtl' ? 'flex-row-reverse' : ''}`}>
-                <MapPin className="w-5 h-5 text-sky-500 flex-shrink-0 mt-0.5" />
+                <MapPin className="w-5 h-5 text-[#32a7b5] flex-shrink-0 mt-0.5" />
                 <span className={`text-slate-600 text-sm ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
                   {t('contact.info.address')}
                 </span>
               </li>
+
               <li className={`flex items-center gap-3 ${dir === 'rtl' ? 'flex-row-reverse' : ''}`}>
-                <Mail className="w-5 h-5 text-sky-500 flex-shrink-0" />
-                <span className="text-slate-600 text-sm font-body">{t('contact.info.email')}</span>
+                <Mail className="w-5 h-5 text-[#32a7b5] flex-shrink-0" />
+                <span className="text-slate-600 text-sm font-body">
+                  {t('contact.info.email')}
+                </span>
               </li>
+
               <li className={`flex items-center gap-3 ${dir === 'rtl' ? 'flex-row-reverse' : ''}`}>
-                <Phone className="w-5 h-5 text-sky-500 flex-shrink-0" />
-                <span className="text-slate-600 text-sm font-body" dir="ltr">{t('contact.info.phone')}</span>
+                <Phone className="w-5 h-5 text-[#32a7b5] flex-shrink-0" />
+                <span className="text-slate-600 text-sm font-body" dir="ltr">
+                  {t('contact.info.phone')}
+                </span>
               </li>
             </ul>
           </div>

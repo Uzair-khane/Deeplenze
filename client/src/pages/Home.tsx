@@ -329,10 +329,7 @@ export default function Home() {
                 <div
                   className={`relative p-8 ${dir === "rtl" ? "text-right" : ""}`}
                 >
-                  <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-6 bg-yellow-500/10 text-yellow-500 shadow-sm -mt-16 relative z-20 border border-yellow-500/20">
-                    <service.icon className="w-7 h-7" />
-                  </div>
-
+                  
                   <h3
                     className={`text-2xl font-bold text-slate-800 mb-3 ${dir === "rtl" ? "font-arabic" : "font-display"}`}
                   >

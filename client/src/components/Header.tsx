@@ -8,7 +8,7 @@ import { Link, useLocation } from 'wouter';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Menu, X, Globe } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import logo from '@/assets/images/DeepLenz.svg';
+import logo from '@/assets/images/logo.svg';
 
 export default function Header() {
   const { language, setLanguage, t, dir } = useLanguage();
