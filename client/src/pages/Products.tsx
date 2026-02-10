@@ -131,7 +131,11 @@ export default function Products() {
             <span className={`inline-block px-4 py-2 rounded-full bg-[#32a7b5]/10 border border-[#32a7b5]/30 text-[#32a7b5] text-sm font-bold mb-6 tracking-wide uppercase ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
               {language === 'en' ? 'Our Solutions' : 'حلولنا'}
             </span>
+<<<<<<< HEAD
             <h1 className={`text-4xl md:text-6xl font-bold text-[#1D293D] mb-6 ${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}>
+=======
+            <h1 className={`text-4xl md:text-6xl font-bold text-[#314158] mb-6 ${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}>
+>>>>>>> ca017424022f07d15ae30d257174937cd6b891fe
               {t('products.title')}
             </h1>
             <p className={`text-xl text-black leading-relaxed ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
@@ -234,7 +238,7 @@ export default function Products() {
           <div className="w-16 h-16 rounded-2xl bg-[#32a7b5]/10 border-2 border-[#32a7b5]/30 flex items-center justify-center mx-auto mb-6 shadow-md">
             <Sparkles className="w-8 h-8 text-[#32a7b5]" />
           </div>
-          <h2 className={`text-3xl md:text-4xl font-bold text-[#32a7b5] mb-6 ${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}>
+          <h2 className={`text-3xl md:text-4xl font-bold text-[#314158] mb-6 ${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}>
             {language === 'en' ? 'Seamless Integration' : 'تكامل سلس'}
           </h2>
           <p className={`text-gray-700 text-lg leading-relaxed ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
@@ -256,7 +260,7 @@ export default function Products() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className={`text-3xl md:text-4xl font-bold text-[#32a7b5] mb-6 ${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}>
+          <h2 className={`text-3xl md:text-4xl font-bold text-[#314158] mb-6 ${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}>
             {language === 'en' ? 'Ready to Get Started?' : 'هل أنت مستعد للبدء؟'}
           </h2>
           <p className={`text-gray-700 text-lg mb-10 ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
