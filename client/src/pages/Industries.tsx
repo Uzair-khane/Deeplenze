@@ -169,11 +169,7 @@ export default function Industries() {
             <span className={`inline-block px-4 py-2 rounded-full bg-[#32a7b5]/10 border border-[#32a7b5]/30 text-[#32a7b5] text-sm font-bold mb-6 tracking-wide uppercase ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
               {language === 'en' ? 'Sectors We Serve' : 'القطاعات التي نخدمها'}
             </span>
-<<<<<<< HEAD
             <h1 className={`text-4xl md:text-6xl font-bold text-[#1D293D] mb-6 ${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}>
-=======
-            <h1 className={`text-4xl md:text-6xl font-bold text-[#314158] mb-6 ${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}>
->>>>>>> ca017424022f07d15ae30d257174937cd6b891fe
               {t('industries.title')}
             </h1>
             <p className={`text-xl text-black leading-relaxed ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
