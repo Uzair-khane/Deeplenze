@@ -33,12 +33,11 @@ import HeroImage from "@/assets/images/hero.png";
 // logs
 import nalystLogo from "@/assets/images/nalyst.png";
 import newsHuntLogo from "@/assets/images/newshunt_logo.png";
-const AI_IMG =
-  "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030867079/hYVpeMLXqLiWYyQt.jpg";
-const CYBER_IMG =
-  "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030867079/ttqBQgjepjeNgSMT.jpg";
-const DIGITAL_IMG =
-  "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030867079/xsqFgzTMBLvupfxK.jpg";
+import AI_IMG from "@/assets/images/AI.jpeg";
+import CYBER_IMG from "@/assets/images/CyberSecurity.webp";
+import DIGITAL_IMG  from "@/assets/images/DigitalTransformation.webp";
+import AWS  from "@/assets/images/AWSCloudManagement.webp";
+
 const SMART_IMG =
   "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030867079/zxhLFuUlDPKEooqo.jpg";
 
@@ -76,7 +75,7 @@ export default function Home() {
         language === "en"
           ? "Comprehensive AWS cloud services for scalable and secure infrastructure."
           : "خدمات سحابة AWS الشاملة للبنية التحتية القابلة للتوسع والآمنة.",
-      image: DIGITAL_IMG,
+      image: AWS,
       color: "#FF9900",
     },
   ];

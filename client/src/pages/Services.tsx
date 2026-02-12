@@ -23,11 +23,10 @@ import {
   Cloud,
   Server
 } from 'lucide-react';
-
-const AI_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030867079/hYVpeMLXqLiWYyQt.jpg";
-const CYBER_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030867079/ttqBQgjepjeNgSMT.jpg";
-const DIGITAL_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030867079/xsqFgzTMBLvupfxK.jpg";
-const SMART_IMG = "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030867079/zxhLFuUlDPKEooqo.jpg";
+import AI_IMG from "@/assets/images/AI.jpeg";
+import CYBER_IMG from "@/assets/images/CyberSecurity.webp";
+import DIGITAL_IMG  from "@/assets/images/DigitalTransformation.webp";
+import AWS  from "@/assets/images/AWSCloudManagement.webp";
 
 export default function Services() {
   const { t, dir, language } = useLanguage();
@@ -79,7 +78,7 @@ export default function Services() {
       description: language === 'en'
         ? 'Comprehensive AWS cloud services including architecture design, migration, optimization, and managed services for scalable and secure cloud infrastructure.'
         : 'خدمات سحابة AWS الشاملة بما في ذلك تصميم البنية والترحيل والتحسين والخدمات المدارة للبنية التحتية السحابية القابلة للتوسع والآمنة.',
-      image: DIGITAL_IMG,
+      image: AWS,
       color: '#FF9900',
       features: language === 'en'
         ? ['Cloud Architecture Design', 'AWS Migration Services', 'Cost Optimization', 'DevOps & CI/CD', 'Managed Cloud Services', '24/7 Cloud Monitoring']
