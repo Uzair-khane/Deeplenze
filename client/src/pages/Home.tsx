@@ -183,29 +183,6 @@ export default function Home() {
           />
         </div>
 
-        {/* Animated Gold Particles */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          {[...Array(20)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute w-1.5 h-1.5 bg-sky-800 rounded-full"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-              }}
-              animate={{
-                y: [0, -100, 0],
-                opacity: [0, 1, 0],
-              }}
-              transition={{
-                duration: 3 + Math.random() * 2,
-                repeat: Infinity,
-                delay: Math.random() * 2,
-              }}
-            />
-          ))}
-        </div>
-
         <div className="container mx-auto px-4 relative z-10 pt-32 pb-20">
           <div
             className={`max-w-4xl ${dir === "rtl" ? "mr-0 ml-auto text-right" : ""}`}
