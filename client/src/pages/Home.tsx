@@ -33,6 +33,9 @@ import HeroImage from "@/assets/images/hero.png";
 // logs
 import nalystLogo from "@/assets/images/nalyst.png";
 import newsHuntLogo from "@/assets/images/newshunt_logo.png";
+import kastLogo from "@/assets/images/4kastLogo.svg";
+import hr360Logo from "@/assets/images/Hr360Logo.svg";
+import khellaLogo from "@/assets/images/khellaLogo.svg";
 import AI_IMG from "@/assets/images/AI.jpeg";
 import CYBER_IMG from "@/assets/images/CyberSecurity.webp";
 import DIGITAL_IMG  from "@/assets/images/DigitalTransformation.webp";
@@ -102,19 +105,19 @@ export default function Home() {
     {
       name: t("products.khella.name"),
       description: t("products.khella.description"),
-      icon: newsHuntLogo,
+      icon: khellaLogo,
       url: "https://example.com/khella", // placeholder, change later
     },
     {
       name: t("products.4kast.name"),
       description: t("products.4kast.description"),
-      icon: newsHuntLogo,
+      icon: kastLogo,
       url: "https://example.com/4kast", // placeholder, change later
     },
     {
       name: t("products.hr360.name"),
       description: t("products.hr360.description"),
-      icon: newsHuntLogo,
+      icon: hr360Logo,
       url: "https://example.com/hr360", // placeholder, change later
     },
   ];
