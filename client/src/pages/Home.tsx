@@ -570,7 +570,7 @@ const productNames = [
           >
             <Link href="/products">
               <motion.button
-                className={`inline-flex items-center gap-2 px-8 py-4 bg-[#32A7B5] text-white rounded-xl font-bold hover:bg-sky-500 transition-colors ${dir === "rtl" ? "flex-row-reverse font-arabic" : "font-body"}`}
+                className={`inline-flex items-center gap-2 px-8 py-4 bg-[#32A7B5] text-white rounded-xl font-bold  transition-colors ${dir === "rtl" ? "flex-row-reverse font-arabic" : "font-body"}`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -652,7 +652,7 @@ ${dir === "rtl" ? "font-arabic" : ""}`}
           >
             <Link href="/industries">
               <motion.button
-                className={`inline-flex items-center gap-2 px-8 py-4 bg-[#32A7B5] text-white rounded-xl font-bold hover:bg-sky-500 transition-colors ${dir === "rtl" ? "flex-row-reverse font-arabic" : "font-body"}`}
+                className={`inline-flex items-center gap-2 px-8 py-4 bg-[#32A7B5] text-white rounded-xl font-bold  transition-colors ${dir === "rtl" ? "flex-row-reverse font-arabic" : "font-body"}`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
