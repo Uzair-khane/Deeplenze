@@ -55,7 +55,7 @@ export default function About() {
     <div className="min-h-screen bg-">
       <Header />
 
-      {/* Hero Section */}
+     
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0">
           <img
@@ -73,23 +73,35 @@ export default function About() {
 
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
-            className={`max-w-3xl ${dir === 'rtl' ? 'mr-0 ml-auto text-right' : ''}`}
+            className="max-w-3xl mx-auto text-center"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className={`inline-block px-4 py-2 rounded-full bg-[#32a7b5]/10 border border-[#32a7b5]/30 text-[#32a7b5] text-sm font-bold mb-6 tracking-wide uppercase ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
-              {language === 'en' ? 'Who We Are' : 'من نحن'}
+            <span
+              className={`inline-block px-4 py-2 rounded-full bg-[#32a7b5]/10 border border-[#32a7b5]/30 text-[#32a7b5] text-sm font-bold mb-6 tracking-wide uppercase ${dir === "rtl" ? "font-arabic" : "font-body"
+                }`}
+            >
+              {language === "en" ? "Who We Are" : "من نحن"}
             </span>
-            <h1 className={`text-4xl md:text-6xl font-bold text-[#314158] mb-6 ${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}>
-              {t('about.title')}
+
+            <h1
+              className={`text-4xl md:text-6xl font-bold text-[#314158] mb-6 ${dir === "rtl" ? "font-arabic" : "font-display"
+                }`}
+            >
+              {t("about.title")}
             </h1>
-            <p className={`text-xl text-black leading-relaxed ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
-              {t('about.subtitle')}
+
+            <p
+              className={`text-xl text-black leading-relaxed ${dir === "rtl" ? "font-arabic" : "font-body"
+                }`}
+            >
+              {t("about.subtitle")}
             </p>
           </motion.div>
         </div>
       </section>
+
 
       {/* Story Section */}
       <section className="py-20 relative">

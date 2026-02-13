@@ -35,8 +35,8 @@ import nalystLogo from "@/assets/images/nalyst.png";
 import newsHuntLogo from "@/assets/images/newshunt_logo.png";
 import AI_IMG from "@/assets/images/AI.jpeg";
 import CYBER_IMG from "@/assets/images/CyberSecurity.webp";
-import DIGITAL_IMG  from "@/assets/images/DigitalTransformation.webp";
-import AWS  from "@/assets/images/AWSCloudManagement.webp";
+import DIGITAL_IMG from "@/assets/images/DigitalTransformation.webp";
+import AWS from "@/assets/images/AWSCloudManagement.webp";
 
 const SMART_IMG =
   "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030867079/zxhLFuUlDPKEooqo.jpg";
@@ -85,37 +85,37 @@ export default function Home() {
       name: t("products.nalyst.name"),
       description: t("products.nalyst.description"),
       icon: nalystLogo,
-      url: "https://nalyst.ai", // link for Nalyst
+      url: "/products/nalyst", // Internal route to Nalyst page
     },
     {
       name: t("products.newshunt.name"),
       description: t("products.newshunt.description"),
       icon: newsHuntLogo,
-      url: "https://newshunt.io", // link for Newshunt
+      url: "/products/newshunt", // Internal route to Newshunt page
     },
     {
       name: t("products.asaad.name"),
       description: t("products.asaad.description"),
       icon: newsHuntLogo,
-      url: "https://example.com/asaad", // placeholder, change later
+      url: "/products/asaad", // You'll need to create Asaad.tsx
     },
     {
       name: t("products.khella.name"),
       description: t("products.khella.description"),
       icon: newsHuntLogo,
-      url: "https://example.com/khella", // placeholder, change later
+      url: "/products/khella", // You'll need to create Khella.tsx
     },
     {
       name: t("products.4kast.name"),
       description: t("products.4kast.description"),
       icon: newsHuntLogo,
-      url: "https://example.com/4kast", // placeholder, change later
+      url: "/products/4kast", // You'll need to create 4kast.tsx
     },
     {
       name: t("products.hr360.name"),
       description: t("products.hr360.description"),
       icon: newsHuntLogo,
-      url: "https://example.com/hr360", // placeholder, change later
+      url: "/products/hr360", // You'll need to create Hr360.tsx
     },
   ];
 
@@ -184,9 +184,7 @@ export default function Home() {
         </div>
 
         <div className="container mx-auto px-4 relative z-10 pt-32 pb-20">
-          <div
-            className={`max-w-4xl ${dir === "rtl" ? "mr-0 ml-auto text-right" : ""}`}
-          >
+          <div className="max-w-4xl mx-auto text-center">
             {/* Badge */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -194,7 +192,8 @@ export default function Home() {
               transition={{ duration: 0.8 }}
             >
               <span
-                className={`inline-block px-4 py-2 rounded-full bg-[#32a7b5]/10 border border-[#32a7b5]/30 text-[#32a7b5] text-sm font-bold mb-6 tracking-wide uppercase ${dir === "rtl" ? "font-arabic" : "font-body"}`}
+                className={`inline-block px-4 py-2 rounded-full bg-[#32a7b5]/10 border border-[#32a7b5]/30 text-[#32a7b5] text-sm font-bold mb-6 tracking-wide uppercase ${dir === "rtl" ? "font-arabic" : "font-body"
+                  }`}
               >
                 {language === "en"
                   ? "Aligned with Vision 2030"
@@ -204,7 +203,8 @@ export default function Home() {
 
             {/* Title */}
             <motion.h1
-              className={`text-5xl md:text-7xl lg:text-8xl font-bold leading-tight mb-6 ${dir === "rtl" ? "font-arabic" : "font-display"}`}
+              className={`text-5xl md:text-7xl lg:text-8xl font-bold leading-tight mb-6 ${dir === "rtl" ? "font-arabic" : "font-display"
+                }`}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1 }}
@@ -217,7 +217,8 @@ export default function Home() {
 
             {/* Description */}
             <motion.p
-              className={`text-lg md:text-xl text-black mb-12 max-w-2xl leading-relaxed ${dir === "rtl" ? "font-arabic" : "font-body"}`}
+              className={`text-lg md:text-xl text-black mb-12 max-w-2xl mx-auto leading-relaxed ${dir === "rtl" ? "font-arabic" : "font-body"
+                }`}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -227,23 +228,27 @@ export default function Home() {
 
             {/* Buttons */}
             <motion.div
-              className={`flex flex-wrap gap-4 ${dir === "rtl" ? "flex-row-reverse" : ""}`}
+              className={`flex flex-wrap gap-4 justify-center ${dir === "rtl" ? "flex-row-reverse" : ""
+                }`}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
               <Link href="/services">
                 <motion.button
-                  className={`group flex items-center gap-2 px-8 py-4 bg-[#32a7b5] text-white font-bold rounded-xl shadow-lg hover:bg-[#2a8f9a] hover:-translate-y-1 transition-all duration-300 ${dir === "rtl" ? "flex-row-reverse font-arabic" : "font-body"}`}
+                  className={`group flex items-center gap-2 px-8 py-4 bg-[#32a7b5] text-white font-bold rounded-xl shadow-lg hover:bg-[#2a8f9a] hover:-translate-y-1 transition-all duration-300 ${dir === "rtl" ? "flex-row-reverse font-arabic" : "font-body"
+                    }`}
                   whileTap={{ scale: 0.95 }}
                 >
                   {t("hero.cta.services")}
                   <ArrowIcon className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </motion.button>
               </Link>
+
               <Link href="/contact">
                 <motion.button
-                  className={`flex items-center gap-2 px-8 py-4 border-2 border-[#32a7b5] text-black font-bold rounded-xl hover:bg-[#32a7b5]/10 hover:-translate-y-1 transition-all duration-300 ${dir === "rtl" ? "flex-row-reverse font-arabic" : "font-body"}`}
+                  className={`flex items-center gap-2 px-8 py-4 border-2 border-[#32a7b5] text-black font-bold rounded-xl hover:bg-[#32a7b5]/10 hover:-translate-y-1 transition-all duration-300 ${dir === "rtl" ? "flex-row-reverse font-arabic" : "font-body"
+                    }`}
                   whileTap={{ scale: 0.95 }}
                 >
                   {t("hero.cta.contact")}
@@ -253,6 +258,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
 
       {/* Services Section */}
       <section className="py-24 relative overflow-hidden bg-slate-200">
@@ -305,7 +311,7 @@ export default function Home() {
                 <div
                   className={`relative p-8 ${dir === "rtl" ? "text-right" : ""}`}
                 >
-                  
+
                   <h3
                     className={`text-2xl font-bold text-slate-800 mb-3 ${dir === "rtl" ? "font-arabic" : "font-display"}`}
                   >
@@ -362,45 +368,32 @@ export default function Home() {
           {/* Products Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {products.map((product, index) => (
-              <motion.div
-                key={index}
-                className={`group p-8 rounded-2xl bg-white border border-yellow-500/30 shadow-sm hover:shadow-xl transition-all duration-300 ${dir === "rtl" ? "text-right" : ""}`}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ y: -8 }}
-              >
-                {/* Icon */}
-                <a
-                  href={product.url} // external URL
-                  target="_blank" // open in new tab
-                  rel="noopener noreferrer" // security best practice
-                  className="group" // preserve hover effects
+              <Link key={index} href={product.url}>
+                <motion.div
+                  className={`group p-8 rounded-2xl bg-white border border-yellow-500/30 shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer ${dir === "rtl" ? "text-right" : ""}`}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  whileHover={{ y: -8 }}
                 >
-                  <div className="text-5xl   -mt-8 transform group-hover:scale-110 transition-transform duration-300 flex justify-center items-center ">
+                  {/* Icon */}
+                  <div className="text-5xl -mt-8 transform group-hover:scale-110 transition-transform duration-300 flex justify-center items-center">
                     <img
                       src={product.icon}
                       alt={product.name}
                       className="w-44 h-44 object-contain"
                     />
                   </div>
-                </a>
 
-                {/* Product Title */}
-                {/* <h3
-                  className={`text-xl font-bold text-slate-700 mb-3 ${dir === "rtl" ? "font-arabic" : "font-display"}`}
-                >
-                  {product.name}
-                </h3> */}
-
-                {/* Product Description */}
-                <p
-                  className={`text-slate-600 text-sm text-center leading-relaxed -mt-8 ${dir === "rtl" ? "font-arabic" : "font-body"}`}
-                >
-                  {product.description}
-                </p>
-              </motion.div>
+                  {/* Product Description */}
+                  <p
+                    className={`text-slate-600 text-sm text-center leading-relaxed -mt-8 ${dir === "rtl" ? "font-arabic" : "font-body"}`}
+                  >
+                    {product.description}
+                  </p>
+                </motion.div>
+              </Link>
             ))}
           </div>
 
