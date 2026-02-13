@@ -21,7 +21,7 @@ const translations: Translations = {
   // Hero Section
   'hero.title': { en: 'Transforming Tomorrow', ar: 'نصنع المستقبل' },
   'hero.subtitle': { en: 'Through Innovation', ar: 'من خلال الابتكار' },
-  'hero.description': { en: 'Leading Saudi Arabia\'s digital transformation with cutting-edge AI, Cybersecurity, and Smart City solutions aligned with Vision 2030.', ar: 'نقود التحول الرقمي في المملكة العربية السعودية من خلال حلول الذكاء الاصطناعي والأمن السيبراني والمدن الذكية المتوافقة مع رؤية 2030.' },
+  'hero.description': { en: 'Leading Saudi Arabia\'s digital transformation with cutting-edge AI, and Cybersecurity aligned with Vision 2030.', ar: 'نقود التحول الرقمي في المملكة العربية السعودية من خلال حلول الذكاء الاصطناعي والأمن السيبراني والمدن الذكية المتوافقة مع رؤية 2030.' },
   'hero.cta.services': { en: 'Explore Services', ar: 'استكشف خدماتنا' },
   'hero.cta.contact': { en: 'Get in Touch', ar: 'تواصل معنا' },
   

@@ -100,34 +100,32 @@ export default function Home() {
     {
       name: t("products.asaad.name"),
       description: t("products.asaad.description"),
-      icon: newsHuntLogo,
-      url: "/products/asaad", // You'll need to create Asaad.tsx
       icon: assadLogo,
-      url: "https://example.com/asaad", // placeholder, change later
+      url: "/products/asaad", // You'll need to create Asaad.tsx
+     
+      // placeholder, change later
     },
     {
       name: t("products.khella.name"),
       description: t("products.khella.description"),
-      icon: newsHuntLogo,
+   
       url: "/products/khella", // You'll need to create Khella.tsx
       icon: khellaLogo,
-      url: "https://example.com/khella", // placeholder, change later
+     // placeholder, change later
     },
     {
       name: t("products.4kast.name"),
       description: t("products.4kast.description"),
-      icon: newsHuntLogo,
       url: "/products/4kast", // You'll need to create 4kast.tsx
       icon: kastLogo,
-      url: "https://example.com/4kast", // placeholder, change later
+     // placeholder, change later
     },
     {
       name: t("products.hr360.name"),
       description: t("products.hr360.description"),
-      icon: newsHuntLogo,
       url: "/products/hr360", // You'll need to create Hr360.tsx
       icon: hr360Logo,
-      url: "https://example.com/hr360", // placeholder, change later
+      // placeholder, change later
     },
   ];
 
@@ -179,97 +177,251 @@ export default function Home() {
           : "حلول التجزئة متعددة القنوات للتسوق الحديث.",
     },
   ];
+// Add this helper ABOVE return inside your component
+const TypingText = ({
+  text,
+  delayOffset = 0,
+  speed = 0.08, // typing speed (bigger = slower)
+  className,
+}: {
+  text: string;
+  delayOffset?: number;
+  speed?: number;
+  className?: string;
+}) => {
+  return (
+    <span className={className}>
+      {text.split("").map((char, index) => (
+        <motion.span
+          key={index}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{
+            delay: delayOffset + index * speed,
+            duration: 0.4,
+            ease: "easeInOut",
+          }}
+        >
+          {char === " " ? "\u00A0" : char}
+        </motion.span>
+      ))}
+    </span>
+  );
+};
+
+
+const FloatingProducts = ({
+  products,
+  color = "#1c7f87",
+  repeat = 3,
+}: {
+  products: string[];
+  color?: string;
+  repeat?: number;
+}) => {
+  const repeatedProducts = Array.from({ length: repeat }).flatMap(() => products);
+
+  // store used positions to avoid collision
+  const positions: { top: number; left: number }[] = [];
+
+  const getSafePosition = () => {
+    let top: number, left: number, attempts = 0;
+
+    do {
+      top = 10 + Math.random() * 80; // 10%-90%
+      left = 10 + Math.random() * 80; // 10%-90%
+      attempts++;
+    } while (
+      positions.some(
+        (pos) =>
+          Math.abs(pos.top - top) < 12 && // vertical spacing
+          Math.abs(pos.left - left) < 20 // horizontal spacing
+      ) &&
+      attempts < 100
+    );
+
+    positions.push({ top, left });
+    return { top, left };
+  };
+
+  return (
+    <div className="absolute inset-0 pointer-events-none overflow-hidden">
+      {repeatedProducts.map((product, index) => {
+        const { top, left } = getSafePosition();
+
+        const rotateStart = -15 + Math.random() * 30; // small tilt
+        const xAmplitude = 15 + Math.random() * 25; // small horizontal float
+        const yAmplitude = 15 + Math.random() * 25; // small vertical float
+        const direction = Math.random() > 0.5 ? 1 : -1;
+
+        return (
+          <motion.div
+            key={index}
+            className="absolute font-bold text-2xl md:text-4xl whitespace-nowrap"
+            style={{
+              top: `${top}%`,
+              left: `${left}%`,
+              color: color,
+              opacity: 0.16,
+              rotate: `${rotateStart}deg`,
+            }}
+            animate={{
+              y: [0, yAmplitude * direction, 0],
+              x: [0, xAmplitude * -direction, 0],
+              rotate: [rotateStart, rotateStart + 8 * direction, rotateStart],
+            }}
+            transition={{
+              duration: 18 + Math.random() * 10,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          >
+            {product}
+          </motion.div>
+        );
+      })}
+    </div>
+  );
+};
+
+
+
+const productNames = [
+  t("products.nalyst.name"),
+  t("products.newshunt.name"),
+  t("products.asaad.name"),
+  t("products.khella.name"),
+  t("products.4kast.name"),
+  t("products.hr360.name"),
+];
+
 
   return (
     <div className="min-h-screen bg-background text-foreground font-body">
       <Header />
 
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center overflow-hidden">
-        {/* Background Image */}
-        <div className="absolute inset-0">
-          <img
-            src={HeroImage}
-            alt="Hero Background"
-            className="w-full h-full object-cover"
+   
+<section className="relative min-h-[90vh] flex items-center overflow-hidden">
+  {/* Background Image with Smooth Zoom */}
+  <motion.div
+    className="absolute inset-0"
+    initial={{ scale: 1.1 }}
+    animate={{ scale: 1 }}
+    transition={{ duration: 6, ease: "easeOut" }}
+  >
+    <img
+      src={HeroImage}
+      alt="Hero Background"
+      className="w-full h-full object-cover"
+    />
+  </motion.div>
+<FloatingProducts
+  products={productNames}
+  color="#1c7f87"
+  repeat={2}
+
+/>
+
+
+  <div className="container mx-auto px-4 relative z-10 pt-32 pb-20">
+    <div className="max-w-4xl mx-auto text-center">
+
+      {/* Badge */}
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
+        <span
+          className={`inline-block px-4 py-2 rounded-full bg-[#32a7b5]/10 border border-[#32a7b5]/30 text-[#32a7b5] text-sm font-bold mb-6 tracking-wide uppercase ${
+            dir === "rtl" ? "font-arabic" : "font-body"
+          }`}
+        >
+          {language === "en"
+            ? "Aligned with Vision 2030"
+            : "متوافق مع رؤية 2030"}
+        </span>
+      </motion.div>
+
+      {/* Typing Title */}
+      <motion.h1
+        className={`text-5xl md:text-7xl lg:text-8xl font-bold leading-tight mb-6 ${
+          dir === "rtl" ? "font-arabic" : "font-display"
+        }`}
+      >
+        <div className="block text-black">
+          <TypingText text={t("hero.title")} delayOffset={0.5} />
+        </div>
+
+        <div className="text-4xl md:text-5xl lg:text-6xl text-[#32a7b5] mt-4">
+          <TypingText
+            text={t("hero.subtitle")}
+            delayOffset={0.5 + t("hero.title").length * 0.035}
           />
         </div>
+      </motion.h1>
 
-        <div className="container mx-auto px-4 relative z-10 pt-32 pb-20">
-          <div className="max-w-4xl mx-auto text-center">
-            {/* Badge */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <span
-                className={`inline-block px-4 py-2 rounded-full bg-[#32a7b5]/10 border border-[#32a7b5]/30 text-[#32a7b5] text-sm font-bold mb-6 tracking-wide uppercase ${dir === "rtl" ? "font-arabic" : "font-body"
-                  }`}
-              >
-                {language === "en"
-                  ? "Aligned with Vision 2030"
-                  : "متوافق مع رؤية 2030"}
-              </span>
-            </motion.div>
+      {/* Description */}
+      <motion.p
+        className={`text-lg md:text-xl text-black mb-12 max-w-2xl mx-auto leading-relaxed ${
+          dir === "rtl" ? "font-arabic" : "font-body"
+        }`}
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          delay:
+            0.8 + t("hero.title").length * 0.035 +
+            t("hero.subtitle").length * 0.02,
+          duration: 0.8,
+        }}
+      >
+        {t("hero.description")}
+      </motion.p>
 
-            {/* Title */}
-            <motion.h1
-              className={`text-5xl md:text-7xl lg:text-8xl font-bold leading-tight mb-6 ${dir === "rtl" ? "font-arabic" : "font-display"
-                }`}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.1 }}
-            >
-              <span className="block text-black">{t("hero.title")}</span>
-              <span className="text-4xl md:text-5xl lg:text-6xl text-[#32a7b5]">
-                {t("hero.subtitle")}
-              </span>
-            </motion.h1>
+      {/* Buttons */}
+      <motion.div
+        className={`flex flex-wrap gap-4 justify-center ${
+          dir === "rtl" ? "flex-row-reverse" : ""
+        }`}
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          delay:
+            1 +
+            t("hero.title").length * 0.035 +
+            t("hero.subtitle").length * 0.02,
+        }}
+      >
+        <Link href="/services">
+          <motion.button
+            className={`group flex items-center gap-2 px-8 py-4 bg-[#32a7b5] text-white font-bold rounded-xl shadow-lg hover:bg-[#2a8f9a] transition-all duration-300 ${
+              dir === "rtl" ? "flex-row-reverse font-arabic" : "font-body"
+            }`}
+            whileHover={{ scale: 1.05, y: -4 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            {t("hero.cta.services")}
+            <ArrowIcon className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
+          </motion.button>
+        </Link>
 
-            {/* Description */}
-            <motion.p
-              className={`text-lg md:text-xl text-black mb-12 max-w-2xl mx-auto leading-relaxed ${dir === "rtl" ? "font-arabic" : "font-body"
-                }`}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              {t("hero.description")}
-            </motion.p>
+        <Link href="/contact">
+          <motion.button
+            className={`flex items-center gap-2 px-8 py-4 border-2 border-[#32a7b5] text-black font-bold rounded-xl hover:bg-[#32a7b5]/10 transition-all duration-300 ${
+              dir === "rtl" ? "flex-row-reverse font-arabic" : "font-body"
+            }`}
+            whileHover={{ scale: 1.05, y: -4 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            {t("hero.cta.contact")}
+          </motion.button>
+        </Link>
+      </motion.div>
 
-            {/* Buttons */}
-            <motion.div
-              className={`flex flex-wrap gap-4 justify-center ${dir === "rtl" ? "flex-row-reverse" : ""
-                }`}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-            >
-              <Link href="/services">
-                <motion.button
-                  className={`group flex items-center gap-2 px-8 py-4 bg-[#32a7b5] text-white font-bold rounded-xl shadow-lg hover:bg-[#2a8f9a] hover:-translate-y-1 transition-all duration-300 ${dir === "rtl" ? "flex-row-reverse font-arabic" : "font-body"
-                    }`}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  {t("hero.cta.services")}
-                  <ArrowIcon className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </motion.button>
-              </Link>
-
-              <Link href="/contact">
-                <motion.button
-                  className={`flex items-center gap-2 px-8 py-4 border-2 border-[#32a7b5] text-black font-bold rounded-xl hover:bg-[#32a7b5]/10 hover:-translate-y-1 transition-all duration-300 ${dir === "rtl" ? "flex-row-reverse font-arabic" : "font-body"
-                    }`}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  {t("hero.cta.contact")}
-                </motion.button>
-              </Link>
-            </motion.div>
-          </div>
-        </div>
-      </section>
+    </div>
+  </div>
+</section>
 
 
       {/* Services Section */}
