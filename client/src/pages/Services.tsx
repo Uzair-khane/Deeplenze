@@ -24,7 +24,7 @@ import {
   Server
 } from 'lucide-react';
 import AI_IMG from "@/assets/images/AI.jpeg";
-import CYBER_IMG from "@/assets/images/CyberSecurity.webp";
+import CYBER_IMG from "@/assets/images/Cybersecurity.jpeg";
 import DIGITAL_IMG  from "@/assets/images/DigitalTransformation.webp";
 import AWS  from "@/assets/images/AWSCloudManagement.webp";
 

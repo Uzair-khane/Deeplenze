@@ -33,10 +33,14 @@ import HeroImage from "@/assets/images/hero.png";
 // logs
 import nalystLogo from "@/assets/images/nalyst.png";
 import newsHuntLogo from "@/assets/images/newshunt_logo.png";
+import kastLogo from "@/assets/images/4kastLogo.svg";
+import hr360Logo from "@/assets/images/Hr360Logo.svg";
+import khellaLogo from "@/assets/images/khellaLogo.svg";
+import assadLogo from "@/assets/images/assadLogo.svg";
 import AI_IMG from "@/assets/images/AI.jpeg";
-import CYBER_IMG from "@/assets/images/CyberSecurity.webp";
-import DIGITAL_IMG from "@/assets/images/DigitalTransformation.webp";
-import AWS from "@/assets/images/AWSCloudManagement.webp";
+import CYBER_IMG from "@/assets/images/Cybersecurity.jpeg";
+import DIGITAL_IMG  from "@/assets/images/DigitalTransformation.webp";
+import AWS  from "@/assets/images/AWSCloudManagement.webp";
 
 const SMART_IMG =
   "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030867079/zxhLFuUlDPKEooqo.jpg";
@@ -98,24 +102,32 @@ export default function Home() {
       description: t("products.asaad.description"),
       icon: newsHuntLogo,
       url: "/products/asaad", // You'll need to create Asaad.tsx
+      icon: assadLogo,
+      url: "https://example.com/asaad", // placeholder, change later
     },
     {
       name: t("products.khella.name"),
       description: t("products.khella.description"),
       icon: newsHuntLogo,
       url: "/products/khella", // You'll need to create Khella.tsx
+      icon: khellaLogo,
+      url: "https://example.com/khella", // placeholder, change later
     },
     {
       name: t("products.4kast.name"),
       description: t("products.4kast.description"),
       icon: newsHuntLogo,
       url: "/products/4kast", // You'll need to create 4kast.tsx
+      icon: kastLogo,
+      url: "https://example.com/4kast", // placeholder, change later
     },
     {
       name: t("products.hr360.name"),
       description: t("products.hr360.description"),
       icon: newsHuntLogo,
       url: "/products/hr360", // You'll need to create Hr360.tsx
+      icon: hr360Logo,
+      url: "https://example.com/hr360", // placeholder, change later
     },
   ];
 
