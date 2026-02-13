@@ -17,15 +17,24 @@ export default function Nalyst() {
   const nalystSections = [
     {
       id: 1,
-      text: "NALYST is more than a news aggregator—it helps you analyze, organize, and save information for future use. With customizable folders, categorized topics, and a personal research library, it’s designed for students, researchers, and professionals who want more than just headlines.Track trends, uncover insights, and access structured knowledge from multiple sources and languages. NALYST transforms daily news into meaningful research, empowering smarter decisions and long-term understanding.",
+      text: {
+        en: "NALYST is more than a news aggregator—it helps you analyze, organize, and save information for future use. With customizable folders, categorized topics, and a personal research library, it’s designed for students, researchers, and professionals who want more than just headlines. Track trends, uncover insights, and access structured knowledge from multiple sources and languages. NALYST transforms daily news into meaningful research, empowering smarter decisions and long-term understanding.",
+
+        ar: "نالست ليس مجرد منصة لتجميع الأخبار—بل يساعدك على تحليل المعلومات وتنظيمها وحفظها للاستخدام المستقبلي. من خلال مجلدات قابلة للتخصيص، ومواضيع مصنفة، ومكتبة بحث شخصية، تم تصميمه للطلاب والباحثين والمهنيين الذين يبحثون عن أكثر من مجرد عناوين. تابع الاتجاهات، واكتشف الرؤى، واطلع على معرفة منظمة من مصادر ولغات متعددة. يحول نالست الأخبار اليومية إلى أبحاث ذات معنى، مما يمكّنك من اتخاذ قرارات أذكى وفهم طويل المدى."
+      },
       image: NalystImage,
     },
     {
       id: 2,
-      text: "NALYST brings the world’s news to your fingertips, turning it into organized, actionable knowledge. From global headlines to niche topics, you can save content your way. With AI-driven tools, personalized libraries, and trend tracking, staying informed becomes smarter, faster, and more meaningful. Discover patterns, analyze developments, and turn everyday news into research-ready insights—all in one platform for curious minds, professionals, and knowledge seekers who want more than just stories.",
+      text: {
+        en: "NALYST brings the world’s news to your fingertips, turning it into organized, actionable knowledge. From global headlines to niche topics, you can save content your way. With AI-driven tools, personalized libraries, and trend tracking, staying informed becomes smarter, faster, and more meaningful. Discover patterns, analyze developments, and turn everyday news into research-ready insights—all in one platform for curious minds, professionals, and knowledge seekers who want more than just stories.",
+
+        ar: "يجلب نالست أخبار العالم إلى متناول يدك، ويحوّلها إلى معرفة منظمة وقابلة للتنفيذ. من العناوين العالمية إلى المواضيع المتخصصة، يمكنك حفظ المحتوى بالطريقة التي تناسبك. بفضل أدوات مدعومة بالذكاء الاصطناعي، ومكتبات مخصصة، وتتبع الاتجاهات، يصبح البقاء على اطلاع أكثر ذكاءً وسرعةً وفائدة. اكتشف الأنماط، وحلل التطورات، وحوّل الأخبار اليومية إلى رؤى جاهزة للبحث—كل ذلك في منصة واحدة للعقول الفضولية والمهنيين والباحثين عن المعرفة."
+      },
       image: NalystImage2,
     }
   ];
+
 
 
   return (
@@ -117,48 +126,55 @@ export default function Nalyst() {
 
 
       <section className="relative py-20 px-6 bg-[#e2e8f0]">
-  <h1 className="text-4xl md:text-6xl font-bold text-[#314158] pl-12">
-    Nalyst
-  </h1>
+        <h1 className="text-4xl md:text-6xl font-bold text-[#314158] pl-12">
+          Nalyst
+        </h1>
 
-  <div className="container pt-12 mx-auto px-12">
-    {nalystSections.map((section, index) => (
-      <div
-        key={section.id}
-        className={`flex flex-col md:flex-row items-start gap-12 mb-32 
+        <div className="container pt-12 mx-auto px-12">
+          {nalystSections.map((section, index) => (
+            <div
+              key={section.id}
+              className={`flex flex-col md:flex-row items-start gap-12 mb-32 
           ${index % 2 === 1 ? "md:flex-row-reverse" : ""}`}
-      >
-        {/* Text */}
-        <motion.div
-          className="md:w-1/2 order-1 text-left"
-          initial={{ opacity: 0, x: -80 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true }}
-        >
-          <p className="text-xl md:text-xl text-black leading-relaxed text-justify">
-            {section.text}
-          </p>
-        </motion.div>
+            >
+              {/* Text */}
+              <motion.div
+                className={`md:w-1/2 order-1 ${language === "ar" ? "text-right" : "text-left"
+                  }`}
+                initial={{ opacity: 0, x: -80 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                viewport={{ once: true }}
+              >
+                <p
+                  className={`text-xl text-black leading-relaxed ${language === "ar"
+                      ? "text-right font-arabic"
+                      : "text-justify font-body"
+                    }`}
+                >
+                  {section.text[language]}
+                </p>
+              </motion.div>
 
-        {/* Image */}
-        <motion.div
-          className="md:w-1/2 order-2"
-          initial={{ opacity: 0, x: 80 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-          viewport={{ once: true }}
-        >
-          <img
-            src={section.image}
-            alt="Nalyst illustration"
-            className="w-full bg-[#f5f5f5] h-[300px] md:h-[430px] lg:h-[400px] object-cover rounded-lg shadow-lg"
-          />
-        </motion.div>
-      </div>
-    ))}
-  </div>
-</section>
+
+              {/* Image */}
+              <motion.div
+                className="md:w-1/2 order-2"
+                initial={{ opacity: 0, x: 80 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+                viewport={{ once: true }}
+              >
+                <img
+                  src={section.image}
+                  alt="Nalyst illustration"
+                  className="w-full bg-[#f5f5f5] h-[300px] md:h-[430px] lg:h-[400px] object-cover rounded-lg shadow-lg"
+                />
+              </motion.div>
+            </div>
+          ))}
+        </div>
+      </section>
 
 
 
