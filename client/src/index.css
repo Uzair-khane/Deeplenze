@@ -217,15 +217,32 @@ html {
   scroll-behavior: smooth;
 }
 
+/* ===== Theme Scrollbar ===== */
+
 ::-webkit-scrollbar {
   width: 8px;
 }
 
+/* Track (Background) */
 ::-webkit-scrollbar-track {
-  background: var(--background);
+  background: #ffffff;
 }
 
+/* Thumb (Scroll bar) */
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, var(--accent), var(--secondary));
-  border-radius: 4px;
+  background: #32a7b5;
+  border-radius: 999px;
+  border: 2px solid #ffffff;
+  transition: background 0.3s ease;
+}
+
+/* Hover Effect */
+::-webkit-scrollbar-thumb:hover {
+  background: #2a8f9a; /* slightly darker teal */
+}
+
+/* Firefox Support */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #32a7b5 #ffffff;
 }

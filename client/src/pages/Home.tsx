@@ -505,82 +505,131 @@ const productNames = [
       </section>
 
       {/* Products Section */}
-      <section className="py-24 relative bg-slate-100">
-        <div className="container mx-auto px-4 relative">
-          {/* Section Heading */}
+     <section className="py-24 relative bg-slate-100 overflow-hidden">
+  <div className="container mx-auto px-4 relative">
+
+    {/* Section Heading */}
+    <motion.div
+      className={`text-center mb-16 max-w-3xl mx-auto ${
+        dir === "rtl" ? "font-arabic" : ""
+      }`}
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.7 }}
+    >
+      <span className="inline-block px-4 py-2 rounded-full bg-[#32A7B51A] text-[#32a7b5] text-sm font-bold mb-4 uppercase tracking-wider">
+        {language === "en" ? "Our Solutions" : "حلولنا"}
+      </span>
+
+      <h2
+        className={`text-4xl md:text-5xl font-bold text-slate-700 mb-6 ${
+          dir === "rtl" ? "font-arabic" : "font-display"
+        }`}
+      >
+        {t("products.title")}
+      </h2>
+
+      <p
+        className={`text-slate-600 text-lg ${
+          dir === "rtl" ? "font-arabic" : "font-body"
+        }`}
+      >
+        {t("products.subtitle")}
+      </p>
+    </motion.div>
+
+    {/* Products Grid */}
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {products.map((product, index) => (
+        <Link key={index} href={product.url}>
           <motion.div
-            className={`text-center mb-16 max-w-3xl mx-auto ${dir === "rtl" ? "font-arabic" : ""}`}
-            initial={{ opacity: 0, y: 30 }}
+            className={`group relative p-8 rounded-2xl bg-white border border-yellow-500/30 shadow-sm cursor-pointer overflow-hidden ${
+              dir === "rtl" ? "text-right" : ""
+            }`}
+            initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            transition={{
+              delay: index * 0.12,
+              duration: 0.6,
+              ease: "easeOut",
+            }}
+            whileHover={{
+              y: -10,
+              scale: 1.02,
+            }}
           >
-            <span className="inline-block px-4 py-2 rounded-full bg-[#32A7B51A] text-[#32a7b5] text-sm font-bold mb-4 uppercase tracking-wider">
-              {language === "en" ? "Our Solutions" : "حلولنا"}
-            </span>
-            <h2
-              className={`text-4xl md:text-5xl font-bold text-slate-700 mb-6 ${dir === "rtl" ? "font-arabic" : "font-display"}`}
+
+            {/* Hover Shine Effect */}
+            <motion.div
+              className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              style={{
+                background:
+                  "linear-gradient(120deg, transparent 20%, rgba(50,167,181,0.08) 50%, transparent 80%)",
+              }}
+            />
+
+            {/* Icon */}
+            <motion.div
+              className="text-5xl -mt-6 flex justify-center items-center relative z-10"
+              whileHover={{ y: -6 }}
+              transition={{ duration: 0.4 }}
             >
-              {t("products.title")}
-            </h2>
+              <motion.img
+                src={product.icon}
+                alt={product.name}
+                className="w-44 h-44 object-contain"
+                animate={{ y: [0, -6, 0] }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              />
+            </motion.div>
+
+            {/* Product Description */}
             <p
-              className={`text-slate-600 text-lg ${dir === "rtl" ? "font-arabic" : "font-body"}`}
+              className={`text-slate-600 text-sm text-center leading-relaxed -mt-6 relative z-10 ${
+                dir === "rtl" ? "font-arabic" : "font-body"
+              }`}
             >
-              {t("products.subtitle")}
+              {product.description}
             </p>
+
+            {/* Glow Border on Hover */}
+            <div className="absolute inset-0 rounded-2xl border border-transparent group-hover:border-[#32a7b5]/40 transition-colors duration-500" />
+
           </motion.div>
+        </Link>
+      ))}
+    </div>
 
-          {/* Products Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {products.map((product, index) => (
-              <Link key={index} href={product.url}>
-                <motion.div
-                  className={`group p-8 rounded-2xl bg-white border border-yellow-500/30 shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer ${dir === "rtl" ? "text-right" : ""}`}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  whileHover={{ y: -8 }}
-                >
-                  {/* Icon */}
-                  <div className="text-5xl -mt-8 transform group-hover:scale-110 transition-transform duration-300 flex justify-center items-center">
-                    <img
-                      src={product.icon}
-                      alt={product.name}
-                      className="w-44 h-44 object-contain"
-                    />
-                  </div>
+    {/* View All Button */}
+    <motion.div
+      className="text-center mt-16"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.7 }}
+    >
+      <Link href="/products">
+        <motion.button
+          className={`inline-flex items-center gap-2 px-8 py-4 bg-[#32A7B5] text-white rounded-xl font-bold transition-colors ${
+            dir === "rtl" ? "flex-row-reverse font-arabic" : "font-body"
+          }`}
+          whileHover={{ scale: 1.05, y: -3 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          {t("common.viewAll")}
+          <ChevronIcon className="w-5 h-5" />
+        </motion.button>
+      </Link>
+    </motion.div>
+  </div>
+</section>
 
-                  {/* Product Description */}
-                  <p
-                    className={`text-slate-600 text-sm text-center leading-relaxed -mt-8 ${dir === "rtl" ? "font-arabic" : "font-body"}`}
-                  >
-                    {product.description}
-                  </p>
-                </motion.div>
-              </Link>
-            ))}
-          </div>
-
-          {/* View All Button */}
-          <motion.div
-            className="text-center mt-16"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-          >
-            <Link href="/products">
-              <motion.button
-                className={`inline-flex items-center gap-2 px-8 py-4 bg-[#32A7B5] text-white rounded-xl font-bold  transition-colors ${dir === "rtl" ? "flex-row-reverse font-arabic" : "font-body"}`}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                {t("common.viewAll")}
-                <ChevronIcon className="w-5 h-5" />
-              </motion.button>
-            </Link>
-          </motion.div>
-        </div>
-      </section>
 
       {/* Industries Section */}
       <section className="py-24 relative bg-white">
