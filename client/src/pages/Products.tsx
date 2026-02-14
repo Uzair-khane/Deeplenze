@@ -3,6 +3,12 @@
  * Colors: Midnight Blue, Digital Gold, Electric Teal
  */
 import HeroImage from "@/assets/images/hero.png";
+import nalystLogo from "@/assets/images/nalyst.png";
+import newsHuntLogo from "@/assets/images/newshunt_logo.png";
+import kastLogo from "@/assets/images/4kastLogo.svg";
+import hr360Logo from "@/assets/images/Hr360Logo.svg";
+import khellaLogo from "@/assets/images/khellaLogo.svg";
+import assadLogo from "@/assets/images/assadLogo.svg";
 import { useLanguage } from '@/contexts/LanguageContext';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -30,10 +36,10 @@ export default function Products() {
       id: 1,
       name: t('products.nalyst.name'),
       description: t('products.nalyst.description'),
-      icon: BarChart3,
+      logo: nalystLogo,
       color: '#00D4AA',
       tagline: language === 'en' ? 'AI-Powered Analytics' : 'تحليلات مدعومة بالذكاء الاصطناعي',
-      url: 'https://nalyst.ai/',
+      url: '/products/Nalyst',
       features: language === 'en'
         ? ['Real-time data processing', 'Custom dashboard builder', 'Predictive insights', 'Multi-source integration']
         : ['معالجة البيانات في الوقت الفعلي', 'منشئ لوحات المعلومات المخصصة', 'رؤى تنبؤية', 'تكامل متعدد المصادر'],
@@ -42,10 +48,10 @@ export default function Products() {
       id: 2,
       name: t('products.newshunt.name'),
       description: t('products.newshunt.description'),
-      icon: Newspaper,
+      logo: newsHuntLogo,
       color: '#C9A227',
       tagline: language === 'en' ? 'Media Intelligence' : 'الذكاء الإعلامي',
-      url: 'https://newshunt.io/',
+      url: '/products/Newshunt',
       features: language === 'en'
         ? ['AI-powered news aggregation', 'Sentiment analysis', 'Trend detection', 'Custom alerts & reports']
         : ['تجميع الأخبار بالذكاء الاصطناعي', 'تحليل المشاعر', 'اكتشاف الاتجاهات', 'تنبيهات وتقارير مخصصة'],
@@ -54,10 +60,10 @@ export default function Products() {
       id: 3,
       name: t('products.asaad.name'),
       description: t('products.asaad.description'),
-      icon: ShieldCheck,
+      logo: assadLogo,
       color: '#00D4AA',
       tagline: language === 'en' ? 'Enterprise Security' : 'أمان المؤسسات',
-      url: 'https://example.com/asaad',
+      url: 'products/Asaad',
       features: language === 'en'
         ? ['Threat detection & response', 'Vulnerability management', 'Compliance monitoring', 'Security analytics']
         : ['اكتشاف التهديدات والاستجابة', 'إدارة الثغرات', 'مراقبة الامتثال', 'تحليلات الأمان'],
@@ -66,10 +72,10 @@ export default function Products() {
       id: 4,
       name: t('products.khella.name'),
       description: t('products.khella.description'),
-      icon: MessageSquare,
+      logo: khellaLogo,
       color: '#C9A227',
       tagline: language === 'en' ? 'Smart Collaboration' : 'التعاون الذكي',
-      url: 'https://example.com/khella',
+      url: '/products/Khella',
       features: language === 'en'
         ? ['Secure messaging', 'Video conferencing', 'File sharing & collaboration', 'AI meeting assistant']
         : ['المراسلة الآمنة', 'مؤتمرات الفيديو', 'مشاركة الملفات والتعاون', 'مساعد الاجتماعات بالذكاء الاصطناعي'],
@@ -78,10 +84,10 @@ export default function Products() {
       id: 5,
       name: t('products.4kast.name'),
       description: t('products.4kast.description'),
-      icon: TrendingUp,
+      logo: kastLogo ,
       color: '#00D4AA',
       tagline: language === 'en' ? 'Predictive Intelligence' : 'الذكاء التنبؤي',
-      url: 'https://example.com/4kast',
+      url: '/products/Forecast',
       features: language === 'en'
         ? ['Demand forecasting', 'Risk prediction', 'Market analysis', 'Scenario planning']
         : ['التنبؤ بالطلب', 'التنبؤ بالمخاطر', 'تحليل السوق', 'تخطيط السيناريوهات'],
@@ -90,10 +96,10 @@ export default function Products() {
       id: 6,
       name: t('products.hr360.name'),
       description: t('products.hr360.description'),
-      icon: Users,
+      logo: hr360Logo,
       color: '#C9A227',
       tagline: language === 'en' ? 'HR Management' : 'إدارة الموارد البشرية',
-      url: 'https://example.com/hr360',
+      url: 'products/Hr',
       features: language === 'en'
         ? ['Employee lifecycle management', 'Performance tracking', 'Payroll automation', 'Learning & development']
         : ['إدارة دورة حياة الموظف', 'تتبع الأداء', 'أتمتة الرواتب', 'التعلم والتطوير'],
@@ -172,9 +178,13 @@ export default function Products() {
                       <a href={product.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-16 h-16 rounded-xl flex items-center justify-center cursor-pointer shadow-md hover:shadow-xl transition-all duration-300 bg-[#32a7b5]/10 border-2 border-[#32a7b5]/30 hover:border-[#32a7b5] hover:scale-110"
+                        className="w-32 h-32 rounded-xl flex items-center justify-center cursor-pointer transition-all duration-300   hover:scale-110"
                       >
-                        <product.icon className="w-8 h-8 text-[#32a7b5]" />
+             <img
+  src={product.logo}
+  alt={product.name}
+  className="w-32 h-32 object-contain"
+/>
                       </a>
 
                       <div>
