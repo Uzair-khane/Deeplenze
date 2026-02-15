@@ -129,11 +129,11 @@ export default function Newshunt() {
           {language === "en" ? "Newshunt" : "نيوزهنت"}
         </h1>
 
-        <div className="container pt-12 mx-auto px-4 md:px-12">
+        <div className="container pt-12 mx-auto px-4 md:px-12 ">
           {newshuntSections.map((section, index) => (
             <div
               key={section.id}
-              className={`flex flex-col md:flex-row items-start gap-6 md:gap-12 mb-16 md:mb-32 
+              className={`flex flex-col md:flex-row items-start gap-6 md:gap-12 mb-20 md:mb-32 
           ${index % 2 === 1 ? "md:flex-row-reverse" : ""}`}
             >
               {/* Text */}

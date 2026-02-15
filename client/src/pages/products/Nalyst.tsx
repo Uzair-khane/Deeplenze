@@ -125,56 +125,55 @@ export default function Nalyst() {
       {/* little detaild section */}
 
 
-      <section className="relative py-20 px-6 bg-[#e2e8f0]">
-        <h1 className="text-4xl md:text-6xl font-bold text-[#314158] pl-12">
-          Nalyst
-        </h1>
+     <section className="relative py-10 px-4 md:px-6 bg-[#e2e8f0]">
+  <h1 className="text-4xl md:text-6xl font-bold text-[#314158] pl-5 md:pl-12">
+    Nalyst
+  </h1>
 
-        <div className="container pt-12 mx-auto px-12">
-          {nalystSections.map((section, index) => (
-            <div
-              key={section.id}
-              className={`flex flex-col md:flex-row items-start gap-12 mb-32 
+  <div className="container pt-12 mx-auto px-4 md:px-12">
+    {nalystSections.map((section, index) => (
+      <div
+        key={section.id}
+        className={`flex flex-col md:flex-row items-start gap-6 md:gap-12 mb-20 md:mb-32
           ${index % 2 === 1 ? "md:flex-row-reverse" : ""}`}
-            >
-              {/* Text */}
-              <motion.div
-                className={`md:w-1/2 order-1 ${language === "ar" ? "text-right" : "text-left"
-                  }`}
-                initial={{ opacity: 0, x: -80 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-                viewport={{ once: true }}
-              >
-                <p
-                  className={`text-xl text-black leading-relaxed ${language === "ar"
-                      ? "text-right font-arabic"
-                      : "text-justify font-body"
-                    }`}
-                >
-                  {section.text[language]}
-                </p>
-              </motion.div>
+      >
+        {/* Text */}
+        <motion.div
+          className={`md:w-1/2 order-1 ${language === "ar" ? "text-right" : "text-left"
+            }`}
+          initial={{ opacity: 0, x: -80 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
+          <p
+            className={`px-2 md:px-0 text-base md:text-lg text-black leading-normal md:leading-relaxed ${language === "ar"
+              ? "text-right font-arabic"
+              : "text-justify font-body"
+              }`}
+          >
+            {section.text[language]}
+          </p>
+        </motion.div>
 
-
-              {/* Image */}
-              <motion.div
-                className="md:w-1/2 order-2"
-                initial={{ opacity: 0, x: 80 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-                viewport={{ once: true }}
-              >
-                <img
-                  src={section.image}
-                  alt="Nalyst illustration"
-                  className="w-full bg-[#f5f5f5] h-[300px] md:h-[430px] lg:h-[400px] object-cover rounded-lg shadow-lg"
-                />
-              </motion.div>
-            </div>
-          ))}
-        </div>
-      </section>
+        {/* Image */}
+        <motion.div
+          className="md:w-1/2 order-2"
+          initial={{ opacity: 0, x: 80 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+          viewport={{ once: true }}
+        >
+          <img
+            src={section.image}
+            alt="Nalyst illustration"
+            className="w-full bg-[#f5f5f5] h-[300px] md:h-[430px] lg:h-[400px] object-cover rounded-lg shadow-lg"
+          />
+        </motion.div>
+      </div>
+    ))}
+  </div>
+</section>
 
 
 
