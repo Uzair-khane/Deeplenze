@@ -139,7 +139,7 @@ export default function Services() {
               <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 && dir === 'ltr' ? 'lg:flex-row-reverse' : ''}`}>
                 {/* Image */}
                 <motion.div
-                  className={`relative rounded-2xl overflow-hidden shadow-lg border border-border ${index % 2 === 1 ? 'lg:order-2' : ''}`}
+                  className={`relative rounded-2xl overflow-hidden shadow-lg  ${index % 2 === 1 ? 'lg:order-2' : ''}`}
                   initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
                   whileInView={{ opacity: 1, x: 0 }}
                  viewport={{ once: false }}

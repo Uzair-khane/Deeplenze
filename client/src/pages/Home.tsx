@@ -479,7 +479,7 @@ const productNames = [
             {services.map((service, index) => (
               <motion.div
                 key={index}
-                className="group relative rounded-sm overflow-hidden bg-white shadow-sm hover:shadow-md transition-all duration-300 border border-yellow-500/30"
+                className="group relative rounded-sm overflow-hidden bg-white shadow-sm hover:shadow-md "
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: false }}
@@ -489,7 +489,7 @@ const productNames = [
                 {/* Image with overlay */}
                 <div className="relative h-64 overflow-hidden">
 
-                  <div className="absolute inset-0  group-hover:bg-transparent transition-colors duration-500 z-10" />
+                  <div className="absolute inset-0   z-10" />
                   <img
                     src={service.image}
                     alt={service.title}
@@ -570,7 +570,7 @@ const productNames = [
       {products.map((product, index) => (
         <Link key={index} href={product.url}>
           <motion.div
-            className={`group relative p-8 rounded-2xl bg-white border border-yellow-500/30 shadow-sm cursor-pointer overflow-hidden ${
+            className={`group relative p-8 rounded-2xl bg-white  shadow-sm cursor-pointer overflow-hidden ${
               dir === "rtl" ? "text-right" : ""
             }`}
             initial={{ opacity: 0, y: 40 }}
@@ -581,10 +581,10 @@ const productNames = [
               duration: 0.6,
               ease: "easeOut",
             }}
-            whileHover={{
-              y: -10,
-              scale: 1.02,
-            }}
+            // whileHover={{
+            //   y: -10,
+            //   scale: 1.02,
+            // }}
           >
 
             {/* Hover Shine Effect */}
@@ -625,7 +625,7 @@ const productNames = [
             </p>
 
             {/* Glow Border on Hover */}
-            <div className="absolute inset-0 rounded-2xl border border-transparent group-hover:border-[#32a7b5]/40 transition-colors duration-500" />
+            <div className="absolute inset-0 rounded-2xl  duration-500" />
 
           </motion.div>
         </Link>
@@ -777,7 +777,7 @@ const productNames = [
             {industries.map((industry, index) => (
               <motion.div
                 key={index}
-                className={`group p-8 rounded-2xl bg-white border border-yellow-500/30 shadow-sm hover:shadow-xl transition-all duration-300 
+                className={`group p-8 rounded-2xl bg-white shadow-sm hover:shadow-xl transition-all duration-300 
 flex flex-col items-center text-center h-full
 ${dir === "rtl" ? "font-arabic" : ""}`}
                 initial={{ opacity: 0, y: 30 }}
