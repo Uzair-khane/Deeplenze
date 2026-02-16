@@ -26,7 +26,7 @@ import {
 import AI_IMG from "@/assets/images/AI.jpeg";
 import CYBER_IMG from "@/assets/images/CyberSecurity.jpeg";
 import DIGITAL_IMG  from "@/assets/images/DigitalTransformation.jpeg";
-import AWS  from "@/assets/images/AWSCloudManagement.jpg.jpeg";
+import AWS  from "@/assets/images/AWSCloudManagement.jpeg";
 
 export default function Services() {
   const { t, dir, language } = useLanguage();

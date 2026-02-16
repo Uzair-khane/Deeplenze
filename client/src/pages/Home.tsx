@@ -41,7 +41,7 @@ import assadLogo from "@/assets/images/assadLogo.svg";
 import AI_IMG from "@/assets/images/AI.jpeg";
 import CYBER_IMG from "@/assets/images/CyberSecurity.jpeg";
 import DIGITAL_IMG  from "@/assets/images/DigitalTransformation.jpeg";
-import AWS  from "@/assets/images/AWSCloudManagement.jpg.jpeg";
+import AWS  from "@/assets/images/AWSCloudManagement.jpeg";
 const galleryImages = [
   AI_IMG,
   CYBER_IMG,
