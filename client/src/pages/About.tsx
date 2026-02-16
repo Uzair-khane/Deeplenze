@@ -112,7 +112,7 @@ export default function About() {
               className={`max-w-3xl mx-auto text-center ${dir === 'rtl' ? 'font-arabic' : ''}`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+             viewport={{ once: false }}
             >
               <h2 className={`text-3xl md:text-4xl font-bold text-slate-800 mb-6 ${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}>
                 {language === 'en' ? 'Our Story' : 'قصتنا'}
@@ -145,7 +145,7 @@ export default function About() {
               className={`p-8 rounded-md bg-gradient-to-br from-primary/10 to-transparent border border-primary/20 ${dir === 'rtl' ? 'text-right' : ''}`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+             viewport={{ once: false }}
             >
               <div className={`flex items-center gap-4 mb-6 ${dir === 'rtl' ? 'flex-row-reverse' : ''}`}>
                 <div className="w-14 h-14 rounded-xl bg-primary/20 border border-primary/30 flex items-center justify-center">
@@ -165,7 +165,7 @@ export default function About() {
               className={`p-8 rounded-md bg-gradient-to-br from-primary/10 to-transparent border border-primary/20  ${dir === 'rtl' ? 'text-right' : ''}`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+             viewport={{ once: false }}
               transition={{ delay: 0.1 }}
             >
               <div className={`flex items-center gap-4 mb-6 ${dir === 'rtl' ? 'flex-row-reverse' : ''}`}>
@@ -191,7 +191,7 @@ export default function About() {
             className={`text-center mb-16 ${dir === 'rtl' ? 'font-arabic' : ''}`}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+           viewport={{ once: false }}
           >
             <span className="inline-block px-4 py-2 rounded-full bg-[#32A7B51A]  text-[#32A7B5] text-sm font-medium mb-4">
               {language === 'en' ? 'What Drives Us' : 'ما يحركنا'}
@@ -208,7 +208,7 @@ export default function About() {
                 className={`group p-6 rounded-2xl glass hover:border-primary/30 transition-all duration-300 ${dir === 'rtl' ? 'text-right' : ''}`}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+               viewport={{ once: false }}
                 transition={{ delay: index * 0.1 }}
                 whileHover={{ y: -5 }}
               >
@@ -236,7 +236,7 @@ export default function About() {
             className={`max-w-4xl mx-auto text-center ${dir === 'rtl' ? 'font-arabic' : ''}`}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
           >
             <div className="w-20 h-20 rounded-2xl bg-[#32A7B51A] flex items-center justify-center mx-auto mb-8 ">
               <Globe2 className="w-10 h-10 text-[#32A7B5]" />

@@ -4,6 +4,7 @@
  */
 
 import { Link } from "wouter";
+import { useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -38,9 +39,33 @@ import hr360Logo from "@/assets/images/Hr360Logo.svg";
 import khellaLogo from "@/assets/images/khellaLogo.svg";
 import assadLogo from "@/assets/images/assadLogo.svg";
 import AI_IMG from "@/assets/images/AI.jpeg";
-import CYBER_IMG from "@/assets/images/Cybersecurity.jpeg";
-import DIGITAL_IMG  from "@/assets/images/DigitalTransformation.webp";
-import AWS  from "@/assets/images/AWSCloudManagement.webp";
+import CYBER_IMG from "@/assets/images/CyberSecurity.jpeg";
+import DIGITAL_IMG  from "@/assets/images/DigitalTransformation.jpeg";
+import AWS  from "@/assets/images/AWSCloudManagement.jpg.jpeg";
+const galleryImages = [
+  AI_IMG,
+  CYBER_IMG,
+  DIGITAL_IMG,
+  AWS,
+  AI_IMG,
+  CYBER_IMG,
+  DIGITAL_IMG,
+  AWS,
+  AI_IMG,
+  CYBER_IMG,
+  DIGITAL_IMG,
+  AWS,
+ 
+];
+  const spans = [
+    "col-span-6 md:col-span-4",
+    "col-span-6 md:col-span-4",
+    "col-span-12 md:col-span-4",
+    "col-span-6 md:col-span-3",
+    "col-span-6 md:col-span-6",
+    "col-span-12 md:col-span-3",
+  ];
+
 
 const SMART_IMG =
   "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030867079/zxhLFuUlDPKEooqo.jpg";
@@ -49,7 +74,7 @@ export default function Home() {
   const { t, dir, language } = useLanguage();
   const ArrowIcon = dir === "rtl" ? ArrowLeft : ArrowRight;
   const ChevronIcon = dir === "rtl" ? ChevronLeft : ChevronRight;
-
+const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const services = [
     {
       icon: Brain,
@@ -325,7 +350,7 @@ const productNames = [
 
 
   <div className="container mx-auto px-4 relative z-10 pt-32 pb-20">
-    <div className="max-w-4xl mx-auto text-center">
+    <div className=" flex flex-col items-center text-center max-w-4xl mx-auto text-center">
 
       {/* Badge */}
       <motion.div
@@ -345,11 +370,11 @@ const productNames = [
       </motion.div>
 
       {/* Typing Title */}
-      <motion.h1
-        className={`text-5xl md:text-7xl lg:text-8xl font-bold leading-tight mb-6 ${
-          dir === "rtl" ? "font-arabic" : "font-display"
-        }`}
-      >
+    <motion.h1
+  className={`text-3xl sm:text-4xl md:text-6xl text-center lg:text-7xl xl:text-8xl font-bold leading-tight mb-6 ${
+    dir === "rtl" ? "font-arabic" : "font-display"
+  }`}
+>
         <div className="block text-black">
           <TypingText text={t("hero.title")} delayOffset={0.5} />
         </div>
@@ -432,7 +457,7 @@ const productNames = [
             className={`text-center mb-16 max-w-3xl mx-auto ${dir === "rtl" ? "font-arabic" : ""}`}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
           >
             <span className="inline-block px-4 py-2 rounded-full bg-[#32A7B51A] text-[#32a7b5] text-sm font-bold mb-4 uppercase tracking-wider">
               {language === "en" ? "What We Do" : "ما نقدمه"}
@@ -450,20 +475,21 @@ const productNames = [
           </motion.div>
 
           {/* Services Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {services.map((service, index) => (
               <motion.div
                 key={index}
-                className="group relative rounded-2xl overflow-hidden bg-white shadow-md hover:shadow-xl transition-all duration-300 border border-yellow-500/30"
+                className="group relative rounded-sm overflow-hidden bg-white shadow-sm hover:shadow-md transition-all duration-300 border border-yellow-500/30"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: false }}
                 transition={{ delay: index * 0.1 }}
                 whileHover={{ y: -5 }}
               >
                 {/* Image with overlay */}
                 <div className="relative h-64 overflow-hidden">
-                  <div className="absolute inset-0 bg-yellow-500/10 group-hover:bg-transparent transition-colors duration-500 z-10" />
+
+                  <div className="absolute inset-0  group-hover:bg-transparent transition-colors duration-500 z-10" />
                   <img
                     src={service.image}
                     alt={service.title}
@@ -515,7 +541,7 @@ const productNames = [
       }`}
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
+      viewport={{ once: false}}
       transition={{ duration: 0.7 }}
     >
       <span className="inline-block px-4 py-2 rounded-full bg-[#32A7B51A] text-[#32a7b5] text-sm font-bold mb-4 uppercase tracking-wider">
@@ -549,7 +575,7 @@ const productNames = [
             }`}
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             transition={{
               delay: index * 0.12,
               duration: 0.6,
@@ -611,7 +637,7 @@ const productNames = [
       className="text-center mt-16"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
-      viewport={{ once: true }}
+      viewport={{ once: false }}
       transition={{ duration: 0.7 }}
     >
       <Link href="/products">
@@ -631,6 +657,96 @@ const productNames = [
 </section>
 
 
+  <section className="py-24 bg-slate-100">
+      {/* Section Heading */}
+      <motion.div
+        className={`text-center mb-16 max-w-3xl mx-auto ${
+          dir === "rtl" ? "font-arabic" : ""
+        }`}
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false }}
+      >
+        <span className="inline-block px-4 py-2 rounded-full bg-[#32A7B51A] text-[#32a7b5] text-sm font-bold mb-4 uppercase tracking-wider">
+          {language === "en" ? "Gallery" : "المعرض"}
+        </span>
+
+        <h2
+          className={`text-4xl md:text-5xl font-bold text-slate-800 mb-6 ${
+            dir === "rtl" ? "font-arabic" : "font-display"
+          }`}
+        >
+          {language === "en" ? "Our Products Gallery" : "معرض منتجاتنا"}
+        </h2>
+
+        <p
+          className={`text-slate-700 text-lg ${
+            dir === "rtl" ? "font-arabic" : "font-body"
+          }`}
+        >
+          {language === "en"
+            ? "Explore visuals of our innovative solutions and digital transformation services."
+            : "استكشف صور حلولنا المبتكرة وخدمات التحول الرقمي."}
+        </p>
+      </motion.div>
+
+      {/* Gallery Grid */}
+      <div className="grid grid-cols-12 gap-3 mx-8 md:mx-12 lg:mx-16">
+        {galleryImages.map((img, index) => (
+          <motion.div
+            key={index}
+            className={`relative group cursor-pointer overflow-hidden ${
+              spans[index % spans.length]
+            }`}
+            initial={{ opacity: 0, y: 40, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.6, delay: index * 0.05 }}
+            whileHover={{ scale: 1.02 }}
+            onClick={() => setSelectedImage(img)}
+          >
+            <img
+              src={img}
+              alt={`Gallery ${index}`}
+              className="w-full h-56 object-cover transition-transform duration-700 group-hover:scale-110"
+            />
+
+            {/* Hover Overlay */}
+            <motion.div
+              className="absolute inset-0 bg-[#32a7b5]/70 opacity-0 group-hover:opacity-100 flex items-center justify-center"
+              transition={{ duration: 0.3 }}
+            >
+              <span className="text-white font-bold text-lg">
+                {language === "en" ? "View Image" : "عرض الصورة"}
+              </span>
+            </motion.div>
+          </motion.div>
+        ))}
+      </div>
+
+      {/* Lightbox / Modal */}
+      {selectedImage && (
+        <div className="fixed inset-0 bg-gray-50 bg-opacity-70 flex items-center justify-center z-50">
+          <div className="relative max-w-3xl mx-4 md:mx-0">
+            <img
+              src={selectedImage}
+              alt="Selected"
+              className="w-full max-h-[80vh] object-contain rounded"
+            />
+            <button
+              onClick={() => setSelectedImage(null)}
+              className="absolute top-2 right-2 text-white text-2xl font-bold p-2 hover:text-gray-300"
+            >
+              &times;
+            </button>
+          </div>
+        </div>
+      )}
+    </section>
+
+
+
+
       {/* Industries Section */}
       <section className="py-24 relative bg-white">
         <div className="container mx-auto px-4">
@@ -639,7 +755,7 @@ const productNames = [
             className={`text-center mb-16 max-w-3xl mx-auto ${dir === "rtl" ? "font-arabic" : ""}`}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false}}
           >
             <span className="inline-block px-4 py-2 rounded-full bg-[#32A7B51A] text-[#32a7b5] text-sm font-bold mb-4 uppercase tracking-wider">
               {language === "en" ? "Sectors" : "القطاعات"}
@@ -666,7 +782,7 @@ flex flex-col items-center text-center h-full
 ${dir === "rtl" ? "font-arabic" : ""}`}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: false }}
                 transition={{ delay: index * 0.1 }}
                 whileHover={{ y: -8 }}
               >
@@ -697,7 +813,7 @@ ${dir === "rtl" ? "font-arabic" : ""}`}
             className="text-center mt-16"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
+            viewport={{ once: false}}
           >
             <Link href="/industries">
               <motion.button
@@ -721,7 +837,7 @@ ${dir === "rtl" ? "font-arabic" : ""}`}
             className={`text-center max-w-4xl mx-auto ${dir === "rtl" ? "font-arabic" : ""}`}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+           viewport={{ once: false }}
           >
             {/* Section Heading */}
             <h2

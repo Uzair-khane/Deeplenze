@@ -5,6 +5,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { Mail, Phone, MapPin, Linkedin, Twitter } from 'lucide-react';
 import { motion } from 'framer-motion';
 import logo from '@/assets/images/logo.svg';
+import pillersLogo from '@/assets/images/3pillers.svg';
 
 export default function Footer() {
   const { t, dir, language } = useLanguage();
@@ -33,12 +34,13 @@ export default function Footer() {
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl opacity-50" />
 
       <div className="container mx-auto px-4 relative py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
           {/* Brand Column */}
           <div className={dir === 'rtl' ? 'text-right space-y-6' : 'space-y-6'}>
-            <Link href="/" className="ml-0 pl-0">
+         <div className="pillers ">
+             <Link href="/" className="ml-0 pl-0">
               <motion.div
-                className="flex items-center gap-3 cursor-pointer ml-0 pl-0"
+                className="flex items-center gap-2 cursor-pointer ml-0 pl-0"
               >
                 <img
                   src={logo}
@@ -47,7 +49,8 @@ export default function Footer() {
                 />
               </motion.div>
             </Link>
-
+         
+         </div>
             <p className={`text-slate-600 text-sm leading-relaxed ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
               {t('footer.description')}
             </p>
@@ -134,11 +137,24 @@ export default function Footer() {
                 </span>
               </li>
             </ul>
+            
           </div>
+           {/* 3pillers logo  */}
+             <Link href="/" className="">
+              <motion.div
+                className="flex items-center gap-1 cursor-pointer "
+              >
+                <img
+                  src={pillersLogo}
+                  alt="Logo"
+                  className="w-32 h-32 "
+                />
+              </motion.div>
+            </Link>
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-slate-200">
+        <div className="mt-3 pt-3 border-t border-slate-200">
           <div className={`flex flex-col md:flex-row justify-between items-center gap-4 ${dir === 'rtl' ? 'md:flex-row-reverse' : ''}`}>
             <p className={`text-slate-600 text-sm ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
               {t('footer.copyright')}

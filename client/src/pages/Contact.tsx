@@ -142,7 +142,7 @@ export default function Contact() {
               className={`lg:col-span-1 space-y-6 ${dir === 'rtl' ? 'text-right' : ''}`}
               initial={{ opacity: 0, x: dir === 'rtl' ? 30 : -30 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+             viewport={{ once: false }}
             >
               <div className="mb-8">
                 <h2 className={`text-2xl font-bold text-[#32A7B5] mb-4 ${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}>
@@ -162,7 +162,7 @@ export default function Contact() {
                   className={`p-5 rounded-xl bg-white  shadow-sm ${dir === 'rtl' ? 'text-right' : ''}`}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
+                 viewport={{ once: false }}
                   transition={{ delay: index * 0.1 }}
                 >
                   <div className={`flex items-start gap-4 ${dir === 'rtl' ? 'flex-row-reverse' : ''}`}>
@@ -189,7 +189,7 @@ export default function Contact() {
               className="lg:col-span-2"
               initial={{ opacity: 0, x: dir === 'rtl' ? -30 : 30 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+             viewport={{ once: false }}
             >
               <div className={`p-8 rounded-2xl bg-white  shadow-md ${dir === 'rtl' ? 'text-right' : ''}`}>
                 <div className={`flex items-center gap-3 mb-8 ${dir === 'rtl' ? 'flex-row-reverse' : ''}`}>
@@ -340,7 +340,7 @@ export default function Contact() {
             className={`text-center mb-12 ${dir === 'rtl' ? 'font-arabic' : ''}`}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+           viewport={{ once: false }}
           >
             <h2 className={`text-3xl font-bold text-[#314158] mb-4 ${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}>
               {language === 'en' ? 'Our Location' : 'موقعنا'}
@@ -354,7 +354,7 @@ export default function Contact() {
             className="rounded-md overflow-hidden h-[400px] relative bg-slate-100 "
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+           viewport={{ once: false }}
           >
             <div className="absolute inset-0 bg-background/50 flex items-center justify-center">
               <div className="text-center">

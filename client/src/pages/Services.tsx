@@ -24,9 +24,9 @@ import {
   Server
 } from 'lucide-react';
 import AI_IMG from "@/assets/images/AI.jpeg";
-import CYBER_IMG from "@/assets/images/Cybersecurity.jpeg";
-import DIGITAL_IMG  from "@/assets/images/DigitalTransformation.webp";
-import AWS  from "@/assets/images/AWSCloudManagement.webp";
+import CYBER_IMG from "@/assets/images/CyberSecurity.jpeg";
+import DIGITAL_IMG  from "@/assets/images/DigitalTransformation.jpeg";
+import AWS  from "@/assets/images/AWSCloudManagement.jpg.jpeg";
 
 export default function Services() {
   const { t, dir, language } = useLanguage();
@@ -142,7 +142,7 @@ export default function Services() {
                   className={`relative rounded-2xl overflow-hidden shadow-lg border border-border ${index % 2 === 1 ? 'lg:order-2' : ''}`}
                   initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
+                 viewport={{ once: false }}
                 >
                   <img
                     src={service.image}
@@ -166,7 +166,7 @@ export default function Services() {
                   className={`${index % 2 === 1 ? 'lg:order-1' : ''} ${dir === 'rtl' ? 'text-right' : ''}`}
                   initial={{ opacity: 0, x: index % 2 === 0 ? 30 : -30 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
+                 viewport={{ once: false }}
                 >
                   <h2 className={`text-3xl md:text-4xl font-bold text-[#314158] mb-4 ${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}>
                     {service.title}
@@ -220,7 +220,7 @@ export default function Services() {
             className={`text-center max-w-3xl mx-auto ${dir === 'rtl' ? 'font-arabic' : ''}`}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+           viewport={{ once: false }}
           >
             <h2 className={`text-3xl md:text-4xl font-bold text-[#314158] mb-6 ${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}>
               {language === 'en' ? 'Need a Custom Solution?' : 'هل تحتاج إلى حل مخصص؟'}
