@@ -39,7 +39,7 @@ import hr360Logo from "@/assets/images/Hr360Logo.svg";
 import khellaLogo from "@/assets/images/khellaLogo.svg";
 import assadLogo from "@/assets/images/assadLogo.svg";
 import AI_IMG from "@/assets/images/AI.jpeg";
-import CYBER_IMG from "@/assets/images/CyberSecurity.jpeg";
+import CYBER_IMG from "@/assets/images/CyberSecurity.png";
 import DIGITAL_IMG  from "@/assets/images/DigitalTransformation.jpeg";
 import AWS  from "@/assets/images/AWSCloudManagement.jpeg";
 const galleryImages = [
