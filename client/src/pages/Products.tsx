@@ -175,17 +175,17 @@ export default function Products() {
 
                       {/* logo is clickable */}
 
-                      <a href={product.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-32 h-32 rounded-xl flex items-center justify-center cursor-pointer transition-all duration-300   hover:scale-110"
-                      >
-             <img
-  src={product.logo}
-  alt={product.name}
-  className="w-32 h-32 object-contain"
-/>
-                      </a>
+                    <Link
+  href={product.url}
+  className="w-32 h-32 rounded-xl flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-110"
+>
+  <img
+    src={product.logo}
+    alt={product.name}
+    className="w-32 h-32 object-contain"
+  />
+</Link>
+
 
                       <div>
                         <h3 className={`text-2xl font-bold text-black mb-1 ${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}>
