@@ -40,8 +40,8 @@ import khellaLogo from "@/assets/images/khellaLogo.svg";
 import assadLogo from "@/assets/images/assadLogo.svg";
 import AI_IMG from "@/assets/images/AI.png";
 import CYBER_IMG from "@/assets/images/CyberSecurity.png";
-import DIGITAL_IMG  from "@/assets/images/DigitalTransformation.jpeg";
-import AWS  from "@/assets/images/AWSCloudManagement.jpeg";
+import DIGITAL_IMG  from "@/assets/images/DigitalTransformation.png";
+import AWS  from "@/assets/images/AWSCloudManagement.png";
 const galleryImages = [
   AI_IMG,
   CYBER_IMG,

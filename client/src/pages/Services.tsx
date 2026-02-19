@@ -25,8 +25,8 @@ import {
 } from 'lucide-react';
 import AI_IMG from "@/assets/images/AI.png";
 import CYBER_IMG from "@/assets/images/CyberSecurity.png";
-import DIGITAL_IMG  from "@/assets/images/DigitalTransformation.jpeg";
-import AWS  from "@/assets/images/AWSCloudManagement.jpeg";
+import DIGITAL_IMG  from "@/assets/images/AWSCloudManagement.png";
+import AWS  from "@/assets/images/DigitalTransformation.png";
 
 export default function Services() {
   const { t, dir, language } = useLanguage();
