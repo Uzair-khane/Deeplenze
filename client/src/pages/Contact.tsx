@@ -116,12 +116,14 @@ export default function Contact() {
     <img
       src={HeroImage} // Replace with your Contact hero image
       alt="Contact Background"
-      className="w-full h-full object-cover opacity-87"
+      className="w-full h-full object-cover"
     />
+        {/* Blue semi-transparent dark overlay */}
+    <div className="absolute inset-0 bg-blue-900/40"></div>
   </div>
 
   {/* Optional very light overlay for readability */}
-  <div className="absolute inset-0 bg-black/20"></div>
+  <div className="absolute inset-0 "></div>
 
   {/* Decorative Gradient / Shapes */}
   <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent" />

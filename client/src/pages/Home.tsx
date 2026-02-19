@@ -338,19 +338,20 @@ const productNames = [
     <img
       src={HeroImage}
       alt="Hero Background"
-      className="w-full h-full object-cover opacity-86"
+      className="w-full h-full object-cover"
     />
+    {/* Blue semi-transparent dark overlay */}
+    <div className="absolute inset-0 bg-blue-900/40"></div>
   </motion.div>
-<FloatingProducts
-  products={productNames}
-  color="#1c7f87"
-  repeat={2}
 
-/>
-
+  <FloatingProducts
+    products={productNames}
+    color="#1c7f87"
+    repeat={2}
+  />
 
   <div className="container mx-auto px-4 relative z-10 pt-32 pb-20">
-    <div className=" flex flex-col items-center text-center max-w-4xl mx-auto text-center">
+    <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
 
       {/* Badge */}
       <motion.div
@@ -359,7 +360,7 @@ const productNames = [
         transition={{ duration: 0.8 }}
       >
         <span
-          className={`inline-block px-4 py-2 rounded-full bg-[#32a7b5]/10 border border-[#32a7b5]/30 text-[#32a7b5] text-sm font-bold mb-6 tracking-wide uppercase ${
+          className={`inline-block px-4 py-2 rounded-full bg-[#32a7b5]/20 border border-[#32a7b5]/30 text-[#32a7b5] text-sm font-bold mb-6 tracking-wide uppercase ${
             dir === "rtl" ? "font-arabic" : "font-body"
           }`}
         >
@@ -370,16 +371,16 @@ const productNames = [
       </motion.div>
 
       {/* Typing Title */}
-    <motion.h1
-  className={`text-3xl sm:text-4xl md:text-6xl text-center lg:text-7xl xl:text-8xl font-bold leading-tight mb-6 ${
-    dir === "rtl" ? "font-arabic" : "font-display"
-  }`}
->
+      <motion.h1
+        className={`text-3xl sm:text-4xl md:text-6xl text-center lg:text-7xl xl:text-8xl font-bold leading-tight mb-6 ${
+          dir === "rtl" ? "font-arabic" : "font-display"
+        }`}
+      >
         <div className="block text-white">
           <TypingText text={t("hero.title")} delayOffset={0.5} />
         </div>
 
-        <div className="text-4xl md:text-5xl lg:text-6xl text-white mt-4">
+        <div className="text-4xl md:text-5xl lg:text-6xl text-[#32a7b5] mt-4">
           <TypingText
             text={t("hero.subtitle")}
             delayOffset={0.5 + t("hero.title").length * 0.035}
@@ -389,7 +390,7 @@ const productNames = [
 
       {/* Description */}
       <motion.p
-        className={`text-lg md:text-xl text-white mb-12 max-w-2xl mx-auto leading-relaxed ${
+        className={`text-lg md:text-xl text-white/90 mb-12 max-w-2xl mx-auto leading-relaxed ${
           dir === "rtl" ? "font-arabic" : "font-body"
         }`}
         initial={{ opacity: 0, y: 40 }}
@@ -447,6 +448,7 @@ const productNames = [
     </div>
   </div>
 </section>
+
 
 
       {/* Services Section */}

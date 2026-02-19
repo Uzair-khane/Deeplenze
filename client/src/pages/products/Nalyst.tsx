@@ -46,8 +46,10 @@ export default function Nalyst() {
           <img
             src={HeroImage}
             alt="Hero Background"
-            className="w-full h-full object-cover opacity-87"
+            className="w-full h-full object-cover "
           />
+              {/* Blue semi-transparent dark overlay */}
+    <div className="absolute inset-0 bg-blue-900/40"></div>
           {/* Light Overlay */}
           <div className="absolute inset-0" />
         </div>
