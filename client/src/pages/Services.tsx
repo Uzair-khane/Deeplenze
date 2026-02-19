@@ -2,7 +2,7 @@
  * Four service verticals with detailed information
  * Colors: Midnight Blue, Digital Gold, Electric Teal
  */
-import HeroImage from "@/assets/images/hero.png";
+import HeroImage from "@/assets/images/herosection.png";
 import { useLanguage } from '@/contexts/LanguageContext';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -23,7 +23,7 @@ import {
   Cloud,
   Server
 } from 'lucide-react';
-import AI_IMG from "@/assets/images/AI.jpeg";
+import AI_IMG from "@/assets/images/AI.png";
 import CYBER_IMG from "@/assets/images/CyberSecurity.png";
 import DIGITAL_IMG  from "@/assets/images/DigitalTransformation.jpeg";
 import AWS  from "@/assets/images/AWSCloudManagement.jpeg";
@@ -98,10 +98,10 @@ export default function Services() {
           <img
             src={HeroImage}
             alt="Services Background"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover opacity-87"
           />
           {/* Very light dark overlay */}
-          <div className="absolute inset-0 " />
+          <div className="" />
         </div>
 
         <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent" />
@@ -118,10 +118,10 @@ export default function Services() {
             <span className={`inline-block px-4 py-2 rounded-full bg-[#32a7b5]/10 border border-[#32a7b5]/30 text-[#32a7b5] text-sm font-bold mb-6 tracking-wide uppercase ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
               {language === 'en' ? 'Our Expertise' : 'خبراتنا'}
             </span>
-            <h1 className={`text-4xl md:text-6xl font-bold text-[#314158] mb-6 ${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}>
+            <h1 className={`text-4xl md:text-6xl font-bold text-white mb-6 ${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}>
               {t('services.title')}
             </h1>
-            <p className={`text-xl text-black leading-relaxed ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
+            <p className={`text-xl text-white leading-relaxed ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
               {t('services.subtitle')}
             </p>
           </motion.div>
@@ -147,7 +147,7 @@ export default function Services() {
                   <img
                     src={service.image}
                     alt={service.title}
-                    className="w-full h-[400px] object-cover"
+                    className="w-full h-[400px] object-cover opacity-87"
                   />
                   {/* Subtle gradient for depth, but not too dark */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
@@ -168,7 +168,7 @@ export default function Services() {
                   whileInView={{ opacity: 1, x: 0 }}
                  viewport={{ once: false }}
                 >
-                  <h2 className={`text-3xl md:text-4xl font-bold text-[#314158] mb-4 ${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}>
+                  <h2 className={`text-3xl md:text-4xl font-bold text-white mb-4 ${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}>
                     {service.title}
                   </h2>
                   <p className={`text-muted-foreground text-lg mb-8 leading-relaxed ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>

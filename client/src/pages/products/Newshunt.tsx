@@ -1,7 +1,7 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import HeroImage from "@/assets/images/hero.png";
+import HeroImage from "@/assets/images/herosection.png";
 import { motion } from "framer-motion";
 import { ArrowRight, ArrowLeft } from "lucide-react";
 
@@ -81,7 +81,7 @@ export default function Newshunt() {
 
             {/* Title */}
             <h1
-              className={`text-4xl md:text-6xl font-bold text-[#314158] mb-6 ${dir === "rtl" ? "font-arabic" : "font-display"
+              className={`text-4xl md:text-6xl font-bold text-white mb-6 ${dir === "rtl" ? "font-arabic" : "font-display"
                 }`}
             >
               {language === "en"
@@ -91,7 +91,7 @@ export default function Newshunt() {
 
             {/* Description */}
             <p
-              className={`text-xl text-black leading-relaxed mb-10 ${dir === "rtl" ? "font-arabic" : "font-body"
+              className={`text-xl text-white leading-relaxed mb-10 ${dir === "rtl" ? "font-arabic" : "font-body"
                 }`}
             >
               {language === "en"

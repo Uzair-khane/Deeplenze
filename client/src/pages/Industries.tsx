@@ -3,7 +3,7 @@
  * Colors: Midnight Blue, Digital Gold, Electric Teal
  */
 
-import HeroImage from "@/assets/images/hero.png";
+import HeroImage from "@/assets/images/herosection.png";
 import { useLanguage } from '@/contexts/LanguageContext';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -149,7 +149,7 @@ export default function Industries() {
           <img
             src={HeroImage}
             alt="Industries Background"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover opacity-87"
           />
           {/* Very light dark overlay */}
           <div className="absolute inset-0 " />
@@ -169,10 +169,10 @@ export default function Industries() {
             <span className={`inline-block px-4 py-2 rounded-full bg-[#32a7b5]/10 border border-[#32a7b5]/30 text-[#32a7b5] text-sm font-bold mb-6 tracking-wide uppercase ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
               {language === 'en' ? 'Sectors We Serve' : 'القطاعات التي نخدمها'}
             </span>
-            <h1 className={`text-4xl md:text-6xl font-bold text-[#1D293D] mb-6 ${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}>
+            <h1 className={`text-4xl md:text-6xl font-bold text-white mb-6 ${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}>
               {t('industries.title')}
             </h1>
-            <p className={`text-xl text-black leading-relaxed ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
+            <p className={`text-xl text-white leading-relaxed ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
               {t('industries.subtitle')}
             </p>
           </motion.div>
@@ -189,7 +189,7 @@ export default function Industries() {
                 className={`p-8 rounded-2xl border-2 border-[#32a7b5]/20 hover:border-[#32a7b5] shadow-lg hover:shadow-2xl transition-all duration-300 bg-white`}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+               viewport={{ once: false }}
                 transition={{ delay: index * 0.1 }}
               >
                 <div className={`grid grid-cols-1 lg:grid-cols-3 gap-8 ${dir === 'rtl' ? 'text-right' : ''}`}>
@@ -260,7 +260,7 @@ export default function Industries() {
             className={`text-center max-w-3xl mx-auto ${dir === 'rtl' ? 'font-arabic' : ''}`}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+           viewport={{ once: false }}
           >
             <h2 className={`text-3xl md:text-4xl font-bold text-[#314158] mb-6 ${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}>
               {language === 'en' ? 'Don\'t See Your Industry?' : 'لا ترى قطاعك؟'}

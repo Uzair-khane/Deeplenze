@@ -39,12 +39,13 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
-  ? 'py-3 glass shadow-sm'
-  : 'py-5 bg-transparent'
-}`}
+   className={`fixed top-0 left-0 right-0 !border-0 z-50 transition-all duration-500 ${
+    isScrolled
+      ? 'py-3 glass shadow-sm bg-[#0f1f2a] text-white' 
+      : 'py- bg-transparent text-white'               
+  } `}
     >
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-2 py-2">
         <nav className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/">
@@ -77,8 +78,8 @@ export default function Header() {
       <motion.span
         className={`relative text-sm font-medium transition-colors cursor-pointer ${
           location === link.href
-            ? 'text-[#32a7b5]'
-            : 'text-black hover:text-black'
+            ? 'text-white'
+            : 'text-white hover:text-[#32a7b5]'
         } ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}
         whileHover={{ y: -2 }}
         transition={{ type: 'spring', stiffness: 400 }}
@@ -86,7 +87,7 @@ export default function Header() {
         {link.label}
         {location === link.href && (
           <motion.div
-            className="absolute -bottom-1 left-1 right-1 h-0.5 bg-[#32a7b5]"
+            className="absolute -bottom-1 left-1 right-1 h-0.5 bg-[#fdffff]"
             layoutId="activeNav"
           />
         )}
@@ -99,7 +100,7 @@ export default function Header() {
           <div className="hidden lg:flex items-center gap-4">
             <button
               onClick={toggleLanguage}
-              className="flex items-center gap-2 px-3 py-2 text-black"
+              className="flex items-center gap-2 px-3 py-2 text-white"
             >
               <Globe className="w-4 h-4" />
               <span className={`text-sm font-medium ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
@@ -109,7 +110,7 @@ export default function Header() {
 
             <Link href="/contact">
               <button
-                className="px-5 py-2.5 bg-transparent text-black font-semibold text-sm rounded-lg border border-black"
+                className="px-5 py-2.5 bg-transparent text-white font-semibold text-sm rounded-lg border border-[#32a7b5]"
               >
                 <span className={dir === 'rtl' ? 'font-arabic' : 'font-body'}>
                   {t('nav.contact')}
@@ -120,10 +121,10 @@ export default function Header() {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="flex lg:hidden items-center gap-3">
+          <div className="flex lg:hidden items-center gap-2 pl-10">
             <motion.button
               onClick={toggleLanguage}
-              className="p-2 rounded-lg border border-[#32a7b5] text-[#32a7b5]"
+              className="p-2 rounded-lg border border-white text-white"
               whileTap={{ scale: 0.95 }}
             >
               <Globe className="w-5 h-5" />
@@ -133,7 +134,7 @@ export default function Header() {
               className="p-2 text-foreground"
               whileTap={{ scale: 0.95 }}
             >
-              {isMobileMenuOpen ? <X className="w-8 h-8" /> : <Menu className="w-10 h-10 text-slate-600" />}
+              {isMobileMenuOpen ? <X className="w-8 h-8" /> : <Menu className="w-10 h-10 text-white" />}
             </motion.button>
           </div>
         </nav>
@@ -161,7 +162,7 @@ export default function Header() {
                       onClick={() => setIsMobileMenuOpen(false)}
                       className={`block py-3 px-4 rounded-lg transition-colors cursor-pointer ${location === link.href
                         ? 'bg-primary/10 text-primary'
-                        : 'text-slate-700 hover:bg-gray-200 hover:text-slate-800'
+                        : 'text-slate-white hover:bg-gray-50 hover:text-slate-800'
                         } ${dir === 'rtl' ? 'font-arabic text-right' : 'font-body'}`}
                     >
                       {link.label}

@@ -30,7 +30,7 @@ import {
 } from "lucide-react";
 
 // Image URLs
-import HeroImage from "@/assets/images/hero.png";
+import HeroImage from "@/assets/images/herosection.png";
 // logs
 import nalystLogo from "@/assets/images/nalyst.png";
 import newsHuntLogo from "@/assets/images/newshunt_logo.png";
@@ -38,7 +38,7 @@ import kastLogo from "@/assets/images/4kastLogo.svg";
 import hr360Logo from "@/assets/images/Hr360Logo.svg";
 import khellaLogo from "@/assets/images/khellaLogo.svg";
 import assadLogo from "@/assets/images/assadLogo.svg";
-import AI_IMG from "@/assets/images/AI.jpeg";
+import AI_IMG from "@/assets/images/AI.png";
 import CYBER_IMG from "@/assets/images/CyberSecurity.png";
 import DIGITAL_IMG  from "@/assets/images/DigitalTransformation.jpeg";
 import AWS  from "@/assets/images/AWSCloudManagement.jpeg";
@@ -327,7 +327,7 @@ const productNames = [
 
       {/* Hero Section */}
    
-<section className="relative min-h-[90vh] flex items-center overflow-hidden">
+<section className="relative min-h-[90vh] flex bg-cover items-center overflow-hidden">
   {/* Background Image with Smooth Zoom */}
   <motion.div
     className="absolute inset-0"
@@ -338,7 +338,7 @@ const productNames = [
     <img
       src={HeroImage}
       alt="Hero Background"
-      className="w-full h-full object-cover"
+      className="w-full h-full object-cover opacity-86"
     />
   </motion.div>
 <FloatingProducts
@@ -375,11 +375,11 @@ const productNames = [
     dir === "rtl" ? "font-arabic" : "font-display"
   }`}
 >
-        <div className="block text-black">
+        <div className="block text-white">
           <TypingText text={t("hero.title")} delayOffset={0.5} />
         </div>
 
-        <div className="text-4xl md:text-5xl lg:text-6xl text-[#32a7b5] mt-4">
+        <div className="text-4xl md:text-5xl lg:text-6xl text-white mt-4">
           <TypingText
             text={t("hero.subtitle")}
             delayOffset={0.5 + t("hero.title").length * 0.035}
@@ -389,7 +389,7 @@ const productNames = [
 
       {/* Description */}
       <motion.p
-        className={`text-lg md:text-xl text-black mb-12 max-w-2xl mx-auto leading-relaxed ${
+        className={`text-lg md:text-xl text-white mb-12 max-w-2xl mx-auto leading-relaxed ${
           dir === "rtl" ? "font-arabic" : "font-body"
         }`}
         initial={{ opacity: 0, y: 40 }}
@@ -433,7 +433,7 @@ const productNames = [
 
         <Link href="/contact">
           <motion.button
-            className={`flex items-center gap-2 px-8 py-4 border-2 border-[#32a7b5] text-black font-bold rounded-xl hover:bg-[#32a7b5]/10 transition-all duration-300 ${
+            className={`flex items-center gap-2 px-8 py-4 border-2 border-[#32a7b5] text-white font-bold rounded-xl hover:bg-[#32a7b5]/10 transition-all duration-300 ${
               dir === "rtl" ? "flex-row-reverse font-arabic" : "font-body"
             }`}
             whileHover={{ scale: 1.05, y: -4 }}

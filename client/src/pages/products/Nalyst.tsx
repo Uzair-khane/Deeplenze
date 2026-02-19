@@ -1,7 +1,7 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import HeroImage from "@/assets/images/hero.png";
+import HeroImage from "@/assets/images/herosection.png";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { ArrowRight, ArrowLeft } from "lucide-react";
@@ -46,7 +46,7 @@ export default function Nalyst() {
           <img
             src={HeroImage}
             alt="Hero Background"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover opacity-87"
           />
           {/* Light Overlay */}
           <div className="absolute inset-0" />
@@ -83,7 +83,7 @@ export default function Nalyst() {
 
             {/* Title */}
             <h1
-              className={`text-4xl md:text-6xl font-bold text-[#314158] mb-6 ${dir === "rtl" ? "font-arabic" : "font-display"
+              className={`text-4xl md:text-6xl font-bold text-white mb-6 ${dir === "rtl" ? "font-arabic" : "font-display"
                 }`}
             >
               {language === "en" ? "Beyond Reading." : "أبعد من القراءة."}
@@ -91,7 +91,7 @@ export default function Nalyst() {
 
             {/* Description */}
             <p
-              className={`text-xl text-black leading-relaxed mb-10 ${dir === "rtl" ? "font-arabic" : "font-body"
+              className={`text-xl text-white leading-relaxed mb-10 ${dir === "rtl" ? "font-arabic" : "font-body"
                 }`}
             >
               {language === "en"

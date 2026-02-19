@@ -246,3 +246,7 @@ html {
   scrollbar-width: thin;
   scrollbar-color: #32a7b5 #ffffff;
 }
+header.glass {
+  background: rgba(15, 31, 42, 0.7); /* Dark semi-transparent */
+  backdrop-filter: blur(12px);
+}

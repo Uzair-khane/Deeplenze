@@ -8,7 +8,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { motion } from 'framer-motion';
 import { Target, Eye, Heart, Users, Award, Globe2, Zap, Shield } from 'lucide-react';
-import HERO_BG from "@/assets/images/hero.png";
+import HERO_BG from "@/assets/images/herosection.png";
 
 export default function About() {
   const { t, dir, language } = useLanguage();
@@ -61,7 +61,7 @@ export default function About() {
           <img
             src={HERO_BG}
             alt="About Background"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover opacity-87"
           />
           {/* Very light dark overlay - same as other pages */}
           <div className="absolute inset-0 " />
@@ -86,14 +86,14 @@ export default function About() {
             </span>
 
             <h1
-              className={`text-4xl md:text-6xl font-bold text-[#314158] mb-6 ${dir === "rtl" ? "font-arabic" : "font-display"
+              className={`text-4xl md:text-6xl font-bold text-white mb-6 ${dir === "rtl" ? "font-arabic" : "font-display"
                 }`}
             >
               {t("about.title")}
             </h1>
 
             <p
-              className={`text-xl text-black leading-relaxed ${dir === "rtl" ? "font-arabic" : "font-body"
+              className={`text-xl text-white leading-relaxed ${dir === "rtl" ? "font-arabic" : "font-body"
                 }`}
             >
               {t("about.subtitle")}
@@ -205,7 +205,7 @@ export default function About() {
             {values.map((value, index) => (
               <motion.div
                 key={index}
-                className={`group p-6 rounded-2xl glass hover:border-primary/30 transition-all duration-300 ${dir === 'rtl' ? 'text-right' : ''}`}
+                className={`group p-6 rounded-2xl border border-[#8ddbe4] hover:border-primary/30 transition-all duration-300 ${dir === 'rtl' ? 'text-right' : ''}`}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                viewport={{ once: false }}

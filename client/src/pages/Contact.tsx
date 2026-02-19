@@ -4,6 +4,7 @@
  */
 
 import { useState } from 'react';
+import HeroImage from "@/assets/images/herosection.png";
 import { useLanguage } from '@/contexts/LanguageContext';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -108,30 +109,61 @@ export default function Contact() {
     <div className="min-h-screen bg-background font-body">
       <Header />
 
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-16 overflow-hidden bg-muted/30">
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent" />
-        <div className="absolute top-1/4 right-0 w-96 h-96 bg-[#00D4AA]/5 rounded-full blur-3xl" />
+    {/* Hero Section */}
+<section className="relative pt-32 pb-16 overflow-hidden">
+  {/* Background Image */}
+  <div className="absolute inset-0">
+    <img
+      src={HeroImage} // Replace with your Contact hero image
+      alt="Contact Background"
+      className="w-full h-full object-cover opacity-87"
+    />
+  </div>
 
-        <div className="container mx-auto px-4 relative z-10">
-          <motion.div
-            className={`max-w-3xl mx-auto text-center ${dir === 'rtl' ? 'font-arabic' : ''}`}
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <span className={`inline-block px-4 py-2 rounded-full bg-[#32a7b5]/10 border border-[#32a7b5]/30 text-[#32a7b5] text-sm font-bold mb-6 tracking-wide uppercase ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
-              {language === 'en' ? 'Get in Touch' : 'تواصل معنا'}
-            </span>
-            <h1 className={`text-4xl md:text-6xl font-bold text-[#1D293D] mb-6 ${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}>
-              {t('contact.title')}
-            </h1>
-            <p className={`text-xl text-slate-600 leading-relaxed ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
-              {t('contact.subtitle')}
-            </p>
-          </motion.div>
-        </div>
-      </section>
+  {/* Optional very light overlay for readability */}
+  <div className="absolute inset-0 bg-black/20"></div>
+
+  {/* Decorative Gradient / Shapes */}
+  <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent" />
+  <div className="absolute top-1/4 right-0 w-96 h-96 bg-[#00D4AA]/5 rounded-full blur-3xl" />
+
+  <div className="container mx-auto px-4 relative z-10">
+    <motion.div
+      className={`max-w-3xl mx-auto text-center ${dir === 'rtl' ? 'font-arabic' : ''}`}
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+    >
+      {/* Badge */}
+      <span
+        className={`inline-block px-4 py-2 rounded-full bg-[#32a7b5]/10 border border-[#32a7b5]/30 text-[#32a7b5] text-sm font-bold mb-6 tracking-wide uppercase ${
+          dir === 'rtl' ? 'font-arabic' : 'font-body'
+        }`}
+      >
+        {language === 'en' ? 'Get in Touch' : 'تواصل معنا'}
+      </span>
+
+      {/* Title */}
+      <h1
+        className={`text-4xl md:text-6xl font-bold text-white mb-6 ${
+          dir === 'rtl' ? 'font-arabic' : 'font-display'
+        }`}
+      >
+        {t('contact.title')}
+      </h1>
+
+      {/* Subtitle */}
+      <p
+        className={`text-xl text-white/90 leading-relaxed ${
+          dir === 'rtl' ? 'font-arabic' : 'font-body'
+        }`}
+      >
+        {t('contact.subtitle')}
+      </p>
+    </motion.div>
+  </div>
+</section>
+
 
       {/* Contact Section */}
       <section className="py-16">

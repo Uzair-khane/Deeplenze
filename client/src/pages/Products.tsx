@@ -2,7 +2,7 @@
  * Showcase of six innovative products
  * Colors: Midnight Blue, Digital Gold, Electric Teal
  */
-import HeroImage from "@/assets/images/hero.png";
+import HeroImage from "@/assets/images/herosection.png";
 import nalystLogo from "@/assets/images/nalyst.png";
 import newsHuntLogo from "@/assets/images/newshunt_logo.png";
 import kastLogo from "@/assets/images/4kastLogo.svg";
@@ -117,7 +117,7 @@ export default function Products() {
           <img
             src={HeroImage}
             alt="Hero Background"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover opacity-87"
           />
           {/* Very light dark overlay */}
           <div className="absolute inset-0 " />
@@ -138,12 +138,12 @@ export default function Products() {
               {language === 'en' ? 'Our Solutions' : 'حلولنا'}
             </span>
             <h1
-              className={`text-4xl md:text-6xl font-bold text-[#314158] mb-6 ${dir === 'rtl' ? 'font-arabic' : 'font-display'
+              className={`text-4xl md:text-6xl font-bold text-white mb-6 ${dir === 'rtl' ? 'font-arabic' : 'font-display'
                 }`}
             >
               {t('products.title')}
             </h1>
-            <p className={`text-xl text-black leading-relaxed ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
+            <p className={`text-xl text-white leading-relaxed ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
               {t('products.subtitle')}
             </p>
           </motion.div>
