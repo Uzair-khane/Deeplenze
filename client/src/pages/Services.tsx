@@ -185,7 +185,7 @@ export default function Services() {
                   whileInView={{ opacity: 1, x: 0 }}
                  viewport={{ once: false }}
                 >
-                  <h2 className={`text-3xl md:text-4xl font-bold text-white mb-4 ${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}>
+                  <h2 className={`text-3xl md:text-4xl font-bold text-slate-700 mb-4 ${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}>
                     {service.title}
                   </h2>
                   <p className={`text-muted-foreground text-lg mb-8 leading-relaxed ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>

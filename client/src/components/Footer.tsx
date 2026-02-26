@@ -37,9 +37,9 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="space-y-5">
             <Link href="/">
-              <img src={logo} alt="Logo" className="h-16 w-auto object-contain cursor-pointer" />
+              <img src={logo} alt="Logo" className="h-20 w-auto object-contain cursor-pointer" />
             </Link>
-            <p className={`text-slate-500 text-sm leading-relaxed max-w-xs ${isRTL ? 'font-arabic' : 'font-body'}`}>
+            <p className={`text-slate-500 text-sm leading-relaxed my-8 max-w-xs ${isRTL ? 'font-arabic' : 'font-body'}`}>
               {t('footer.description')}
             </p>
             <div className={`flex gap-3 ${isRTL ? 'justify-end' : ''}`}>

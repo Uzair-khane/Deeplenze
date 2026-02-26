@@ -29,7 +29,7 @@ const translations: Translations = {
   'services.title': { en: 'Our Expertise', ar: 'خبراتنا' },
   'services.subtitle': { en: 'Four Pillars of Digital Excellence', ar: 'أربعة ركائز للتميز الرقمي' },
   'services.ai.title': { en: 'Artificial Intelligence', ar: 'الذكاء الاصطناعي' },
-  'services.ai.description': { en: 'Leverage advanced Generative AI, intelligent automation, and seamless AI integration to transform operations, enhance decision-making, and accelerate digital innovation across your enterprise.', ar: 'استفد من قوة التعلم الآلي والذكاء الاصطناعي لأتمتة العمليات واكتساب الرؤى ودفع الابتكار في مؤسستك.' },
+  'services.ai.description': { en: 'Leverage advanced Generative AI, intelligent automation, and seamless AI integration to transform operations, enhance decision-making, and accelerate digital innovation across your enterprise.', ar: 'استفد من الذكاء الاصطناعي التوليدي المتقدم، والأتمتة الذكية، والتكامل السلس للذكاء الاصطناعي لتحويل العمليات، وتعزيز عملية صنع القرار، وتسريع الابتكار الرقمي في جميع أنحاء مؤسستك.' },
   'services.cyber.title': { en: 'Cyber Security', ar: 'الأمن السيبراني' },
   'services.cyber.description': { en: 'Protect your digital assets with comprehensive security solutions, threat detection, and compliance frameworks tailored for the Saudi market.', ar: 'احمِ أصولك الرقمية من خلال حلول أمنية شاملة واكتشاف التهديدات وأطر الامتثال المصممة للسوق السعودي.' },
   'services.digital.title': { en: 'Digital Transformation', ar: 'التحول الرقمي' },
@@ -104,7 +104,7 @@ const translations: Translations = {
   'footer.quicklinks': { en: 'Quick Links', ar: 'روابط سريعة' },
   'footer.services': { en: 'Our Services', ar: 'خدماتنا' },
   'footer.contact': { en: 'Contact Info', ar: 'معلومات الاتصال' },
-  'footer.copyright': { en: '© 2024 Deeplenze. All rights reserved.', ar: '© 2024 تك فيجن. جميع الحقوق محفوظة.' },
+  'footer.copyright': { en: '© 2026 Deeplenze. All rights reserved.', ar: '© 2026 تك فيجن. جميع الحقوق محفوظة.' },
   
   // Common
   'common.readMore': { en: 'Read More', ar: 'اقرأ المزيد' },
