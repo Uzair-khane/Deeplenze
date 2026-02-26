@@ -372,7 +372,7 @@ const productNames = [
           <TypingText text={t("hero.title")} delayOffset={0.5} />
         </div>
 
-        <div className="text-4xl md:text-5xl lg:text-6xl text-[#32a7b5] mt-4">
+        <div className="text-4xl md:text-5xl lg:text-6xl text-white mt-4">
           <TypingText
             text={t("hero.subtitle")}
             delayOffset={0.5 + t("hero.title").length * 0.035}
