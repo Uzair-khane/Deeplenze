@@ -133,8 +133,8 @@ export default function Footer() {
 
             {/* Vision 2030 */}
             <div className="flex items-center gap-1.5 text-sm">
-              <span className="text-slate-400">Aligned with</span>
-              <span className="text-[#32a7b5] font-semibold">Vision 2030</span>
+            <a href=""><span className="text-slate-400">Privacy Policy</span></a>
+            <a href=""><span className="text-[#32a7b5] font-semibold">Terms & Conditions</span></a>
             </div>
 
             {/* Logos row — right side of bottom bar */}

@@ -39,7 +39,8 @@ export default function Products() {
       logo: nalystLogo,
       color: '#00D4AA',
       tagline: language === 'en' ? 'AI-Powered Analytics' : 'تحليلات مدعومة بالذكاء الاصطناعي',
-      url: '/products/Nalyst',
+       url: "https://newshunt-sensika.vercel.app/en", 
+      // url: '/products/Nalyst',
       features: language === 'en'
         ? ['Real-time data processing', 'Custom dashboard builder', 'Predictive insights', 'Multi-source integration']
         : ['معالجة البيانات في الوقت الفعلي', 'منشئ لوحات المعلومات المخصصة', 'رؤى تنبؤية', 'تكامل متعدد المصادر'],
@@ -51,7 +52,7 @@ export default function Products() {
       logo: newsHuntLogo,
       color: '#C9A227',
       tagline: language === 'en' ? 'Media Intelligence' : 'الذكاء الإعلامي',
-      url: '/products/Newshunt',
+      // url: '/products/Newshunt',
       features: language === 'en'
         ? ['AI-powered news aggregation', 'Sentiment analysis', 'Trend detection', 'Custom alerts & reports']
         : ['تجميع الأخبار بالذكاء الاصطناعي', 'تحليل المشاعر', 'اكتشاف الاتجاهات', 'تنبيهات وتقارير مخصصة'],
@@ -63,7 +64,7 @@ export default function Products() {
       logo: assadLogo,
       color: '#00D4AA',
       tagline: language === 'en' ? 'Enterprise Security' : 'أمان المؤسسات',
-      url: 'products/Asaad',
+      // url: 'products/Asaad',
       features: language === 'en'
         ? ['Threat detection & response', 'Vulnerability management', 'Compliance monitoring', 'Security analytics']
         : ['اكتشاف التهديدات والاستجابة', 'إدارة الثغرات', 'مراقبة الامتثال', 'تحليلات الأمان'],
@@ -75,7 +76,7 @@ export default function Products() {
       logo: khellaLogo,
       color: '#C9A227',
       tagline: language === 'en' ? 'Smart Collaboration' : 'التعاون الذكي',
-      url: '/products/Khella',
+      // url: '/products/Khella',
       features: language === 'en'
         ? ['Secure messaging', 'Video conferencing', 'File sharing & collaboration', 'AI meeting assistant']
         : ['المراسلة الآمنة', 'مؤتمرات الفيديو', 'مشاركة الملفات والتعاون', 'مساعد الاجتماعات بالذكاء الاصطناعي'],
@@ -87,7 +88,7 @@ export default function Products() {
       logo: kastLogo ,
       color: '#00D4AA',
       tagline: language === 'en' ? 'Predictive Intelligence' : 'الذكاء التنبؤي',
-      url: '/products/Forecast',
+      // url: '/products/Forecast',
       features: language === 'en'
         ? ['Demand forecasting', 'Risk prediction', 'Market analysis', 'Scenario planning']
         : ['التنبؤ بالطلب', 'التنبؤ بالمخاطر', 'تحليل السوق', 'تخطيط السيناريوهات'],
@@ -99,7 +100,7 @@ export default function Products() {
       logo: hr360Logo,
       color: '#C9A227',
       tagline: language === 'en' ? 'HR Management' : 'إدارة الموارد البشرية',
-      url: 'products/Hr',
+      // url: 'products/Hr',
       features: language === 'en'
         ? ['Employee lifecycle management', 'Performance tracking', 'Payroll automation', 'Learning & development']
         : ['إدارة دورة حياة الموظف', 'تتبع الأداء', 'أتمتة الرواتب', 'التعلم والتطوير'],
@@ -153,89 +154,116 @@ export default function Products() {
       </section>
 
       {/* Products Grid */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {products.map((product, index) => (
-              <motion.div
-                key={product.id}
-                className={`group relative p-8 rounded-2xl overflow-hidden bg-white shadow-lg border-2 border-[#32a7b5]/20 hover:border-[#32a7b5] hover:shadow-2xl transition-all duration-300 ${dir === 'rtl' ? 'text-right' : ''}`}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ y: -8, scale: 1.02 }}
-              >
-                {/* Background Glow */}
-                <div className="absolute top-0 right-0 w-64 h-64 bg-[#32a7b5]/5 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-                <div className={`relative z-10 ${dir === 'rtl' ? 'text-right' : ''}`}>
-                  {/* Header */}
-                  <div className={`flex items-start justify-between mb-6 ${dir === 'rtl' ? 'flex-row-reverse' : ''}`}>
-                    <div className={`flex items-center gap-4 ${dir === 'rtl' ? 'flex-row-reverse' : ''}`}>
-                      {/* logo is clickable */}
-
-                      {/* logo is clickable */}
-
-                    <Link
-  href={product.url}
-  className="w-32 h-32 rounded-xl flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-110"
->
-  <img
-    src={product.logo}
-    alt={product.name}
-    className="w-32 h-32 object-contain"
+<section className="py-20 bg-white relative overflow-hidden">
+  {/* Subtle background pattern */}
+  <div className="absolute inset-0 opacity-[0.03]"
+    style={{
+      backgroundImage: `radial-gradient(circle at 1px 1px, #32a7b5 1px, transparent 0)`,
+      backgroundSize: '32px 32px'
+    }}
   />
-</Link>
 
+  <div className="container mx-auto px-4 relative z-10">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      {products.map((product, index) => (
+        <motion.div
+          key={product.id}
+          className={`group relative rounded-2xl overflow-hidden bg-white border border-[#32a7b5]/15 hover:border-[#32a7b5]/60 transition-all duration-500 ${dir === 'rtl' ? 'text-right' : ''}`}
+          style={{ boxShadow: '0 4px 24px rgba(50,167,181,0.08)' }}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: index * 0.12, duration: 0.5 }}
+          whileHover={{ y: -6, boxShadow: '0 20px 60px rgba(50,167,181,0.18)' }}
+        >
+          {/* Top accent bar */}
+          <div className="" />
 
-                      <div>
-                        <h3 className={`text-2xl font-bold text-black mb-1 ${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}>
-                          {product.name}
-                        </h3>
-                        <span className={`text-sm font-bold text-[#32a7b5] uppercase tracking-wide ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
-                          {product.tagline}
-                        </span>
-                      </div>
-                    </div>
-                  </div>
+          {/* Glow effect */}
+          <div className="absolute -top-20 -right-20 w-64 h-64 bg-[#32a7b5]/8 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
 
-                  {/* Description */}
-                  <p className={`text-gray-700 mb-6 leading-relaxed ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
-                    {product.description}
-                  </p>
+          <div className={`relative z-10 p-5 sm:p-8 ${dir === 'rtl' ? 'text-right' : ''}`}>
 
-                  {/* Features */}
-                  <div className="grid grid-cols-2 gap-3 mb-6">
-                    {product.features.map((feature, i) => (
-                      <div
-                        key={i}
-                        className={`flex items-center gap-2 ${dir === 'rtl' ? 'flex-row-reverse' : ''}`}
-                      >
-                        <CheckCircle2 className="w-5 h-5 flex-shrink-0 text-[#32a7b5]" />
-                        <span className={`text-gray-700 text-sm font-medium ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
-                          {feature}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
+            {/* Header: Logo + Name + Tagline */}
+            <div className={`flex items-center gap-4 mb-5 ${dir === 'rtl' ? 'flex-row-reverse' : ''}`}>
+              <a
+                href={product.url}
+                className="flex-shrink-0 w-16 h-16 sm:w-26 sm:h-26 rounded-2xl bg-[#32a7b5]/6 border border-[#32a7b5]/20 flex items-center justify-center hover:scale-110 hover:border-[#32a7b5]/50 hover:bg-[#32a7b5]/10 transition-all duration-300 overflow-hidden"
+              >
+                <img
+                  src={product.logo}
+                  alt={product.name}
+                  className="w-12 h-12 sm:w-24 sm:h-24 object-contain"
+                />
+              </a>
 
-                  {/* CTA */}
-                  <Link href="/contact">
-                    <motion.button
-                      className={`inline-flex items-center gap-2 px-6 py-3 bg-[#32a7b5] text-white font-bold rounded-lg shadow-md hover:shadow-lg transition-all duration-300 ${dir === 'rtl' ? 'flex-row-reverse font-arabic' : 'font-body'}`}
-                      whileHover={{ x: dir === 'rtl' ? -5 : 5 }}
-                    >
-                      {language === 'en' ? 'Request Demo' : 'طلب عرض توضيحي'}
-                      <ArrowIcon className="w-4 h-4" />
-                    </motion.button>
-                  </Link>
+              <div className="flex-1 min-w-0">
+                <h3 className={`text-lg sm:text-2xl font-bold text-gray-900 mb-1 truncate ${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}>
+                  {product.name}
+                </h3>
+                <span className={`inline-block text-xs font-bold text-[#32a7b5] uppercase tracking-widest px-2 sm:px-3 py-1 rounded-full bg-[#32a7b5]/8 border border-[#32a7b5]/20 ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
+                  {product.tagline}
+                </span>
+              </div>
+            </div>
+
+            {/* Divider */}
+            <div className="w-full h-px bg-gradient-to-r from-transparent via-[#32a7b5]/20 to-transparent mb-5" />
+
+            {/* Description */}
+            <p className={`text-gray-600 mb-5 leading-relaxed text-sm ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
+              {product.description}
+            </p>
+
+            {/* Features Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-6">
+              {product.features.map((feature, i) => (
+                <div
+                  key={i}
+                  className={`flex items-center gap-2 px-3 py-2 rounded-lg bg-[#32a7b5]/4 border border-[#32a7b5]/10 group-hover:border-[#32a7b5]/25 transition-colors duration-300 ${dir === 'rtl' ? 'flex-row-reverse' : ''}`}
+                >
+                  <CheckCircle2 className="w-4 h-4 flex-shrink-0 text-[#32a7b5]" />
+                  <span className={`text-gray-700 text-xs font-medium leading-tight ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
+                    {feature}
+                  </span>
                 </div>
-              </motion.div>
-            ))}
+              ))}
+            </div>
+
+            {/* Buttons */}
+            <div className={`grid grid-cols-2 gap-3 ${dir === 'rtl' ? 'flex-row-reverse' : ''}`}>
+
+              {/* Request Demo - Primary */}
+              <Link href="/contact" className="w-full">
+                <motion.button
+                  className={`w-full inline-flex items-center justify-center gap-2 px-3 sm:px-5 py-2.5 sm:py-3 bg-[#32a7b5] text-white font-bold text-xs sm:text-sm rounded-xl shadow-md hover:shadow-[0_8px_24px_rgba(50,167,181,0.4)] transition-all duration-300 ${dir === 'rtl' ? 'flex-row-reverse font-arabic' : 'font-body'}`}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <span className="truncate">{language === 'en' ? 'Request Demo' : 'طلب عرض'}</span>
+                  <ArrowIcon className="w-3.5 h-3.5 flex-shrink-0" />
+                </motion.button>
+              </Link>
+
+              {/* Visit - Secondary */}
+              <a href={product.url} className="w-full">
+                <motion.button
+                  className={`w-full inline-flex items-center justify-center gap-2 px-3 sm:px-5 py-2.5 sm:py-3 bg-[#32a7b5] text-white font-bold text-xs sm:text-sm rounded-xl shadow-md hover:shadow-[0_8px_24px_rgba(50,167,181,0.4)] transition-all duration-300${dir === 'rtl' ? 'flex-row-reverse font-arabic' : 'font-body'}`}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  
+                  <span>{language === 'en' ? 'Visit' : 'زيارة'}</span>
+                </motion.button>
+              </a>
+
+            </div>
           </div>
-        </div>
-      </section >
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* Integration Section */}
       < section className="py-20 relative bg-white" >

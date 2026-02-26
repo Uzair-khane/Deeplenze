@@ -181,79 +181,78 @@ export default function Industries() {
         </div>
       </section>
 
-      {/* Industries Grid */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="space-y-8">
-            {industries.map((industry, index) => (
-              <motion.div
-                key={industry.id}
-                className={`p-8 rounded-2xl border-2 border-[#32a7b5]/20 hover:border-[#32a7b5] shadow-lg hover:shadow-2xl transition-all duration-300 bg-white`}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-               viewport={{ once: false }}
-                transition={{ delay: index * 0.1 }}
-              >
-                <div className={`grid grid-cols-1 lg:grid-cols-3 gap-8 ${dir === 'rtl' ? 'text-right' : ''}`}>
-                  {/* Header */}
-                  <div className="lg:col-span-1">
-                    <div className={`flex items-center gap-4 mb-4 ${dir === 'rtl' ? 'flex-row-reverse' : ''}`}>
-                      <div className="w-14 h-14 rounded-xl flex items-center justify-center shadow-md bg-[#32a7b5]/10 border-2 border-[#32a7b5]/30">
-                        <industry.icon className="w-7 h-7 text-[#32a7b5]" />
-                      </div>
-                      <h3 className={`text-2xl font-bold text-black ${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}>
-                        {industry.title}
-                      </h3>
-                    </div>
-                    <p className={`text-gray-700 leading-relaxed ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
-                      {industry.description}
-                    </p>
-                  </div>
+{/* Industries Grid */}
+<section className="py-20 bg-white relative overflow-hidden">
+  {/* Subtle background pattern */}
+  <div className="absolute inset-0 opacity-[0.03]"
+    style={{
+      backgroundImage: `radial-gradient(circle at 1px 1px, #32a7b5 1px, transparent 0)`,
+      backgroundSize: '32px 32px'
+    }}
+  />
 
-                  {/* Solutions */}
-                  <div className="lg:col-span-1">
-                    <h4 className={`text-sm font-bold text-[#32a7b5] uppercase tracking-wider mb-4 ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
-                      {language === 'en' ? 'Solutions' : 'الحلول'}
-                    </h4>
-                    <div className="space-y-2">
-                      {industry.solutions.map((solution, i) => (
-                        <div
-                          key={i}
-                          className={`flex items-center gap-2 ${dir === 'rtl' ? 'flex-row-reverse' : ''}`}
-                        >
-                          <CheckCircle2 className="w-5 h-5 flex-shrink-0 text-[#32a7b5]" />
-                          <span className={`text-gray-700 text-sm font-medium ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
-                            {solution}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
+  <div className="container mx-auto px-4 relative z-10">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {industries.map((industry, index) => (
+        <motion.div
+          key={industry.id}
+          className={`group relative rounded-2xl overflow-hidden bg-white border border-[#32a7b5]/15 hover:border-[#32a7b5]/50 transition-all duration-500 ${dir === 'rtl' ? 'text-right' : ''}`}
+          style={{ boxShadow: '0 4px 24px rgba(50,167,181,0.08)' }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false }}
+          transition={{ delay: index * 0.1, duration: 0.5 }}
+          whileHover={{ y: -4 }}
+        >
+          {/* Glow */}
+          <div className="absolute -top-16 -right-16 w-48 h-48 bg-[#32a7b5]/8 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
 
-                  {/* Case Study */}
-                  <div className="lg:col-span-1">
-                    <h4 className={`text-sm font-bold text-[#32a7b5] uppercase tracking-wider mb-4 ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
-                      {language === 'en' ? 'Success Story' : 'قصة نجاح'}
-                    </h4>
-                    <p className={`text-gray-700 text-sm leading-relaxed mb-4 ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
-                      {industry.caseStudy}
-                    </p>
-                    <Link href="/contact">
-                      <motion.button
-                        className={`inline-flex items-center gap-2 px-6 py-3 bg-[#32a7b5] text-white font-bold rounded-lg  shadow-md hover:shadow-lg transition-all duration-300 ${dir === 'rtl' ? 'flex-row-reverse font-arabic' : 'font-body'}`}
-                        whileHover={{ x: dir === 'rtl' ? -5 : 5 }}
-                      >
-                        {language === 'en' ? 'Learn More' : 'اعرف المزيد'}
-                        <ArrowIcon className="w-4 h-4" />
-                      </motion.button>
-                    </Link>
-                  </div>
+          <div className="relative z-10 p-6 sm:p-8">
+
+            {/* Header: Icon + Title */}
+            <div className={`flex items-center gap-4 mb-4 ${dir === 'rtl' ? 'flex-row-reverse' : ''}`}>
+              <div className="w-14 h-14 flex-shrink-0 rounded-2xl flex items-center justify-center bg-[#32a7b5]/10 border-2 border-[#32a7b5]/25 group-hover:bg-[#32a7b5]/15 transition-colors duration-300">
+                <industry.icon className="w-7 h-7 text-[#32a7b5]" />
+              </div>
+              <h3 className={`text-xl sm:text-2xl font-bold text-gray-900 leading-tight ${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}>
+                {industry.title}
+              </h3>
+            </div>
+
+            {/* Description */}
+            <p className={`text-gray-600 text-sm leading-relaxed mb-5 ${dir === 'rtl' ? 'font-arabic text-right' : 'font-body'}`}>
+              {industry.description}
+            </p>
+
+            {/* Divider */}
+            <div className="w-full h-px bg-gradient-to-r from-transparent via-[#32a7b5]/20 to-transparent mb-5" />
+
+            {/* Solutions Label */}
+            <h4 className={`text-xs font-bold text-[#32a7b5] uppercase tracking-widest mb-3 ${dir === 'rtl' ? 'font-arabic text-right' : 'font-body'}`}>
+              {language === 'en' ? 'Solutions' : 'الحلول'}
+            </h4>
+
+            {/* Solutions Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              {industry.solutions.map((solution, i) => (
+                <div
+                  key={i}
+                  className={`flex items-center gap-2 px-3 py-2 rounded-lg bg-[#32a7b5]/4 border border-[#32a7b5]/10 group-hover:border-[#32a7b5]/25 transition-colors duration-300 ${dir === 'rtl' ? 'flex-row-reverse' : ''}`}
+                >
+                  <CheckCircle2 className="w-4 h-4 flex-shrink-0 text-[#32a7b5]" />
+                  <span className={`text-gray-700 text-xs font-medium leading-tight ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
+                    {solution}
+                  </span>
                 </div>
-              </motion.div>
-            ))}
+              ))}
+            </div>
+
           </div>
-        </div>
-      </section>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* CTA Section */}
       <section className="py-24 relative overflow-hidden bg-gray-50">

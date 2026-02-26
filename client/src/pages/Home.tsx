@@ -114,19 +114,19 @@ const [selectedImage, setSelectedImage] = useState<string | null>(null);
       name: t("products.nalyst.name"),
       description: t("products.nalyst.description"),
       icon: nalystLogo,
-      url: "/products/nalyst", // Internal route to Nalyst page
+      url: "https://newshunt-sensika.vercel.app/en", 
     },
     {
       name: t("products.newshunt.name"),
       description: t("products.newshunt.description"),
       icon: newsHuntLogo,
-      url: "/products/newshunt", // Internal route to Newshunt page
+      // url: "/products/newshunt",
     },
     {
       name: t("products.asaad.name"),
       description: t("products.asaad.description"),
       icon: assadLogo,
-      url: "/products/asaad", // You'll need to create Asaad.tsx
+      // url: "/products/asaad", 
      
       // placeholder, change later
     },
@@ -134,21 +134,21 @@ const [selectedImage, setSelectedImage] = useState<string | null>(null);
       name: t("products.khella.name"),
       description: t("products.khella.description"),
    
-      url: "/products/khella", // You'll need to create Khella.tsx
+      // url: "/products/khella", 
       icon: khellaLogo,
      // placeholder, change later
     },
     {
       name: t("products.4kast.name"),
       description: t("products.4kast.description"),
-      url: "/products/4kast", // You'll need to create 4kast.tsx
+      // url: "/products/4kast", 
       icon: kastLogo,
      // placeholder, change later
     },
     {
       name: t("products.hr360.name"),
       description: t("products.hr360.description"),
-      url: "/products/hr360", // You'll need to create Hr360.tsx
+      // url: "/products/hr360", 
       icon: hr360Logo,
       // placeholder, change later
     },
@@ -560,7 +560,7 @@ const productNames = [
     {/* Products Grid */}
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {products.map((product, index) => (
-        <Link key={index} href={product.url}>
+    <a key={index} href={product.url || "#"} target="_blank" rel="noopener noreferrer">
           <motion.div
             className={`group relative p-8 rounded-2xl bg-white  shadow-sm cursor-pointer overflow-hidden ${
               dir === "rtl" ? "text-right" : ""
@@ -620,7 +620,7 @@ const productNames = [
             <div className="absolute inset-0 rounded-2xl  duration-500" />
 
           </motion.div>
-        </Link>
+       </a>
       ))}
     </div>
 

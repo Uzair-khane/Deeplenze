@@ -97,7 +97,7 @@ const translations: Translations = {
   'contact.form.submit': { en: 'Send Message', ar: 'إرسال الرسالة' },
   'contact.info.address': { en: 'Riyadh, Saudi Arabia', ar: 'الرياض، المملكة العربية السعودية' },
   'contact.info.email': { en: 'info@Deeplenze.sa', ar: 'info@Deeplenze.sa' },
-  'contact.info.phone': { en: '+966 11 XXX XXXX', ar: '+966 11 XXX XXXX' },
+  'contact.info.phone': { en: '+966 11 245 8536', ar: '+966 11 245 8536' },
   
   // Footer
   'footer.description': { en: 'Digital transformation journey with innovative technology solutions.', ar: 'نقود رحلة التحول الرقمي في المملكة العربية السعودية من خلال حلول تقنية مبتكرة.' },

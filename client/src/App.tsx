@@ -17,12 +17,12 @@ import Industries from "./pages/Industries";
 import Contact from "./pages/Contact";
 
 // Product detail pages
-import Nalyst from "@/pages/products/Nalyst";
-import Newshunt from "@/pages/products/Newshunt";
-import Asaad from "@/pages/products/Asaad";
-import Khella from "@/pages/products/Khella";
-import Forecast from "@/pages/products/Forecast";
-import Hr360 from "@/pages/products/Hr";
+// import Nalyst from "@/pages/products/Nalyst";
+// import Newshunt from "@/pages/products/Newshunt";
+// import Asaad from "@/pages/products/Asaad";
+// import Khella from "@/pages/products/Khella";
+// import Forecast from "@/pages/products/Forecast";
+// import Hr360 from "@/pages/products/Hr";
 
 
 // ✅ Scroll To Top Component
@@ -45,12 +45,12 @@ function Router() {
       <Route path="/about" component={About} />
       <Route path="/services" component={Services} />
 
-      <Route path="/products/nalyst" component={Nalyst} />
+      {/* <Route path="/products/nalyst" component={Nalyst} />
       <Route path="/products/newshunt" component={Newshunt} />
       <Route path="/products/asaad" component={Asaad} />
       <Route path="/products/khella" component={Khella} />
       <Route path="/products/4kast" component={Forecast} />
-      <Route path="/products/hr360" component={Hr360} />
+      <Route path="/products/hr360" component={Hr360} /> */}
 
       <Route path="/products" component={Products} />
 
