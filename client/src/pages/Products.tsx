@@ -137,9 +137,9 @@ export default function Products() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className={`inline-block px-4 py-2 rounded-full bg-[#32a7b5]/10 border border-[#32a7b5]/30 text-[#32a7b5] text-sm font-bold mb-6 tracking-wide uppercase ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
+            {/* <span className={`inline-block px-4 py-2 rounded-full bg-[#32a7b5]/10 border border-[#32a7b5]/30 text-[#32a7b5] text-sm font-bold mb-6 tracking-wide uppercase ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
               {language === 'en' ? 'Our Solutions' : 'حلولنا'}
-            </span>
+            </span> */}
             <h1
               className={`text-4xl md:text-6xl font-bold text-white mb-6 ${dir === 'rtl' ? 'font-arabic' : 'font-display'
                 }`}

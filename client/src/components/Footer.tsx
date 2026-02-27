@@ -146,14 +146,14 @@ export default function Footer() {
 
             {/* Logos row — right side of bottom bar */}
             <div className={`flex items-center gap-4 ${isRTL ? 'flex-row-reverse' : ''}`}>
-              <Link href="/">
+              <a href="https://3pillars-sa.com/" target="_blank">
                 <motion.img
                   src={pillersLogo}
                   alt="3 Pillars"
                   className="h-10 w-auto object-contain cursor-pointer opacity-75 hover:opacity-100 transition-opacity"
                   whileHover={{ scale: 1.05 }}
                 />
-              </Link>
+              </a>
             </div>
 
           </div>

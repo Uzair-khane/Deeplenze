@@ -4,11 +4,13 @@
  */
 
 import { Link } from "wouter";
-import { useState } from "react";
+import { useState, useEffect } from "react"; 
+import { motion } from "framer-motion";
+// import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { motion } from "framer-motion";
+
 import {
   Brain,
   Shield,
@@ -321,6 +323,17 @@ const productNames = [
 ];
 
 
+const [currentIndex, setCurrentIndex] = useState(0);
+
+useEffect(() => {
+  const timer = setInterval(() => {
+    setCurrentIndex((prev) => (prev + 1) % products.length);
+  }, 5000);
+  return () => clearInterval(timer);
+}, [products.length]);
+
+const goNext = () => setCurrentIndex((prev) => (prev + 1) % products.length);
+const goPrev = () => setCurrentIndex((prev) => (prev - 1 + products.length) % products.length);
   return (
     <div className="min-h-screen bg-background text-foreground font-body">
       <Header />
@@ -522,122 +535,144 @@ const productNames = [
         </div>
       </section>
 
-      {/* Products Section */}
-     <section className="py-24 relative bg-slate-100 overflow-hidden">
+
+
+{/* Products Section */}
+<section className="py-24 relative bg-slate-100 overflow-hidden">
+
+  {/* Decorative blobs */}
+  <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#32a7b5]/5 rounded-full blur-3xl pointer-events-none" />
+  <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#32a7b5]/5 rounded-full blur-3xl pointer-events-none" />
+
   <div className="container mx-auto px-4 relative">
 
     {/* Section Heading */}
     <motion.div
-      className={`text-center mb-16 max-w-3xl mx-auto ${
-        dir === "rtl" ? "font-arabic" : ""
-      }`}
+      className={`text-center mb-16 max-w-3xl mx-auto ${dir === "rtl" ? "font-arabic" : ""}`}
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: false}}
+      viewport={{ once: false }}
       transition={{ duration: 0.7 }}
     >
-      <span className="inline-block px-4 py-2 rounded-full bg-[#32A7B51A] text-[#32a7b5] text-sm font-bold mb-4 uppercase tracking-wider">
-        {language === "en" ? "Our Solutions" : "حلولنا"}
-      </span>
-
-      <h2
-        className={`text-4xl md:text-5xl font-bold text-slate-700 mb-6 ${
-          dir === "rtl" ? "font-arabic" : "font-display"
-        }`}
+      {/* <motion.span
+        className="inline-block px-4 py-2 rounded-full bg-[#32A7B51A] text-[#32a7b5] text-sm font-bold mb-4 uppercase tracking-wider"
+        initial={{ opacity: 0, scale: 0.8 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: false }}
+        transition={{ duration: 0.5 }}
       >
+        {language === "en" ? "Our Products" : "منتجاتنا"}
+      </motion.span> */}
+      <h2 className={`text-4xl md:text-5xl font-bold text-slate-700 mb-6 ${dir === "rtl" ? "font-arabic" : "font-display"}`}>
         {t("products.title")}
       </h2>
-
-      <p
-        className={`text-slate-600 text-lg ${
-          dir === "rtl" ? "font-arabic" : "font-body"
-        }`}
-      >
+      <p className={`text-slate-600 text-lg ${dir === "rtl" ? "font-arabic" : "font-body"}`}>
         {t("products.subtitle")}
       </p>
     </motion.div>
 
-    {/* Products Grid */}
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {products.map((product, index) => (
-    <a key={index} href={product.url || "#"} target="_blank" rel="noopener noreferrer">
-          <motion.div
-            className={`group relative p-8 rounded-2xl bg-white  shadow-sm cursor-pointer overflow-hidden ${
-              dir === "rtl" ? "text-right" : ""
-            }`}
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
-            transition={{
-              delay: index * 0.12,
-              duration: 0.6,
-              ease: "easeOut",
-            }}
-            // whileHover={{
-            //   y: -10,
-            //   scale: 1.02,
-            // }}
-          >
+    {/* Slider Container */}
+    <div className="relative px-14">
 
-            {/* Hover Shine Effect */}
-            <motion.div
-              className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-              style={{
-                background:
-                  "linear-gradient(120deg, transparent 20%, rgba(50,167,181,0.08) 50%, transparent 80%)",
-              }}
-            />
+      {/* Prev Button */}
+      <motion.button
+        onClick={goPrev}
+        className="absolute left-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white shadow-xl border border-[#32a7b5]/20 flex items-center justify-center text-[#32a7b5] hover:bg-[#32a7b5] hover:text-white transition-all duration-300"
+        whileHover={{ scale: 1.15 }}
+        whileTap={{ scale: 0.9 }}
+      >
+        <ChevronLeft className="w-6 h-6" />
+      </motion.button>
 
-            {/* Icon */}
-            <motion.div
-              className="text-5xl -mt-6 flex justify-center items-center relative z-10"
-              whileHover={{ y: -6 }}
-              transition={{ duration: 0.4 }}
+      {/* Next Button */}
+      <motion.button
+        onClick={goNext}
+        className="absolute right-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white shadow-xl border border-[#32a7b5]/20 flex items-center justify-center text-[#32a7b5] hover:bg-[#32a7b5] hover:text-white transition-all duration-300"
+        whileHover={{ scale: 1.15 }}
+        whileTap={{ scale: 0.9 }}
+      >
+        <ChevronRight className="w-6 h-6" />
+      </motion.button>
+
+      {/* Track */}
+      <div className="overflow-hidden rounded-2xl">
+        <motion.div
+          className="flex gap-6"
+          animate={{ x: `-${currentIndex * (220 + 24)}px` }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        >
+          {[...products, ...products, ...products].map((product, index) => (
+            <motion.a
+              key={index}
+              href=""
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-shrink-0 w-52 h-52 group relative cursor-pointer"
+              whileHover={{ y: -8, scale: 1.05 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
             >
-              <motion.img
-                src={product.icon}
-                alt={product.name}
-                className="w-44 h-44 object-contain"
-                animate={{ y: [0, -6, 0] }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-              />
-            </motion.div>
+              {/* Card */}
+              <div className="w-full h-full  bg-white border border-[#32a7b5]/10  shadow-md group-hover:shadow-2xl transition-all duration-400 flex items-center justify-center overflow-hidden relative">
 
-            {/* Product Description */}
-            <p
-              className={`text-slate-600 text-sm text-center leading-relaxed -mt-6 relative z-10 ${
-                dir === "rtl" ? "font-arabic" : "font-body"
-              }`}
-            >
-              {product.description}
-            </p>
+                {/* Hover glow bg */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[#32a7b5]/0 to-[#32a7b5]/0 transition-all duration-500" />
 
-            {/* Glow Border on Hover */}
-            <div className="absolute inset-0 rounded-2xl  duration-500" />
+                {/* Top teal bar on hover */}
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#32a7b5]/0 via-[#32a7b5] to-[#32a7b5]/0 rounded-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-          </motion.div>
-       </a>
+                {/* Floating logo */}
+                <motion.img
+                  src={product.icon}
+                  alt={product.name}
+                  className="w-40 h-40 object-contain relative z-10"
+                  style={{ mixBlendMode: 'multiply' }}
+                  animate={{ y: [0, -6, 0] }}
+                  transition={{
+                    duration: 3.5,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: (index % products.length) * 0.4,
+                  }}
+                />
+              </div>
+            </motion.a>
+          ))}
+        </motion.div>
+      </div>
+
+      {/* Fade edges */}
+      <div className="absolute left-12 top-0 h-full w-10 bg-gradient-to-r from-slate-100 to-transparent pointer-events-none z-10" />
+      <div className="absolute right-12 top-0 h-full w-10 bg-gradient-to-l from-slate-100 to-transparent pointer-events-none z-10" />
+    </div>
+
+    {/* Dots */}
+    <div className="flex justify-center gap-2 mt-10">
+      {products.map((_, i) => (
+        <motion.button
+          key={i}
+          className={`h-2 rounded-full transition-all duration-300 ${
+            i === currentIndex
+              ? 'w-8 bg-[#32a7b5]'
+              : 'w-2 bg-[#32a7b5]/25 hover:bg-[#32a7b5]/50'
+          }`}
+          onClick={() => setCurrentIndex(i)}
+          whileTap={{ scale: 0.9 }}
+        />
       ))}
     </div>
 
     {/* View All Button */}
     <motion.div
-      className="text-center mt-16"
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
+      className="text-center mt-12"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: false }}
       transition={{ duration: 0.7 }}
     >
       <Link href="/products">
         <motion.button
-          className={`inline-flex items-center gap-2 px-8 py-4 bg-[#32A7B5] text-white rounded-xl font-bold transition-colors ${
-            dir === "rtl" ? "flex-row-reverse font-arabic" : "font-body"
-          }`}
-          whileHover={{ scale: 1.05, y: -3 }}
+          className={`inline-flex items-center gap-2 px-8 py-4 bg-[#32A7B5] text-white rounded-xl font-bold transition-colors shadow-lg shadow-[#32a7b5]/20 ${dir === "rtl" ? "flex-row-reverse font-arabic" : "font-body"}`}
+          whileHover={{ scale: 1.05, y: -3, boxShadow: '0 20px 40px rgba(50,167,181,0.3)' }}
           whileTap={{ scale: 0.95 }}
         >
           {t("common.viewAll")}
@@ -645,6 +680,7 @@ const productNames = [
         </motion.button>
       </Link>
     </motion.div>
+
   </div>
 </section>
 
@@ -659,9 +695,9 @@ const productNames = [
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: false }}
       >
-        <span className="inline-block px-4 py-2 rounded-full bg-[#32A7B51A] text-[#32a7b5] text-sm font-bold mb-4 uppercase tracking-wider">
+        {/* <span className="inline-block px-4 py-2 rounded-full bg-[#32A7B51A] text-[#32a7b5] text-sm font-bold mb-4 uppercase tracking-wider">
           {language === "en" ? "Gallery" : "المعرض"}
-        </span>
+        </span> */}
 
         <h2
           className={`text-4xl md:text-5xl font-bold text-slate-800 mb-6 ${
@@ -749,9 +785,9 @@ const productNames = [
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false}}
           >
-            <span className="inline-block px-4 py-2 rounded-full bg-[#32A7B51A] text-[#32a7b5] text-sm font-bold mb-4 uppercase tracking-wider">
+            {/* <span className="inline-block px-4 py-2 rounded-full bg-[#32A7B51A] text-[#32a7b5] text-sm font-bold mb-4 uppercase tracking-wider">
               {language === "en" ? "Sectors" : "القطاعات"}
-            </span>
+            </span> */}
             <h2
               className={`text-4xl md:text-5xl font-bold text-slate-700 mb-6 ${dir === "rtl" ? "font-arabic" : "font-display"}`}
             >

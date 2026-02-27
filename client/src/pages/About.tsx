@@ -80,12 +80,12 @@ export default function About() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span
+            {/* <span
               className={`inline-block px-4 py-2 rounded-full bg-[#32a7b5]/10 border border-[#32a7b5]/30 text-[#32a7b5] text-sm font-bold mb-6 tracking-wide uppercase ${dir === "rtl" ? "font-arabic" : "font-body"
                 }`}
             >
               {language === "en" ? "Who We Are" : "من نحن"}
-            </span>
+            </span> */}
 
             <h1
               className={`text-4xl md:text-6xl font-bold text-white mb-6 ${dir === "rtl" ? "font-arabic" : "font-display"
@@ -195,9 +195,9 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
            viewport={{ once: false }}
           >
-            <span className="inline-block px-4 py-2 rounded-full bg-[#32A7B51A]  text-[#32A7B5] text-sm font-medium mb-4">
+            {/* <span className="inline-block px-4 py-2 rounded-full bg-[#32A7B51A]  text-[#32A7B5] text-sm font-medium mb-4">
               {language === 'en' ? 'What Drives Us' : 'ما يحركنا'}
-            </span>
+            </span> */}
             <h2 className={`text-4xl md:text-5xl font-bold text-slate-700 mb-4 ${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}>
               {t('about.values.title')}
             </h2>

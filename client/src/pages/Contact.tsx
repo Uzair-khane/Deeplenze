@@ -78,23 +78,36 @@ export default function Contact() {
     ];
 
   const contactInfo = [
-    {
-      icon: MapPin,
-      title: language === 'en' ? 'Visit Us' : 'زورنا',
-      details: [
-        language === 'en' ? 'King Fahd Road' : 'طريق الملك فهد',
-        language === 'en' ? 'Riyadh, Saudi Arabia' : 'الرياض، المملكة العربية السعودية',
-      ],
-    },
+
+
+  {
+    icon: MapPin,
+    title: language === 'en' ? '15 & 16 Riyadh Olaya Center, Riyadh, Saudi Arabia' : '15 و 16 مركز الرياض العليا، الرياض، المملكة العربية السعودية',
+    details: [],
+  },
+  {
+    icon: MapPin,
+    title: language === 'en' ? '305 Al Worood Commercial Center, Jeddah, Saudi Arabia' : '305 مركز الورود التجاري، جدة، المملكة العربية السعودية',
+    details: [],
+  },
+  {
+    icon: MapPin,
+    title: language === 'en' ? '305 & 306 Building B, B-SQUARE Nasr City, Cairo, Egypt' : '305 و 306 مبنى B، بي سكوير مدينة نصر، القاهرة، مصر',
+    details: [],
+  },
+
+
+ 
+
     {
       icon: Mail,
       title: language === 'en' ? 'Email Us' : 'راسلنا',
-      details: ['info@techvision.sa', 'support@techvision.sa'],
+      details: ['sales@3pillars-sa.com', 'support@deeplenze.com.'],
     },
     {
       icon: Phone,
       title: language === 'en' ? 'Call Us' : 'اتصل بنا',
-      details: ['+966 11 XXX XXXX', '+966 11 XXX XXXX'],
+      details: ['+966 11 245 8536', ],
     },
     {
       icon: Clock,
@@ -131,9 +144,9 @@ export default function Contact() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className={`inline-block px-4 py-2 rounded-full bg-[#32a7b5]/10 border border-[#32a7b5]/30 text-[#32a7b5] text-sm font-bold mb-6 tracking-wide uppercase ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
+            {/* <span className={`inline-block px-4 py-2 rounded-full bg-[#32a7b5]/10 border border-[#32a7b5]/30 text-[#32a7b5] text-sm font-bold mb-6 tracking-wide uppercase ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
               {language === 'en' ? 'Get in Touch' : 'تواصل معنا'}
-            </span>
+            </span> */}
             <h1 className={`text-4xl md:text-6xl font-bold text-white mb-6 ${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}>
               {t('contact.title')}
             </h1>
@@ -166,32 +179,36 @@ export default function Contact() {
                 </p>
               </div>
 
-              {contactInfo.map((info, index) => (
-                <motion.div
-                  key={index}
-                  className={`p-5 rounded-xl bg-white shadow-sm ${dir === 'rtl' ? 'text-right' : ''}`}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: false }}
-                  transition={{ delay: index * 0.1 }}
-                >
-                  <div className={`flex items-start gap-4 ${dir === 'rtl' ? 'flex-row-reverse' : ''}`}>
-                    <div className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center flex-shrink-0">
-                      <info.icon className="w-5 h-5 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className={`text-[#32A7B5] font-semibold mb-1 ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
-                        {info.title}
-                      </h3>
-                      {info.details.map((detail, i) => (
-                        <p key={i} className={`text-muted-foreground text-sm ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
-                          {detail}
-                        </p>
-                      ))}
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
+         
+
+
+{/* Step 2: Rendering */}
+{contactInfo.map((info, index) => (
+  <motion.div
+    key={index}
+    className={`p-5 rounded-xl bg-white shadow-sm ${dir === 'rtl' ? 'text-right' : ''}`}
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: false }}
+    transition={{ delay: index * 0.1 }}
+  >
+    <div className={`flex items-center gap-4 ${dir === 'rtl' ? 'flex-row-reverse' : ''}`}>
+      <div className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center flex-shrink-0">
+        <info.icon className="w-5 h-5 text-primary" />
+      </div>
+      <div className="flex-1 min-w-0">
+        <p className={`text-slate-500 text-sm font-medium ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
+          {info.title}
+        </p>
+        {info.details.map((detail, i) => (
+          <p key={i} className={`text-muted-foreground text-sm ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
+            {detail}
+          </p>
+        ))}
+      </div>
+    </div>
+  </motion.div>
+))}
             </motion.div>
 
             {/* Contact Form */}
@@ -365,44 +382,109 @@ export default function Contact() {
       </section>
 
       {/* Map Section */}
-      <section className="py-16 relative bg-[#E0F2F4]">
-        <div className="container mx-auto px-4">
-          <motion.div
-            className={`text-center mb-12 ${dir === 'rtl' ? 'font-arabic' : ''}`}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
-          >
-            <h2 className={`text-3xl font-bold text-[#314158] mb-4 ${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}>
-              {language === 'en' ? 'Our Location' : 'موقعنا'}
-            </h2>
-            <p className={`text-slate-600 ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
-              {language === 'en' ? 'Visit us at our headquarters in Riyadh' : 'زورنا في مقرنا الرئيسي في الرياض'}
-            </p>
-          </motion.div>
+     <section className="py-20 relative bg-[#E0F2F4] overflow-hidden">
 
-          <motion.div
-            className="rounded-md overflow-hidden h-[400px] relative bg-slate-100"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
-          >
-            <div className="absolute inset-0 bg-background/50 flex items-center justify-center">
-              <div className="text-center">
-                <div className="w-20 h-20 rounded-2xl bg-primary/10 border border-primary/30 flex items-center justify-center mx-auto mb-4">
-                  <Building2 className="w-10 h-10 text-primary" />
-                </div>
-                <h3 className={`text-xl font-bold text-[#314158] mb-2 ${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}>
-                  {language === 'en' ? 'TechVision Headquarters' : 'المقر الرئيسي لتك فيجن'}
-                </h3>
-                <p className={`text-muted-foreground ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
-                  {language === 'en' ? 'King Fahd Road, Riyadh, Saudi Arabia' : 'طريق الملك فهد، الرياض، المملكة العربية السعودية'}
-                </p>
-              </div>
-            </div>
-          </motion.div>
+  {/* Background decorative circles */}
+  <div className="absolute top-0 left-0 w-72 h-72 bg-[#32a7b5]/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
+  <div className="absolute bottom-0 right-0 w-72 h-72 bg-[#32a7b5]/10 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
+
+  <div className="container mx-auto px-4 relative z-10">
+
+    {/* Heading */}
+    <motion.div
+      className={`text-center mb-12 ${dir === 'rtl' ? 'font-arabic' : ''}`}
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: false }}
+      transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+    >
+      {/* <motion.div
+        className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#32a7b5]/10 border border-[#32a7b5]/30 text-[#32a7b5] text-sm font-bold mb-4 uppercase tracking-wider"
+        initial={{ opacity: 0, scale: 0.8 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: false }}
+        transition={{ duration: 0.5 }}
+      >
+        <MapPin className="w-4 h-4" />
+        {language === 'en' ? 'Find Us' : 'جدنا'}
+      </motion.div> */}
+
+      <h2 className={`text-3xl md:text-4xl font-bold text-[#314158] mb-4 ${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}>
+        {language === 'en' ? 'Our Location' : 'موقعنا'}
+      </h2>
+      <p className={`text-slate-600 ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
+        {language === 'en' ? 'Visit us at our headquarters in Riyadh' : 'زورنا في مقرنا الرئيسي في الرياض'}
+      </p>
+    </motion.div>
+
+    {/* Map Card */}
+    <motion.div
+      className="relative rounded-2xl overflow-hidden shadow-2xl"
+      initial={{ opacity: 0, y: 60, scale: 0.97 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      viewport={{ once: false }}
+      transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+    >
+      {/* Map iframe */}
+      <div className="h-[450px] w-full relative">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3624.3!2d46.6828!3d24.6915!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f03890d489399%3A0xba974d1c98e79fd5!2sOlaya%2C%20Riyadh%20Saudi%20Arabia!5e0!3m2!1sen!2s!4v1234567890"
+          width="100%"
+          height="100%"
+          style={{ border: 0 }}
+          allowFullScreen
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          className="w-full h-full"
+        />
+      </div>
+
+      {/* Info Card overlay - bottom left */}
+      <motion.div
+        className="absolute bottom-5 left-5 bg-white rounded-xl shadow-lg p-4 max-w-xs"
+        initial={{ opacity: 0, x: -30, y: 20 }}
+        whileInView={{ opacity: 1, x: 0, y: 0 }}
+        viewport={{ once: false }}
+        transition={{ duration: 0.6, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+      >
+        <div className="flex items-start gap-3">
+          <div className="w-9 h-9 rounded-lg bg-[#32a7b5]/10 border border-[#32a7b5]/20 flex items-center justify-center flex-shrink-0">
+            <Building2 className="w-5 h-5 text-[#32a7b5]" />
+          </div>
+          <div>
+            <h4 className={`text-sm font-bold text-[#314158] mb-0.5 ${dir === 'rtl' ? 'font-arabic' : 'font-display'}`}>
+              {language === 'en' ? ' Headquarters' : 'المقر الرئيسي'}
+            </h4>
+            <p className={`text-xs text-slate-500 ${dir === 'rtl' ? 'font-arabic' : 'font-body'}`}>
+              {language === 'en' ? '15 & 16 Riyadh Olaya Center, Riyadh' : '15 و 16 مركز الرياض العليا، الرياض'}
+            </p>
+          </div>
         </div>
-      </section>
+      </motion.div>
+
+      {/* Open in Maps button - top right */}
+      <motion.a
+        href="https://www.google.com/maps?q=Riyadh+Olaya+Center,+Riyadh,+Saudi+Arabia&z=16"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="absolute top-4 right-4 flex items-center gap-2 bg-white px-4 py-2.5 rounded-xl shadow-md text-[#32a7b5] text-sm font-bold border border-[#32a7b5]/20 hover:bg-[#32a7b5] hover:text-white hover:border-[#32a7b5] transition-all duration-300"
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false }}
+        transition={{ duration: 0.5, delay: 0.3 }}
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.97 }}
+      >
+        <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+        </svg>
+        {language === 'en' ? 'Open in Google Maps' : 'فتح في خرائط جوجل'}
+      </motion.a>
+
+    </motion.div>
+  </div>
+</section>
 
       <Footer />
     </div>

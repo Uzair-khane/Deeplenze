@@ -91,14 +91,14 @@ export default function TermsConditions() {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen ">
       <Navbar />
 
-      <main className="flex-1 ">
+      <main className="flex-1 pt-20">
 
     
     {/* Hero */}
-<div className="relative pt-32 pb-20 overflow-hidden">
+<div className="relative w-full pl-5 pr-8 py-24 overflow-hidden">
 
   {/* Background Image */}
   <div className="absolute inset-0">
