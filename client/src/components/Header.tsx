@@ -35,15 +35,17 @@ export default function Header() {
   };
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 !border-0 z-50 transition-all duration-500 ${
-        isScrolled
-          ? 'py-3 glass shadow-sm bg-[#0f1f2a]'
-          : isLightPage
-          ? 'py-3 bg-white shadow-sm border-b border-slate-100'
-          : 'py-3 bg-transparent'
-      }`}
-    >
+   <header
+  className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+    isScrolled
+      ? 'py-3 bg-[#0f1f2a] shadow-sm'
+      : isMobileMenuOpen
+      ? 'py-3 bg-black/50 backdrop-blur-md'
+      : isLightPage
+      ? 'py-3 bg-white shadow-sm border-b border-slate-100'
+      : 'py-3 bg-transparent'
+  }`}
+>
       <div className="container mx-auto px-2 py-2">
         <nav className="flex items-center justify-between">
 
@@ -166,7 +168,7 @@ export default function Header() {
                       className={`block py-3 px-4 rounded-lg transition-colors cursor-pointer ${
                         location === link.href
                           ? 'bg-primary/10 text-primary'
-                          : 'text-slate-700 hover:bg-gray-50 hover:text-slate-800'
+                          : 'text-white hover:bg-gray-50 hover:text-slate-800'
                       } ${dir === 'rtl' ? 'font-arabic text-right' : 'font-body'}`}
                     >
                       {link.label}

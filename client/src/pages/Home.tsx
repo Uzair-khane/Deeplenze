@@ -324,11 +324,21 @@ const productNames = [
 
 
 const [currentIndex, setCurrentIndex] = useState(0);
+const [cardWidth, setCardWidth] = useState(220);
+
+useEffect(() => {
+  const updateWidth = () => {
+    setCardWidth(window.innerWidth < 768 ? window.innerWidth - 112 : 220);
+  };
+  updateWidth();
+  window.addEventListener('resize', updateWidth);
+  return () => window.removeEventListener('resize', updateWidth);
+}, []);
 
 useEffect(() => {
   const timer = setInterval(() => {
     setCurrentIndex((prev) => (prev + 1) % products.length);
-  }, 5000);
+  }, 3000);
   return () => clearInterval(timer);
 }, [products.length]);
 
@@ -537,6 +547,7 @@ const goPrev = () => setCurrentIndex((prev) => (prev - 1 + products.length) % pr
 
 
 
+
 {/* Products Section */}
 <section className="py-24 relative bg-slate-100 overflow-hidden">
 
@@ -598,7 +609,13 @@ const goPrev = () => setCurrentIndex((prev) => (prev - 1 + products.length) % pr
       <div className="overflow-hidden rounded-2xl">
         <motion.div
           className="flex gap-6"
-          animate={{ x: `-${currentIndex * (220 + 24)}px` }}
+          animate={{
+            x: `-${currentIndex * (
+              typeof window !== 'undefined' && window.innerWidth < 768
+                ? window.innerWidth - 112 + 24  // mobile: full width card
+                : 220 + 24                        // desktop: 220px card
+            )}px`
+          }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         >
           {[...products, ...products, ...products].map((product, index) => (
@@ -607,12 +624,12 @@ const goPrev = () => setCurrentIndex((prev) => (prev - 1 + products.length) % pr
               href=""
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-shrink-0 w-52 h-52 group relative cursor-pointer"
+              className="flex-shrink-0 w-[calc(100vw-8rem)] md:w-52 h-52 group relative cursor-pointer"
               whileHover={{ y: -8, scale: 1.05 }}
               transition={{ duration: 0.3, ease: "easeOut" }}
             >
               {/* Card */}
-              <div className="w-full h-full  bg-white border border-[#32a7b5]/10  shadow-md group-hover:shadow-2xl transition-all duration-400 flex items-center justify-center overflow-hidden relative">
+              <div className="w-full  h-full bg-white border border-[#32a7b5]/10 shadow-md group-hover:shadow-2xl transition-all duration-400 flex items-center justify-center overflow-hidden relative ">
 
                 {/* Hover glow bg */}
                 <div className="absolute inset-0 bg-gradient-to-br from-[#32a7b5]/0 to-[#32a7b5]/0 transition-all duration-500" />
@@ -624,7 +641,7 @@ const goPrev = () => setCurrentIndex((prev) => (prev - 1 + products.length) % pr
                 <motion.img
                   src={product.icon}
                   alt={product.name}
-                  className="w-40 h-40 object-contain relative z-10"
+                  className="w-40 h-40 p-3 object-contain relative z-10"
                   style={{ mixBlendMode: 'multiply' }}
                   animate={{ y: [0, -6, 0] }}
                   transition={{
