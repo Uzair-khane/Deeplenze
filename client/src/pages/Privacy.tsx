@@ -1,7 +1,8 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import Navbar from '@/components/Header';
 import Footer from '@/components/Footer';
-
+// Image URLs
+import HeroImage from "@/assets/images/herosection.png";
 export default function PrivacyPolicy() {
     const { dir, language } = useLanguage();
     const isRTL = dir === 'rtl';
@@ -95,23 +96,39 @@ export default function PrivacyPolicy() {
             <Navbar />
 
             <main className="flex-1 pt-20">
-                {/* Hero */}
-                <div className="w-full bg-gradient-to-br from-slate-50 via-cyan-50/40 to-slate-100 pl-5 pr-8 py-16">
-                    <p className="text-[#32a7b5] text-sm font-semibold uppercase tracking-widest mb-3">
-                        {language === 'en' ? 'Legal' : 'قانوني'}
-                    </p>
-                    <h1 className={`text-4xl md:text-6xl font-bold text-slate-900 mb-5 ${isRTL ? 'font-arabic' : 'font-display'}`}>
-                        {language === 'en' ? 'Privacy Policy' : 'سياسة الخصوصية'}
-                    </h1>
-                    <p className={`text-slate-600 text-lg leading-relaxed mb-4 max-w-2xl ${isRTL ? 'font-arabic' : 'font-body'}`}>
-                        {language === 'en'
-                            ? 'This Privacy Policy explains how Deeplenze Technologies collects, uses, discloses, and safeguards your information when you use our services.'
-                            : 'توضح سياسة الخصوصية هذه كيفية قيام شركة ديب لنز للتقنيات بجمع معلوماتك واستخدامها والإفصاح عنها وحمايتها عند استخدامك لخدماتنا.'}
-                    </p>
-                    <p className="text-slate-400 text-base">
-                        {language === 'en' ? 'Last updated: February 7, 2026' : 'آخر تحديث: ٧ فبراير ٢٠٢٦'}
-                    </p>
-                </div>
+              {/* Hero */}
+<div className="relative w-full pl-5 pr-8 py-24 overflow-hidden">
+
+  {/* Background Image */}
+  <div className="absolute inset-0">
+    <img
+      src={HeroImage}
+      alt="Hero Background"
+      className="w-full h-full object-cover"
+    />
+    {/* Dark overlay */}
+    <div className="absolute inset-0 bg-blue-900/40" />
+  </div>
+
+  {/* Content */}
+  <div className="relative z-10 text-center">
+    <p className="text-[#32a7b5] text-sm font-semibold uppercase tracking-widest mb-3">
+      {language === 'en' ? 'Legal' : 'قانوني'}
+    </p>
+    <h1 className={`text-4xl md:text-6xl font-bold text-white mb-5 ${isRTL ? 'font-arabic' : 'font-display'}`}>
+      {language === 'en' ? 'Privacy Policy' : 'سياسة الخصوصية'}
+    </h1>
+    <p className={`text-white/80 text-lg text-center leading-relaxed mb-4  ${isRTL ? 'font-arabic' : 'font-body'}`}>
+      {language === 'en'
+        ? 'This Privacy Policy explains how Deeplenze Technologies collects, uses, discloses, and safeguards your information when you use our services.'
+        : 'توضح سياسة الخصوصية هذه كيفية قيام شركة ديب لنز للتقنيات بجمع معلوماتك واستخدامها والإفصاح عنها وحمايتها عند استخدامك لخدماتنا.'}
+    </p>
+    <p className="text-white/50 text-base">
+      {language === 'en' ? 'Last updated: February 7, 2026' : 'آخر تحديث: ٧ فبراير ٢٠٢٦'}
+    </p>
+  </div>
+
+</div>
 
                 {/* Content */}
                 <div className="w-full pl-5 pr-8 py-14">

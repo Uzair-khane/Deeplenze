@@ -1,7 +1,7 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import Navbar from '@/components/Header';
 import Footer from '@/components/Footer';
-
+import HeroImage from "@/assets/images/herosection.png";
 export default function TermsConditions() {
   const { dir, language } = useLanguage();
   const isRTL = dir === 'rtl';
@@ -91,31 +91,47 @@ export default function TermsConditions() {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col bg-white">
+    <div className="min-h-screen flex flex-col">
       <Navbar />
 
-      <main className="flex-1 pt-20">
+      <main className="flex-1 ">
 
-        {/* Hero */}
-        <div className="w-full bg-gradient-to-br from-slate-50 via-cyan-50/40 to-slate-100 pl-5 pr-8 py-16">
-          <p className="text-[#32a7b5] text-sm font-semibold uppercase tracking-widest mb-3">
-            {language === 'en' ? 'Legal' : 'قانوني'}
-          </p>
-          <h1 className={`text-4xl md:text-6xl font-bold text-slate-900 mb-5 ${isRTL ? 'font-arabic' : 'font-display'}`}>
-            {language === 'en' ? 'Terms & Conditions' : 'الشروط والأحكام'}
-          </h1>
-          <p className={`text-slate-600 text-lg leading-relaxed mb-4 max-w-2xl ${isRTL ? 'font-arabic' : 'font-body'}`}>
-            {language === 'en'
-              ? "Please read these Terms and Conditions carefully before using Deeplenze's platform and services."
-              : 'يرجى قراءة هذه الشروط والأحكام بعناية قبل استخدام منصة وخدمات ديب لنز.'}
-          </p>
-          <p className="text-slate-400 text-base">
-            {language === 'en' ? 'Last updated: February 7, 2026' : 'آخر تحديث: ٧ فبراير ٢٠٢٦'}
-          </p>
-        </div>
+    
+    {/* Hero */}
+<div className="relative pt-32 pb-20 overflow-hidden">
+
+  {/* Background Image */}
+  <div className="absolute inset-0">
+    <img
+      src={HeroImage}
+      alt="Hero Background"
+      className="w-full h-full object-cover"
+    />
+    <div className="absolute inset-0 bg-blue-900/40" />
+  </div>
+
+  {/* Content */}
+  <div className="relative z-10 text-center">
+    <p className="text-[#32a7b5] text-sm font-semibold uppercase tracking-widest mb-3">
+      {language === 'en' ? 'Legal' : 'قانوني'}
+    </p>
+    <h1 className={`text-4xl md:text-6xl font-bold text-white mb-5 ${isRTL ? 'font-arabic' : 'font-display'}`}>
+      {language === 'en' ? 'Terms & Conditions' : 'الشروط والأحكام'}
+    </h1>
+    <p className={`text-white/80 text-center text-lg leading-relaxed mb-4  ${isRTL ? 'font-arabic' : 'font-body'}`}>
+      {language === 'en'
+        ? "Please read these Terms and Conditions carefully before using Deeplenze's platform and services."
+        : 'يرجى قراءة هذه الشروط والأحكام بعناية قبل استخدام منصة وخدمات ديب لنز.'}
+    </p>
+    <p className="text-white/50 text-base">
+      {language === 'en' ? 'Last updated: February 7, 2026' : 'آخر تحديث: ٧ فبراير ٢٠٢٦'}
+    </p>
+  </div>
+
+</div>
 
         {/* Content */}
-        <div className="w-full pl-5 pr-8 py-14">
+        <div className="w-full  pl-5 pr-8 py-14">
           <div className="space-y-10 max-w-4xl">
             {sections.map((section) => (
               <div key={section.number} className={isRTL ? 'text-right' : ''}>
@@ -135,7 +151,7 @@ export default function TermsConditions() {
                     ))}
                   </ul>
                 ) : (
-                  <p className={`text-slate-600 text-lg leading-relaxed ${isRTL ? 'font-arabic' : 'font-body'}`}>
+                  <p className={`text-slate-600  text-lg leading-relaxed ${isRTL ? 'font-arabic' : 'font-body'}`}>
                     {section.content}
                   </p>
                 )}

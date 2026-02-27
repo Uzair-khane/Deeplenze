@@ -96,7 +96,7 @@ const translations: Translations = {
   'contact.form.message': { en: 'Your Message', ar: 'رسالتك' },
   'contact.form.submit': { en: 'Send Message', ar: 'إرسال الرسالة' },
   'contact.info.address': { en: 'Riyadh, Saudi Arabia', ar: 'الرياض، المملكة العربية السعودية' },
-  'contact.info.email': { en: 'info@Deeplenze.sa', ar: 'info@Deeplenze.sa' },
+  'contact.info.email': { en: 'support@deeplenze.com.', ar: 'support@deeplenze.com.' },
   'contact.info.phone': { en: '+966 11 245 8536', ar: '+966 11 245 8536' },
   
   // Footer
