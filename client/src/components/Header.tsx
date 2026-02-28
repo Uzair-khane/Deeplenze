@@ -27,7 +27,7 @@ export default function Header() {
     { href: '/services', label: t('nav.services') },
     { href: '/products', label: t('nav.products') },
     { href: '/industries', label: t('nav.industries') },
-    { href: '/contact', label: t('nav.contact') },
+    // { href: '/contact', label: t('nav.contact') },
   ];
 
   const toggleLanguage = () => {
