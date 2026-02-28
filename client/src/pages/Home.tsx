@@ -38,7 +38,7 @@ import nalystLogo from "@/assets/images/nalyst.png";
 import newsHuntLogo from "@/assets/images/newshunt_logo.png";
 import kastLogo from "@/assets/images/4kastLogo.svg";
 import hr360Logo from "@/assets/images/Hr360Logo.svg";
-import khellaLogo from "@/assets/images/khellaLogo.svg";
+import khellaLogo from "@/assets/images/HoorLogo.svg";
 import assadLogo from "@/assets/images/assadLogo.svg";
 import AI_IMG from "@/assets/images/AI.png";
 import CYBER_IMG from "@/assets/images/CyberSecurity.png";
