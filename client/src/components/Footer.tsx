@@ -40,7 +40,7 @@ export default function Footer() {
             <p className={`text-slate-500 text-sm leading-relaxed my-8 max-w-xs ${isRTL ? 'font-arabic' : 'font-body'}`}>
               {t('footer.description')}
             </p>
-            <div className={`flex gap-3 ${isRTL ? 'justify-end' : ''}`}>
+            <div className={`flex gap-3 ${isRTL ? 'justify-start' : ''}`}>
               {[Linkedin, Twitter].map((Icon, i) => (
                 <motion.a
                   key={i}
@@ -94,28 +94,40 @@ export default function Footer() {
           </div>
 
           {/* Contact */}
-          <div>
-            <h4 className={`text-slate-800 font-bold text-sm uppercase tracking-widest mb-4 ${isRTL ? 'font-arabic' : 'font-display'}`}>
-              {t('footer.contact')}
-            </h4>
-            <div className="w-8 h-0.5 bg-[#32a7b5] mb-6" />
-            <ul className="space-y-4">
-              <li className={`flex items-start gap-3 ${isRTL ? 'flex-row-reverse' : ''}`}>
-                <Mail className="w-4 h-4 text-[#32a7b5] flex-shrink-0 mt-0.5" />
-                <span className="text-slate-500 text-sm font-body">{t('contact.info.email')}</span>
-              </li>
-              <li className={`flex items-center gap-3 ${isRTL ? 'flex-row-reverse' : ''}`}>
-                <Phone className="w-4 h-4 text-[#32a7b5] flex-shrink-0" />
-                <span className="text-slate-500 text-sm font-body" dir="ltr">{t('contact.info.phone')}</span>
-              </li>
-              <li className={`flex items-start gap-3 ${isRTL ? 'flex-row-reverse' : ''}`}>
-                <MapPin className="w-4 h-4 text-[#32a7b5] flex-shrink-0 mt-0.5" />
-                <span className={`text-slate-500 text-sm ${isRTL ? 'font-arabic' : 'font-body'}`}>
-                  {t('contact.info.address')}
-                </span>
-              </li>
-            </ul>
-          </div>
+         <div>
+  <h4 className={`text-slate-800 font-bold text-sm uppercase tracking-widest mb-4 ${isRTL ? 'font-arabic text-right' : 'font-display'}`}>
+    {t('footer.contact')}
+  </h4>
+  <div className={`w-8 h-0.5 bg-[#32a7b5] mb-6 ${isRTL ? 'ml-auto' : ''}`} />
+
+  <ul className="space-y-4" dir={isRTL ? 'rtl' : 'ltr'}>
+
+    {/* Email */}
+    <li className="flex items-start gap-3">
+      <Mail className="w-4 h-4 text-[#32a7b5] flex-shrink-0 mt-0.5" />
+      <span className={`text-slate-500 text-sm ${isRTL ? 'font-arabic' : 'font-body'}`}>
+        {t('contact.info.email')}
+      </span>
+    </li>
+
+    {/* Phone */}
+    <li className="flex items-center gap-3">
+      <Phone className="w-4 h-4 text-[#32a7b5] flex-shrink-0" />
+      <span className="text-slate-500 text-sm font-body" dir="ltr">
+        {t('contact.info.phone')}
+      </span>
+    </li>
+
+    {/* Address */}
+    <li className="flex items-start gap-3">
+      <MapPin className="w-4 h-4 text-[#32a7b5] flex-shrink-0 mt-0.5" />
+      <span className={`text-slate-500 text-sm ${isRTL ? 'font-arabic' : 'font-body'}`}>
+        {t('contact.info.address')}
+      </span>
+    </li>
+
+  </ul>
+</div>
         </div>
       </div>
 
