@@ -4,8 +4,10 @@
  */
 
 import { Link } from "wouter";
+import { useRef } from "react";
+
 import { useState, useEffect } from "react"; 
-import { motion } from "framer-motion";
+import { motion,useInView } from "framer-motion";
 // import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import Header from "@/components/Header";
@@ -71,7 +73,39 @@ const galleryImages = [
 
 const SMART_IMG =
   "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030867079/zxhLFuUlDPKEooqo.jpg";
+const TypingText = ({
+  text,
+  delayOffset = 0,
+  speed = 0.08,
+  className,
+}: {
+  text: string;
+  delayOffset?: number;
+  speed?: number;
+  className?: string;
+}) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
 
+  return (
+    <span ref={ref} className={className}>
+      {text.split("").map((char, index) => (
+        <motion.span
+          key={index}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: isInView ? 1 : 0 }}
+          transition={{
+            delay: delayOffset + index * speed,
+            duration: 0.4,
+            ease: "easeInOut",
+          }}
+        >
+          {char === " " ? "\u00A0" : char}
+        </motion.span>
+      ))}
+    </span>
+  );
+};
 export default function Home() {
   const { t, dir, language } = useLanguage();
   const ArrowIcon = dir === "rtl" ? ArrowLeft : ArrowRight;
@@ -204,37 +238,6 @@ const [selectedImage, setSelectedImage] = useState<string | null>(null);
           : "حلول التجزئة متعددة القنوات للتسوق الحديث.",
     },
   ];
-// Add this helper ABOVE return inside your component
-const TypingText = ({
-  text,
-  delayOffset = 0,
-  speed = 0.08, // typing speed (bigger = slower)
-  className,
-}: {
-  text: string;
-  delayOffset?: number;
-  speed?: number;
-  className?: string;
-}) => {
-  return (
-    <span className={className}>
-      {text.split("").map((char, index) => (
-        <motion.span
-          key={index}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{
-            delay: delayOffset + index * speed,
-            duration: 0.4,
-            ease: "easeInOut",
-          }}
-        >
-          {char === " " ? "\u00A0" : char}
-        </motion.span>
-      ))}
-    </span>
-  );
-};
 
 
 const FloatingProducts = ({
