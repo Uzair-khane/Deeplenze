@@ -588,9 +588,9 @@ const goPrev = () => setCurrentIndex((prev) => (prev - 1 + products.length) % pr
     {/* Slider Container */}
     <div className="relative px-14">
 
-      {/* Prev Button */}
+      {/* Prev Button - RTL mein right side pe */}
       <motion.button
-        onClick={goPrev}
+        onClick={dir === 'rtl' ? goNext : goPrev}
         className="absolute left-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white shadow-xl border border-[#32a7b5]/20 flex items-center justify-center text-[#32a7b5] hover:bg-[#32a7b5] hover:text-white transition-all duration-300"
         whileHover={{ scale: 1.15 }}
         whileTap={{ scale: 0.9 }}
@@ -598,9 +598,9 @@ const goPrev = () => setCurrentIndex((prev) => (prev - 1 + products.length) % pr
         <ChevronLeft className="w-6 h-6" />
       </motion.button>
 
-      {/* Next Button */}
+      {/* Next Button - RTL mein left side pe */}
       <motion.button
-        onClick={goNext}
+        onClick={dir === 'rtl' ? goPrev : goNext}
         className="absolute right-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white shadow-xl border border-[#32a7b5]/20 flex items-center justify-center text-[#32a7b5] hover:bg-[#32a7b5] hover:text-white transition-all duration-300"
         whileHover={{ scale: 1.15 }}
         whileTap={{ scale: 0.9 }}
@@ -613,18 +613,16 @@ const goPrev = () => setCurrentIndex((prev) => (prev - 1 + products.length) % pr
         <motion.div
           className="flex gap-6"
           animate={{
-            x: `-${currentIndex * (
-              typeof window !== 'undefined' && window.innerWidth < 768
-                ? window.innerWidth - 112 + 24  // mobile: full width card
-                : 220 + 24                        // desktop: 220px card
-            )}px`
+            x: dir === 'rtl'
+              ? `${currentIndex * (typeof window !== 'undefined' && window.innerWidth < 768 ? window.innerWidth - 112 + 24 : 220 + 24)}px`
+              : `-${currentIndex * (typeof window !== 'undefined' && window.innerWidth < 768 ? window.innerWidth - 112 + 24 : 220 + 24)}px`
           }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         >
           {[...products, ...products, ...products].map((product, index) => (
             <motion.a
               key={index}
-              href=""
+              href={product.url || "#"}
               target="_blank"
               rel="noopener noreferrer"
               className="flex-shrink-0 w-[calc(100vw-8rem)] md:w-52 h-52 group relative cursor-pointer"
@@ -632,7 +630,7 @@ const goPrev = () => setCurrentIndex((prev) => (prev - 1 + products.length) % pr
               transition={{ duration: 0.3, ease: "easeOut" }}
             >
               {/* Card */}
-              <div className="w-full  h-full bg-white border border-[#32a7b5]/10 shadow-md group-hover:shadow-2xl transition-all duration-400 flex items-center justify-center overflow-hidden relative ">
+              <div className="w-full h-full bg-white border border-[#32a7b5]/10 shadow-md group-hover:shadow-2xl transition-all duration-400 flex items-center justify-center overflow-hidden relative">
 
                 {/* Hover glow bg */}
                 <div className="absolute inset-0 bg-gradient-to-br from-[#32a7b5]/0 to-[#32a7b5]/0 transition-all duration-500" />
